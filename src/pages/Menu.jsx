@@ -1,5 +1,9 @@
+import MenuWrapper from "../components/Menu/MenuWrapper";
+
 function Menu() {
-  return <div>menu</div>;
+  return (
+    <MenuWrapper />
+  )
 }
 
 export default Menu;
