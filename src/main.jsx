@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
@@ -10,6 +11,8 @@ import "./components/GameLevel/Gamelevel.css";
 import "./components/settings/Settings.css";
 import "./components/Menu/Menu.css";
 =======
+=======
+>>>>>>> 35279cd (Revert "Static layout v1")
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'

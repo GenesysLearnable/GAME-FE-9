@@ -1,6 +1,6 @@
 function Dashboard() {
   return (
-    <div>
+    <div className="ugo-dashboard">
       <TopNav />
       <MainDashboard />
       <Footer />
