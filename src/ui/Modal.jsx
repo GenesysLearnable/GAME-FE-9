@@ -27,11 +27,6 @@ function Open({ children, opens: opensWindowName }) {
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
   const ref = useOutsideClick(close);
-<<<<<<< HEAD
-  console.log(openName, name);
-=======
-
->>>>>>> 82bc241 (modifying some components)
   if (name !== openName) return null;
 
   return createPortal(
@@ -40,11 +35,6 @@ function Window({ children, name }) {
         <button className="ugo-close-button" onClick={close}>
           <HiXMark />
         </button>
-<<<<<<< HEAD
-        <div>{cloneElement(children, { onCloseModal: close })}</div>
-=======
-        {cloneElement(children, { onCloseModal: close })}
->>>>>>> 82bc241 (modifying some components)
       </div>
     </div>,
     document.body
