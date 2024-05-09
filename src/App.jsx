@@ -5,6 +5,7 @@ import About from "./pages/About";
 import ChangeAvatar from "./pages/ChangeAvatar";
 import Dashboard from "./pages/Dashboard";
 import GameLevel from "./pages/GameLevel";
+import HowToPlay from "./pages/HowToPlay";
 import LeaderBoard from "./pages/LeaderBoard";
 import Login from "./pages/Login";
 import Menu from "./pages/Menu";
@@ -27,6 +28,7 @@ function App() {
           <Route path="avatar" element={<ChangeAvatar />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="level" element={<GameLevel />} />
+          <Route path="how-to-play" element={<HowToPlay />} />
           <Route path="leaderboard" element={<LeaderBoard />} />
           <Route path="menu" element={<Menu />} />
           <Route path="nickname" element={<Nickname />} />
