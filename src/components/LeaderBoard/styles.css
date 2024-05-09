@@ -1,0 +1,54 @@
+.leaderboard-bg {
+  min-height: calc(100vh - 8rem);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.leaderboard-main {
+  margin-top: 100px;
+  height: 800px;
+  width: 100%;
+  border-radius: 30px;
+  border: 10px solid #b67800;
+  background: #ffb672;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.leaderboard-main header {
+  width: 615px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 0px 0px 60px 60px;
+  border: 5px solid #b67800;
+  background: #ffb672;
+  position: absolute;
+  top: -75px;
+  font-family: "Lilita One", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.leaderboard-main header h1 {
+  color: #663a18;
+  font-family: "Lilita One";
+  font-size: 70px;
+  text-align: center;
+  text-transform: uppercase;
+  /* padding: 35px 82px; */
+}
+.leaderboard-main header img {
+  width: 140px;
+  position: absolute;
+  right: -70px;
+  top: -70px;
+}
+.leaderboard-main section {
+  height: 100%;
+  width: 100%;
+  max-width: 1015px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
