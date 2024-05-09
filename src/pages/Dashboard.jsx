@@ -1,6 +1,7 @@
 import TopNav from "../components/dashboard/TopNav";
 import MainDashboard from "../components/dashboard/MainDashboard";
 import Footer from "../components/dashboard/Footer";
+import "../components/dashboard/dashboard.css";
 
 function Dashboard() {
   return (

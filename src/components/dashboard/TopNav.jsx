@@ -1,3 +1,5 @@
+import Modal from "../../ui/Modal";
+
 function TopNav() {
   return (
     <nav className="ugo-nav">
@@ -6,7 +8,18 @@ function TopNav() {
         <span>2000</span>
       </div>
 
-      <img src="/dashboard/stop.png" alt="stop" />
+      <Modal>
+        <Modal.Open opens="how">
+          <img src="/dashboard/stop.png" alt="stop" />
+        </Modal.Open>
+        <Modal.Window name="how">
+          <span>
+            <p style={{ color: "#ffff" }}>How to play</p>
+            <p style={{ color: "#ffff" }}>How to play</p>
+            <p style={{ color: "#ffff" }}>How to play</p>
+          </span>
+        </Modal.Window>
+      </Modal>
     </nav>
   );
 }
