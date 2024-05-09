@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles.css";
 import { backButton, leaderboardStar } from "../../constants";
-import LeaderboardItem from "./LeaderboardItem";
+// import LeaderboardItem from "./LeaderboardItem";
 import { data } from "./data";
+import LeaderboardItem from "./LeaderBoardItem";
 
 function Leaderboard() {
   return (
