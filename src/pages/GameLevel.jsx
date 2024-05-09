@@ -1,5 +1,13 @@
+import GameLevelWrapper from "../components/GameLevel/GameLevelWrapper";
+
+
 function GameLevel() {
-  return <div>changeLevel</div>;
+
+  return (
+  <div>
+    <GameLevelWrapper />
+    </div>
+  )
 }
 
 export default GameLevel;
