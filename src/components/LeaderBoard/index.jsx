@@ -1,6 +1,7 @@
 import "./styles.css";
 import backButton from "../../assets/back-button.svg";
 import leaderboardStar from "../../assets/leaderboard-star.svg";
+import LeaderboardItem from "./LeaderBoardItem";
 // import LeaderboardItem from "../LeaderboardItem";
 // import { data } from "./data";
 
@@ -13,11 +14,7 @@ function Leaderboard() {
           <h1>LEADERBOARD</h1>
           <img src={leaderboardStar} alt="Leaderboard Star" />
         </header>
-        {/* <section>
-          {data.map((user) => (
-            <LeaderboardItem key={user.id} />
-          ))}
-        </section> */}
+        <LeaderboardItem />
       </div>
     </div>
   );
