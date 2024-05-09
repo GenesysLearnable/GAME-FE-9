@@ -1,5 +1,12 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-brand-50: #dacbc0;
+  --color-brand-100: #cfbcae;
+  --color-brand-200: #814a1f;
+  --color-brand-300: #a58165;
+  --color-brand-500: #7a451d;
+  --color-brand-600: #663a18;
+  --color-brand-800: #3f240f;
+  --color-brand-900: #2c190a;
 }
 
 * {
@@ -14,6 +21,8 @@ html {
 
 body {
   font-size: 2rem;
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .app {
