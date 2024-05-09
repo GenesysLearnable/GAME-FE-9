@@ -22,11 +22,12 @@ body{
     
 }
 
-.top-container h4{
+.levelWrapper h4{
     font-size: 40px;
     font-weight: 400;
     color: #DACBC0;
     font-family: "Lilita One";
+    text-align: center;
 }
 
 .top-container img{
@@ -75,6 +76,7 @@ text-align: center;
 padding: 40px;
 margin-top: 100px;
 padding-bottom: 150px;
+margin-left: 10px;
 
 }
 
@@ -107,6 +109,7 @@ background-clip: text;
     border-radius: 40px;
 background: #6A3B16;
 margin-top: 30px;
+
 }
 
 .level-box .box-content h4{
@@ -176,7 +179,12 @@ color: #DACBC0;
     display: flex;
     justify-content: space-evenly;
     margin: auto;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    overflow-x: auto;
+}
+
+.level-content::-webkit-scrollbar{
+    width: 0;
 }
 
 @media (max-width: 500px) {
@@ -184,9 +192,18 @@ color: #DACBC0;
 
     .level-box {
         max-width: 400px;
-        height: 65vh;
+        height: 75vh;
         margin-top: 20px;
       
+    }
+
+    .levelWrapper h4{
+        text-align: center;
+        font-size: 25px;
+        font-weight: 400;
+        color: #DACBC0;
+        font-family: "Lilita One";
+        padding-bottom: 10px;
     }
 
     .level-box h3 {

@@ -4,7 +4,6 @@ import BkArrow from '../GameLevel/img/bk-arrow.png'
 function MenuWrapper() {
   return (
     <div className="container">
-    <a href=""> <img src={BkArrow} alt="" /></a>
         
         <div className="settingWrapper">
          

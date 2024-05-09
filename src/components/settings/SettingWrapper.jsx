@@ -5,12 +5,15 @@ import BkArrow from '../GameLevel/img/bk-arrow.png'
 function SettingWrapper() {
   return (
     <div className="container">
-<a href="Menu"> <img src={BkArrow} alt="" /></a>
-    
+      <div className='top'>
+      <a href="Menu"><img src={BkArrow} alt="" /></a>
+<h4>Settings</h4>
+      </div>
+
     <div className="settingWrapper">
      
      <div className="setting-content">
-      <h4>Settings</h4>
+     
       <label>Language 
       <select>
                

@@ -8,12 +8,13 @@ function GameLevelWrapper() {
     <div className="levelWrapper">
       <div className="top-container">
       <a href="Menu"><img src={BkArrow} alt="" /></a>
-      <h4>Choose your challenge</h4>
+     
       <button>
       <img src={Coin} alt="" /><span>2000</span>
       <img src={Add} alt="" />
       </button>
       </div>
+      <h4>Choose your challenge</h4>
       <div className="level-content">
         <div className="level-box">
           <h3>Amateur</h3>
