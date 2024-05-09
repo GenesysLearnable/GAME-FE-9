@@ -1,6 +1,7 @@
 import React from "react";
 // import { Switch } from 'antd'
 import BkArrow from "../GameLevel/img/bk-arrow.png";
+import { Link } from "react-router-dom";
 
 function SettingWrapper() {
   return (
@@ -38,9 +39,9 @@ function SettingWrapper() {
             Music
             {/* <Switch /> */}
           </label>
-          <a href="">Channge Avatar</a>
-          <a href="">Profile Settings</a>
-          <a href="">Logout</a>
+          <Link to="/avatar">Channge Avatar</Link>
+          <Link to="/avatar">Profile Settings</Link>
+          <Link to="">Logout</Link>
         </div>
       </div>
     </div>
