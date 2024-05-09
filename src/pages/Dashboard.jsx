@@ -1,8 +1,5 @@
-import TopNav from "../components/dashboard/TopNav";
-import MainDashboard from "../components/dashboard/MainDashboard";
-import Footer from "../components/dashboard/Footer";
-
 function Dashboard() {
+<<<<<<< HEAD
   return (
     <div>
       <TopNav />
@@ -10,6 +7,9 @@ function Dashboard() {
       <Footer />
     </div>
   );
+=======
+  return <div></div>;
+>>>>>>> 35279cd (Revert "Static layout v1")
 }
 
 export default Dashboard;
