@@ -1,5 +1,7 @@
+import Leaderboard from "../components/LeaderBoard/Leaderboard";
+
 function LeaderBoard() {
-  return <div>leaderBoard</div>;
+  return <Leaderboard />;
 }
 
 export default LeaderBoard;
