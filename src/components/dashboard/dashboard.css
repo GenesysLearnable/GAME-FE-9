@@ -54,10 +54,11 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  position: relative;
   justify-content: center;
   align-items: center;
   position: relative;
-  /* top: 9.6rem; */
+  top: 9.6rem;
   padding: 2rem 18rem;
   width: 100vw;
   /* height: 80%; */
