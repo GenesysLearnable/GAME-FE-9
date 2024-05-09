@@ -19,6 +19,7 @@ function Test() {
       <Link to="/menu">Menu</Link>
       <Link to="/about">About</Link>
       <Link to="/leaderboard">LeaderBoard</Link>
+      <Link to="/how-to-play">How To Play</Link>
       <Link to="/invite">Invite</Link>
       <Link to="/avatar">ChangeAvatar</Link>
       <Link to="/nickname">Nickname</Link>
