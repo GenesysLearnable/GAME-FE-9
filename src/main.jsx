@@ -6,6 +6,7 @@ import "./components/GameLevel/Gamelevel.css";
 import "./components/dashboard/dashboard.css";
 import "./components/settings/Settings.css";
 import "./components/Menu/Menu.css";
+import "./components/Landingpage/App.css"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
