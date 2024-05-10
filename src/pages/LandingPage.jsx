@@ -1,11 +1,10 @@
-import Test from "../components/Test";
+import LandingPageWrapper from "../components/Landingpage/LandingPageWrapper";
 
-function LandingPage() {
-  return (
+function LandingPage(){
+  return(
     <div>
-      <Test />
+      <LandingPageWrapper />
     </div>
-  );
+  )
 }
-
 export default LandingPage;
