@@ -15,6 +15,12 @@
   box-sizing: border-box;
 }
 
+.howto {
+  background: url(../dashboard/mainbg.png), var(--color-brand-600);
+  background-size: cover;
+  min-height: 100vh;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -25,5 +31,5 @@ body {
 }
 
 .app {
-  padding: 4rem;
+  /* padding: 4rem; */
 }
