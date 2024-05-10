@@ -1,11 +1,13 @@
 import React from "react";
 import BkArrow from "../GameLevel/img/bk-arrow.png";
 import { Link } from "react-router-dom";
+import { useMoveBack } from "../../services/useMoveBack";
 
 function MenuWrapper() {
+  const navigate = useMoveBack();
   return (
     <div className="container">
-      <Link to="">
+      <Link onClick={navigate(-1)}>
         {" "}
         <img src={BkArrow} alt="" />
       </Link>

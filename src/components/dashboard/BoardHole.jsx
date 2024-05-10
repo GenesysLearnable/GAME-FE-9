@@ -1,5 +1,9 @@
-function BoardHole({ children }) {
-  return <div className="ugo-hole">{children}</div>;
+function BoardHole({ children, onClick }) {
+  return (
+    <div className="ugo-hole" onClick={onClick}>
+      {children}
+    </div>
+  );
 }
 
 export default BoardHole;
