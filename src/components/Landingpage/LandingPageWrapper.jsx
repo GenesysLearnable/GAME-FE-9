@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Link, useNavigate } from "react-router-dom";
+import Nav from "./Nav";
+
 function LandingPage() {
   const navigate = useNavigate();
   return (
@@ -38,6 +40,9 @@ function LandingPage() {
               </div>
             </nav>
           </header>
+      <Nav />
+      <section className="hero">
+        <div className="main-width">
           <div className="content">
             <div className="main-text">
               <h1>
