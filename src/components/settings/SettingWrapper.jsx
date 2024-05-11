@@ -43,8 +43,8 @@ function SettingWrapper() {
           <label>
             Music <Switch />
           </label>
-          <a href="">Channge Avatar</a>
-          <a href="">Profile Settings</a>
+          <Link to="/avatar">Channge Avatar</Link>
+          <Link to="/settings">Profile Settings</Link>
           <Link onClick={handleLogout}>Logout</Link>
         </div>
       </div>
