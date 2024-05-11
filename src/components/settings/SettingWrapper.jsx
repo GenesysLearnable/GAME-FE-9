@@ -52,19 +52,50 @@ function SettingWrapper() {
               Italiano
             </option>
           </select>
-          <label>
-            Sound <Switch />
-          </label>
-          <label>
-            Music <Switch />
-          </label>
+          <a href="Menu">
+            {" "}
+            <img src={BkArrow} alt="" />
+          </a>
+        </div>
 
-          <Link to="/avatar">Channge Avatar</Link>
-          <Link to="/settings">Profile Settings</Link>
-          <Link onClick={handleLogout}>Logout</Link>
-          <Link to="/avatar">Channge Avatar</Link>
-          <Link to="/settings">Profile Settings</Link>
-          <Link to="/">Logout</Link>
+        <div className="settingWrapper">
+          <div className="setting-content">
+            <h4>Settings</h4>
+            <label>
+              Language
+              <select defaultValue="english">
+                <option lang="de" value="deutsch">
+                  Deutsch
+                </option>
+                <option lang="en" value="english">
+                  English
+                </option>
+                <option lang="fr" value="francais">
+                  Français
+                </option>
+                <option lang="it" value="italiano">
+                  Italiano
+                </option>
+              </select>
+            </label>
+
+            <label>
+              Sound <Switch />
+            </label>
+            <label>
+              Music <Switch />
+            </label>
+
+            <Link to="/avatar">Channge Avatar</Link>
+            <Link to="/settings">Profile Settings</Link>
+            <Link onClick={handleLogout}>Logout</Link>
+            <Link to="/avatar">Channge Avatar</Link>
+            <Link to="/settings">Profile Settings</Link>
+            <Link to="/">Logout</Link>
+            <a href="">Channge Avatar</a>
+            <a href="">Profile Settings</a>
+            <Link onClick={handleLogout}>Logout</Link>
+          </div>
         </div>
       </div>
     </div>
