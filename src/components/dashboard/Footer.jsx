@@ -1,3 +1,6 @@
+import Modal from "../../ui/Modal";
+import Chatmodal from "../ChatModa/Chatmoda";
+// import Chatmodal from "../ChatModa/Chatmodal";
 import ImgContainer from "./ImgContainer";
 
 function Footer() {
@@ -13,8 +16,16 @@ function Footer() {
       <ImgContainer>
         <img src="/dashboard/replay.svg" alt="replay" />
       </ImgContainer>
+
       <ImgContainer>
-        <img src="/dashboard/chat.svg" alt="chat" />
+        <Modal>
+          <Modal.Open opens={"chat"}>
+            <img src="/dashboard/chat.svg" alt="chat" />
+          </Modal.Open>
+          <Modal.Window name={"chat"}>
+            <Chatmodal />
+          </Modal.Window>
+        </Modal>
       </ImgContainer>
     </footer>
   );

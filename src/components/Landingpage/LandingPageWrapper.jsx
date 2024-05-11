@@ -3,43 +3,10 @@ import "./App.css";
 import { Link, useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 
-function LandingPage() {
+function LandingPageWrapper() {
   const navigate = useNavigate();
   return (
     <div className="landing--page">
-      <section className="hero">
-        <div className="main-width">
-          <header>
-            <div className="logo">
-              <img src="/image/Ellipse 17.png" alt="" />
-            </div>
-            <nav>
-              <ul>
-                <li className="active">
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/level">New</Link>
-                </li>
-                <li>
-                  <Link to="/how-to-play">Feature</Link>
-                </li>
-              </ul>
-              <div className="btns">
-                <button className="btn" onClick={() => navigate("/login")}>
-                  {/* <Link to="#">sign in</Link> */}
-                  Sign in
-                </button>
-                <button className="btn" onClick={() => navigate("/signup")}>
-                  {/* <Link to="#">sign up</Link> */}
-                  Sign up
-                </button>
-              </div>
-            </nav>
-          </header>
       <Nav />
       <section className="hero">
         <div className="main-width">
@@ -158,27 +125,8 @@ function LandingPage() {
           </Link>
         </div>
       </div>
-
-      <footer>
-        <span>
-          <p>FAQ</p>
-          <p>Contact us</p>
-        </span>
-
-        <div className="social">
-          <Link to="#">
-            <img src="/image/fb.png" alt="facebook" />
-          </Link>
-          <Link to="#">
-            <img src="/image/insta.png" alt="instagram" />
-          </Link>
-          <Link to="#">
-            <img src="/image/google.png" alt="google" />
-          </Link>
-        </div>
-      </footer>
     </div>
   );
 }
 
-export default LandingPage;
+export default LandingPageWrapper;

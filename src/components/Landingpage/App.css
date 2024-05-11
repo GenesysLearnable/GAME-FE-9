@@ -23,7 +23,6 @@
 .hero {
   height: 1024px;
   width: 100%;
-  min-height: 100vh;
   /* min-height: 100vh; */
   background-image: url("/dashboard/mainbg.png");
   position: relative;
@@ -35,7 +34,6 @@
   gap: 8;
 }
 
-.hero header .logo img {
 header .logo img {
   width: 50px;
   height: 50px;
@@ -43,8 +41,6 @@ header .logo img {
   gap: 0px;
   opacity: 0px;
 }
-
-.hero header {
 
 header {
   display: flex;
@@ -113,6 +109,7 @@ nav ul li.btn.hover a {
   background: white;
   transition: 0.4s;
 }
+
 .content {
   padding-top: 140px;
   align-items: center;
@@ -337,7 +334,6 @@ h5 {
   cursor: pointer;
 }
 footer {
-  position: fixed;
   position: relative;
   display: flex;
   width: 100%;
