@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import { useAuth } from "../../contexts/AuthenticationContext";
 >>>>>>> 2b33b52 (built the authentication and authorization)
@@ -16,6 +17,16 @@ import { useAuth } from "../../contexts/AuthenticationContext";
 =======
 import { useAuth } from "../../contexts/AuthenticationContext";
 >>>>>>> 2b33b52 (built the authentication and authorization)
+=======
+import { useAuth } from "../../contexts/AuthenticationContext";
+=======
+>>>>>>> 779dd6d (nicee)
+=======
+=======
+import { useAuth } from "../../contexts/AuthenticationContext";
+>>>>>>> 2b33b52 (built the authentication and authorization)
+>>>>>>> 4b76466 (built the authentication and authorization)
+>>>>>>> 2af7ade (built the authentication and authorization)
 
 function SettingWrapper() {
   const { setIsAuthenticated } = useAuth();
@@ -28,6 +39,7 @@ function SettingWrapper() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Link to="/menu">
         <img src={BkArrow} alt="" />
       </Link>
@@ -36,6 +48,8 @@ function SettingWrapper() {
 >>>>>>> 535e73c (nicee)
 =======
 >>>>>>> 2b33b52 (built the authentication and authorization)
+=======
+>>>>>>> 2af7ade (built the authentication and authorization)
       <a href="Menu">
         {" "}
         <img src={BkArrow} alt="" />
@@ -49,15 +63,30 @@ function SettingWrapper() {
         <img src={BkArrow} alt="" />
       </Link>
 >>>>>>> 779dd6d (nicee)
+<<<<<<< HEAD
 >>>>>>> 535e73c (nicee)
 =======
 >>>>>>> 2b33b52 (built the authentication and authorization)
+=======
+=======
+      <Link to="/menu">
+        <img src={BkArrow} alt="" />
+      </Link>
+=======
+      <a href="Menu">
+        {" "}
+        <img src={BkArrow} alt="" />
+      </a>
+>>>>>>> 2b33b52 (built the authentication and authorization)
+>>>>>>> 4b76466 (built the authentication and authorization)
+>>>>>>> 2af7ade (built the authentication and authorization)
 
       <div className="settingWrapper">
         <div className="setting-content">
           <h4>Settings</h4>
           <label>
             Language
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,6 +100,8 @@ function SettingWrapper() {
 >>>>>>> 535e73c (nicee)
 =======
 >>>>>>> 2b33b52 (built the authentication and authorization)
+=======
+>>>>>>> 2af7ade (built the authentication and authorization)
             <select defaultValue="english">
               <option lang="de" value="deutsch">
                 Deutsch
@@ -81,15 +112,30 @@ function SettingWrapper() {
 >>>>>>> 2b33b52 (built the authentication and authorization)
 =======
 =======
+=======
+>>>>>>> 4b76466 (built the authentication and authorization)
             <select>
               <option lang="de" value="deutsch">
                 Deutsch
               </option>
               <option lang="en" value="english" selected>
+<<<<<<< HEAD
 >>>>>>> 779dd6d (nicee)
+<<<<<<< HEAD
 >>>>>>> 535e73c (nicee)
 =======
 >>>>>>> 2b33b52 (built the authentication and authorization)
+=======
+=======
+=======
+            <select defaultValue="english">
+              <option lang="de" value="deutsch">
+                Deutsch
+              </option>
+              <option lang="en" value="english">
+>>>>>>> 2b33b52 (built the authentication and authorization)
+>>>>>>> 4b76466 (built the authentication and authorization)
+>>>>>>> 2af7ade (built the authentication and authorization)
                 English
               </option>
               <option lang="fr" value="francais">
@@ -109,6 +155,7 @@ function SettingWrapper() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <Link to="/avatar">Channge Avatar</Link>
           <Link to="/settings">Profile Settings</Link>
           <Link to="/">Logout</Link>
@@ -118,6 +165,8 @@ function SettingWrapper() {
           <Link onClick={handleLogout}>Logout</Link>
 >>>>>>> 2b33b52 (built the authentication and authorization)
 =======
+=======
+>>>>>>> 2af7ade (built the authentication and authorization)
           <a href="">Channge Avatar</a>
           <a href="">Profile Settings</a>
           <Link onClick={handleLogout}>Logout</Link>
@@ -126,12 +175,23 @@ function SettingWrapper() {
           <Link to="/settings">Profile Settings</Link>
           <Link to="/">Logout</Link>
 >>>>>>> 779dd6d (nicee)
+<<<<<<< HEAD
 >>>>>>> 535e73c (nicee)
+=======
+=======
+          <Link to="/avatar">Channge Avatar</Link>
+          <Link to="/settings">Profile Settings</Link>
+          <Link to="/">Logout</Link>
+>>>>>>> 2af7ade (built the authentication and authorization)
 =======
           <a href="">Channge Avatar</a>
           <a href="">Profile Settings</a>
           <Link onClick={handleLogout}>Logout</Link>
 >>>>>>> 2b33b52 (built the authentication and authorization)
+<<<<<<< HEAD
+=======
+>>>>>>> 4b76466 (built the authentication and authorization)
+>>>>>>> 2af7ade (built the authentication and authorization)
         </div>
       </div>
     </div>
