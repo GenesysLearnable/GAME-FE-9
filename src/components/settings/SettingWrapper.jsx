@@ -3,6 +3,8 @@ import { Switch } from "antd";
 import BkArrow from "../GameLevel/img/bk-arrow.png";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthenticationContext";
+import Modal from "../../ui/Modal";
+import LogoutModal from "../../ui/LogoutModal";
 
 function SettingWrapper() {
   const { setIsAuthenticated } = useAuth();
@@ -46,7 +48,14 @@ function SettingWrapper() {
 
           <Link to="/avatar">Channge Avatar</Link>
           <Link to="/settings">Profile Settings</Link>
-          <Link onClick={handleLogout}>Logout</Link>
+          <Modal>
+            <Modal.Open>
+              <Link>Logout</Link>
+            </Modal.Open>
+            <Modal.Window>
+              <LogoutModal onClick={handleLogout} />
+            </Modal.Window>
+          </Modal>
         </div>
       </div>
     </div>

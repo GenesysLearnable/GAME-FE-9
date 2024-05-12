@@ -62,7 +62,7 @@ function LandingPageWrapper() {
             <h5> Beginner</h5>
             <div className="pra">
               <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="#">
+              <Link className="button" to="/login">
                 Play now!
               </Link>
             </div>
@@ -73,7 +73,7 @@ function LandingPageWrapper() {
             <h5> Beginner</h5>
             <div className="pra">
               <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="/dashboard">
+              <Link className="button" to="/login">
                 Play now!
               </Link>
             </div>
@@ -84,7 +84,7 @@ function LandingPageWrapper() {
             <h5> Beginner</h5>
             <div className="pra">
               <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="/dashboard">
+              <Link className="button" to="/login">
                 Play now!
               </Link>
             </div>
@@ -102,7 +102,7 @@ function LandingPageWrapper() {
             <h5> Play with friends</h5>
             <div className="pra">
               <p>Time for some Ayo Fun with a friend</p>
-              <Link className="button" to="/dashboard">
+              <Link className="button" to="/login">
                 Start now!
               </Link>
             </div>
@@ -113,14 +113,14 @@ function LandingPageWrapper() {
             <h5> Play Single mode</h5>
             <div className="pra">
               <p>Test your Ayo Mastery in Single Player mode</p>
-              <Link className="button" to="/dashboard">
+              <Link className="button" to="/login">
                 Start now!
               </Link>
             </div>
           </div>
         </div>
         <div className="get">
-          <Link className="button-two" to="#">
+          <Link className="button-two" to="/about">
             get more info
           </Link>
         </div>
