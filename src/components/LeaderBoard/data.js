@@ -5,7 +5,7 @@ export const data = [
     coins: 26347,
     rank: 1,
     stars: 5,
-    avatar: "src/assets/avatar_1.png",
+    avatar: "/assets/avatar_1.png",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const data = [
     coins: 4036,
     rank: 2,
     stars: 4,
-    avatar: "src/assets/avatar_2.png",
+    avatar: "/assets/avatar_2.png",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const data = [
     coins: 2983,
     rank: 3,
     stars: 3,
-    avatar: "src/assets/avatar_3.png",
+    avatar: "/assets/avatar_3.png",
   },
   {
     id: 4,
@@ -29,6 +29,6 @@ export const data = [
     coins: 507,
     rank: 4,
     stars: 2,
-    avatar: "src/assets/avatar_4.png",
+    avatar: "/assets/avatar_4.png",
   },
 ];
