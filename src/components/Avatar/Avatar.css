@@ -1,0 +1,57 @@
+.img-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* background-color: #fff; */
+    max-width: 800px;
+    height: 70vh;
+    margin: auto;
+    padding: 40px 10px;
+    gap: 20px;
+    border-radius: 50px;
+    overflow-x: auto;
+    margin-top: 40px;
+}
+
+.img-container::-webkit-scrollbar{
+    width: 0;
+}
+
+.top-content{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+}
+
+.top-content img{
+    width: 40px;
+}
+
+.top-content h3{
+    font-family: "Lilita One";
+    font-size: 36.8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: linear-gradient(180deg, #FFF 30.82%, #e69e5b 86.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@media (max-width: 600px) {
+    .top-content img{
+  width: 30px;
+    }
+
+    .top-content {
+        display: grid;
+        grid-template-columns: .52fr .5fr .5fr;
+    }
+
+    .top-content h3{
+        font-size: 15px;
+        padding-top: 12px;
+    }
+}
+
+
