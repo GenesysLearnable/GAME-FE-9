@@ -9,10 +9,10 @@ import ScoreCard from "./ScoreCard";
 const MainGame = () => {
   const [playerScores, setPlayerScores] = useState([0, 0]); // Player scores
   const [currentPlayer, setCurrentPlayer] = useState(0); // Current player (0 or 1)
-  const [boardState, setBoardState] = useState([
-    [4, 4, 4, 4, 4, 4],
-    [4, 4, 4, 4, 4, 4],
-  ]); // Initial board state
+  const player1 = [4, 4, 4, 4, 4, 4];
+  const player2 = [4, 4, 4, 4, 4, 4];
+
+  const [boardState, setBoardState] = useState([player1, player2]); // Initial board state
   const [winner, setWinner] = useState(null); // Game winner
   const handleMove = (rowIndex, holeIndex) => {
     // Get the number of seeds in the selected hole
