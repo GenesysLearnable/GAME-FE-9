@@ -13,9 +13,6 @@ import BkArrow from '../GameLevel/img/bk-arrow.png'
 function Avatar()  {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // const history = useHistory();
-
-  
 
     return (
         <>
@@ -54,8 +51,7 @@ function Avatar()  {
 </div>
 {
    isLoggedIn && <div className="btn">
-    <a href="Level"><button >Next</button></a>
-
+<button>Next</button>
 </div>
 }
 

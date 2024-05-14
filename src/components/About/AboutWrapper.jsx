@@ -1,5 +1,4 @@
 import React from 'react'
-import AboutCss from './About.css'
 import BkArrow from '../GameLevel/img/bk-arrow.png'
 
 function AboutWrapper() {
