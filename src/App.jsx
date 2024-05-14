@@ -20,6 +20,8 @@ import Invite from "./pages/Invite";
 import { UserContextProvider } from "./contexts/UserContext";
 import { AuthenticationContext } from "./contexts/AuthenticationContext";
 import ProtectedRoutes from "./components/Auth/ProtectedRoutes";
+import PasswordReset from "./pages/PasswordReset";
+import Verification from "./pages/Verification";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +37,9 @@ function App() {
 
               <Route path="signup" element={<Signup />} />
               <Route path="nickname" element={<Nickname />} />
+              <Route path="passwordreset" element={<PasswordReset />} />
+
+              <Route path="/passwordreset/verify" element={<Verification />} />
 
               <Route
                 element={

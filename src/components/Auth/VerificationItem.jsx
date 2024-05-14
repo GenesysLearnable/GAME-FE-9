@@ -1,47 +1,35 @@
-// import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import AuthContainer from "./AuthContainer";
-import AuthNav from "./AuthNav";
-import Button from "./Button";
 import { useForm } from "react-hook-form";
+import AuthNav from "./AuthNav";
+import AuthContainer from "./AuthContainer";
+import Button from "./Button";
 import Error from "./Error";
-import { useUserData } from "../../contexts/UserContext";
 
-function SignupItem() {
+function VerificationItem() {
   const { register, handleSubmit, getValues, formState } = useForm();
   const { errors } = formState;
 
-  const navigate = useNavigate();
-
-  const { setUser } = useUserData();
-
-  function onSubmit({ email, password }) {
-    // e.preventDefault();
-
-    setUser({ username: "", email, password });
-
-    navigate("/nickname");
+  function onSubmit(data) {
+    console.log(data);
   }
   return (
     <form className="signup " onSubmit={handleSubmit(onSubmit)}>
       {" "}
-      <AuthNav title="Register" goto="Login" url="/login" />
-      <h1 className="ayo-header">New to Ayo? Sign up here</h1>
+      <AuthNav title="Verification" goto="" url="" />
+      <h1 className="ayo-header">
+        Please check your email “edoziemeze33@gmail.com” and enter the code
+        provided and your new password
+      </h1>
       <div className="page-auth">
         <AuthContainer>
           <input
             type="text"
-            id="email"
-            {...register("email", {
-              required: "Email field is required",
-              pattern: {
-                value: /\S+@\S+\.\S+/,
-                message: "Please provide a valid email address",
-              },
+            id="code"
+            {...register("code", {
+              required: "This field is required",
             })}
-            placeholder="Enter your email"
+            placeholder="Enter Code"
           />
-          <Error>{errors?.email?.message}</Error>
+          <Error>{errors?.code?.message}</Error>
 
           <input
             type="password"
@@ -57,7 +45,7 @@ function SignupItem() {
                 message: "Password  should be a number",
               },
             })}
-            placeholder="Password"
+            placeholder="Enter New Password"
           />
 
           <Error>{errors?.password?.message}</Error>
@@ -70,12 +58,12 @@ function SignupItem() {
               validate: (value) =>
                 value === getValues().password || "Passwords need to match",
             })}
-            placeholder="Confirm password"
+            placeholder="Confirm Your New Password"
           />
           <Error>{errors?.passwordConfirm?.message}</Error>
 
           <Button>
-            <span>Signup</span>
+            <span>Verify</span>
           </Button>
         </AuthContainer>
       </div>
@@ -83,4 +71,4 @@ function SignupItem() {
   );
 }
 
-export default SignupItem;
+export default VerificationItem;

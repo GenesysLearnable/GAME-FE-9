@@ -69,6 +69,7 @@
   outline: none;
   color: #dacbc0;
   font-size: 2rem;
+  position: relative;
 
   border-radius: 39.881px;
   border: none;
@@ -114,4 +115,49 @@ input::placeholder {
 
   /* color: #dacbc0; */
   font-size: 2.4rem;
+}
+
+.ayo-header {
+  color: #dacbc0;
+
+  /* Body text regular/Body text Regular 04 */
+  font-family: Roboto;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; /* 150% */
+  text-align: center;
+}
+
+.forspan {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 8rem;
+}
+
+.forgotpwd {
+  text-shadow: 0px 1.546px 1.546px rgba(0, 0, 0, 0.35);
+  font-family: "Lilita One";
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(180deg, #fff 0%, #ffb672 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reset-modal {
+  display: flex;
+  width: 80rem;
+  padding: 1.3rem 8.6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 4rem;
+  background: #dacbc0;
 }
