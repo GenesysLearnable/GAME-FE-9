@@ -1,8 +1,6 @@
 import React from "react";
 import "./styles.css";
 import { backButton, leaderboardStar } from "../../constants";
-// import LeaderboardItem from "./LeaderboardItem";
-import { data } from "./data";
 import LeaderboardItem from "./LeaderBoardItem";
 
 function Leaderboard() {
@@ -20,7 +18,7 @@ function Leaderboard() {
             alt="Leaderboard Star"
           />
         </header>
-        <LeaderboardItem users={data} />
+        <LeaderboardItem />
       </div>
     </div>
   );
