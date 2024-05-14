@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { range } from "./utils";
-import { coin } from "../../constants";
+// import { coin } from "../../constants";
 import Star from "./Star";
 import Medal from "./Medal";
 
@@ -9,7 +9,6 @@ function LeaderboardItem({ users }) {
   return (
     <div className="leaderboard-items">
       {users.map((user) => (
-        
         <div className="leaderboard-item" key={user.id}>
           <Medal rank={user.rank} />
           <div className="leaderboard-item__details">
@@ -20,15 +19,15 @@ function LeaderboardItem({ users }) {
               <p>{user.name}</p>
             </div>
             <div className="leaderboard-item__right">
-              <div>
+              <div className="leaderboard-rating">
                 {range(5).map((num) => {
                   const className =
                     user.stars > num ? "star filled" : "star hollow";
                   return <Star className={className} key={num} />;
                 })}
               </div>
-              <div className="leaderboard-item__coins">
-                <img src={coin} alt="coin" />
+              <div className="leaderboard-item__score">
+                <p>Score</p>
                 <p>{user.coins}</p>
               </div>
             </div>

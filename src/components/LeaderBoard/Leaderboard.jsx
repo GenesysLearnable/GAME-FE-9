@@ -8,7 +8,9 @@ import LeaderboardItem from "./LeaderBoardItem";
 function Leaderboard() {
   return (
     <div className="leaderboard">
-      <img src={backButton} alt="Go Back" />
+      <div className="back-button">
+        <img src={backButton} alt="Go Back" />
+      </div>
       <div className="leaderboard__main">
         <header className="leaderboard__header">
           <h1 className="leaderboard__title">LEADERBOARD</h1>
