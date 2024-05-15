@@ -74,6 +74,13 @@ background-clip: text;
     width: 40px;
 }
 
+.setting-content div{
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+   
+}
+
 @media (max-width: 500px) {
 
     .settingWrapper {

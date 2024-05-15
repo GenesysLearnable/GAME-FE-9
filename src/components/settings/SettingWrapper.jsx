@@ -1,5 +1,7 @@
 import React from 'react'
-import { Switch } from 'antd'
+import GameMusic from './GameMusic';
+import GameSound from './GameSound';
+
 import BkArrow from '../GameLevel/img/bk-arrow.png'
 
 function SettingWrapper() {
@@ -23,9 +25,17 @@ function SettingWrapper() {
                <option lang="it" value="italiano">Italiano</option>
              </select>
       </label>
-      <label>Sound <Switch /></label>
-      <label>Music <Switch /></label>
-      <a href="">Channge Avatar</a>
+      <div>
+      <p>Sound:</p>
+      <GameSound />
+      </div>
+      <div>
+      <p>Music:</p>
+      <GameMusic />
+      </div>
+     
+     
+      <a href="ChangeAvatar">Channge Avatar</a>
       <a href="">Profile Settings</a>
       <a href="">Logout</a>
      </div>
