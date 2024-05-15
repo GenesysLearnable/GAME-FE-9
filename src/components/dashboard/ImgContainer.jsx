@@ -1,5 +1,9 @@
-function ImgContainer({ children }) {
-  return <div className="ugo-img-div">{children}</div>;
+function ImgContainer({ children, onClick }) {
+  return (
+    <button className="ugo-img-div" onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 export default ImgContainer;

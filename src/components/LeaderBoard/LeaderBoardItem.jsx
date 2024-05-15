@@ -9,6 +9,7 @@ function LeaderboardItem({ users }) {
   return (
     <div className="leaderboard-items">
       {users.map((user) => (
+        
         <div className="leaderboard-item" key={user.id}>
           <Medal rank={user.rank} />
           <div className="leaderboard-item__details">

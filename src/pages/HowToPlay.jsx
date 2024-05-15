@@ -1,6 +1,10 @@
 import HowtoPlay from "../components/HowToPlay/HowtoPlay";
 function HowToPlay() {
-  return <HowtoPlay />;
+  return (
+    <div className="howto">
+      <HowtoPlay />;
+    </div>
+  );
 }
 
 export default HowToPlay;

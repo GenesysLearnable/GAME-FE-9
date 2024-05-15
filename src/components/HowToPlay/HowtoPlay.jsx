@@ -16,7 +16,6 @@ function HowtoPlay() {
             <div className="how-to-play__step">
               <h2>STEP 1</h2>
               <p>
-                {" "}
                 Place the game board between you and your opponent. The board
                 consists of two rows of six small pits (also called houses) and
                 two larger pits (called stores) on each end. Put four seeds in
@@ -40,7 +39,6 @@ function HowtoPlay() {
             <div className="how-to-play__step">
               <h2>STEP 3</h2>
               <p>
-                {" "}
                 Alternate turns with your opponent, following steps 4 and 5,
                 until one side of the board is empty. Alternate turns with your
                 opponent, following steps 4 and 5, until one side of the board
