@@ -7,7 +7,7 @@ function MenuWrapper() {
   const navigate = useMoveBack();
   return (
     <div className="container">
-      <Link onClick={navigate(-1)}>
+      <Link onClick={() => navigate(-1)}>
         {" "}
         <img src={BkArrow} alt="" />
       </Link>
@@ -16,8 +16,8 @@ function MenuWrapper() {
         <div className="setting-content">
           <h4>Menu</h4>
 
-          <Link to="/level">Single player mode</Link>
-          <Link to="/level">Play with friends</Link>
+          <Link to={`/dashboard/AI`}>Single player mode</Link>
+          <Link to={`/dashboard/Player 2`}>Play with friends</Link>
           <Link to="/leaderBoard">Leaderboard</Link>
           <Link to="/how-to-play">How to play</Link>
           <Link to="/settings">Settings</Link>

@@ -1,23 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import BoardHole from "./BoardHole";
 import Count from "./Count";
 import GameBoard from "./GameBoard";
 import GameSeed from "./GameSeed";
-import HoleCount from "./HoleCount";
 import ScoreCard from "./ScoreCard";
 import Ayo from "malachi-ayoayo";
 import Hole from "./Hole";
-import {
-  captureStoreByPlayer,
-  getCaptureStorePosition,
-  getCaptureStoreSummary,
-  getPitAtPosition,
-  getPitPosition,
-  getPitSummary,
-  init,
-  setSummaryTextContent,
-  styleSeed,
-} from "./utils/gameFunctions";
+// import {
+//   captureStoreByPlayer,
+//   getCaptureStorePosition,
+//   getCaptureStoreSummary,
+//   getPitAtPosition,
+//   getPitPosition,
+//   getPitSummary,
+//   init,
+//   setSummaryTextContent,
+//   styleSeed,
+// } from "./utils/gameFunctions";
 import { useGameState } from "./utils/GameContext";
 import { useParams } from "react-router";
 
@@ -27,14 +26,10 @@ function MainGame() {
   const [winner, setWinner] = useState(null);
   const { game, setGame } = useGameState();
   const board = game.board;
-  let currentEvent;
+  const [eventQueue, setEventQueue] = useState([]);
+
+  const [currentEvent, setCurrentEvent] = useState(null);
   const { parameterName } = useParams();
-  // console.log(parameterName);
-  // console.log(game);
-
-  // let game;
-
-  // console.log(Ayo.getPermissibleMoves(game.board, 1));
 
   const SowingHandRef = useRef(null);
   const capturingHand = useRef(null);
@@ -59,7 +54,7 @@ function MainGame() {
   const onCapture = onGameEvent(Ayo.events.CAPTURE);
   const onGameOver = onGameEvent(Ayo.events.GAME_OVER);
 
-  function enableOnlyPermissiblePits() {
+  const enableOnlyPermissiblePits = useCallback(() => {
     const nextPlayer = game.nextPlayer;
     const otherPlayer = Ayo.togglePlayer(game.nextPlayer);
 
@@ -76,19 +71,7 @@ function MainGame() {
         pit.classList.add("dis-able");
       }
     });
-  }
-
-  useEffect(() => {
-    init();
-  }, []);
-
-  // useEffect(() => {
-  // Initialize the game when the component mounts
-  if (parameterName === "AI") {
-    onClickNewAIGame();
-  } else {
-    onClickNewPVPGame();
-  }
+  }, [game]);
 
   // }, [onClickNewPVPGame, onClickNewAIGame, parameterName]);
 
@@ -106,7 +89,6 @@ function MainGame() {
       console.log(cellIndex);
       // const childCount = e.currentTarget.querySelectorAll(".ugo-seed");
     }
-    // console.log(cellIndex - 1, startIndexOfCellIndex);
   }
 
   // function onClickNewPVPGame() {
@@ -119,89 +101,174 @@ function MainGame() {
   //   onNewGame("AI");
   // }
 
+  function getPitSummary(pit) {
+    return pit.parentElement.querySelector(".ugo-count");
+  }
+
+  function setSummaryTextContent(elem, count) {
+    elem.textContent = count === 0 ? "" : String(count);
+  }
+
+  function getPitPosition(row, column, board) {
+    const pit = getPitAtPosition(row, column);
+    const pitRect = pit.getBoundingClientRect();
+    const boardRect = board.getBoundingClientRect();
+    return { left: pitRect.x - boardRect.x, top: pitRect.y - boardRect.y };
+  }
+
+  function getPitAtPosition(row, column) {
+    return document.querySelector(`.side-${row + 1} .pit-${column + 1}`);
+  }
+
+  function captureStoreByPlayer(player) {
+    return document.querySelector(`.player-${player + 1} .captured`);
+  }
+
+  function getCaptureStoreSummary(captureStore) {
+    return captureStore?.querySelector(".ugo-count");
+  }
+
+  function getCaptureStorePosition(player, board) {
+    const captureStore = captureStoreByPlayer(player);
+    const captureStoreRect = captureStore.getBoundingClientRect();
+    const boardRect = board.getBoundingClientRect();
+    return [captureStoreRect.x - boardRect.x, captureStoreRect.y - boardRect.y];
+  }
+
+  const styleSeed = useCallback((seed) => {
+    const parentWidth = seed.parentElement.clientWidth;
+    const range = (40 * parentWidth) / 90; // by how much will the random position extend
+    const offset = (-20 * parentWidth) / 90; // from what point
+    const r = Math.round(Math.random() * 360);
+    const x = Math.round(Math.random() * range) + offset;
+    const y = Math.round(Math.random() * range) + offset;
+    seed.style.transform = `rotate(${r}deg) translate(${x}px, ${y}px)`;
+  }, []);
+
+  const init = useCallback(() => {
+    const seeds = document.querySelectorAll(".ugo-seed");
+    seeds.forEach((seed) => {
+      styleSeed(seed);
+    });
+  }, [styleSeed]);
+
+  useEffect(() => {
+    init();
+  }, [init]);
+
   // Existing component code...
 
-  function onClickNewPVPGame() {
+  const updateTurnBadges = useCallback(
+    (nextPlayer) => {
+      const otherPlayer = Ayo.togglePlayer(nextPlayer);
+
+      setCurrentPlayer(nextPlayer);
+      const turnBadge = document.querySelectorAll(".turn-badge");
+
+      turnBadge.item(nextPlayer).style.display = "inline-block";
+      turnBadge.item(otherPlayer).style.display = "none";
+    },
+    [setCurrentPlayer]
+  );
+
+  const initSeedStore = useCallback(
+    (store, count) => {
+      store?.querySelectorAll(".ugo-seed").forEach((seed) => {
+        store.removeChild(seed);
+      });
+
+      for (let i = 0; i < count; i++) {
+        const seed = document.createElement("div");
+        seed.classList.add("ugo-seed");
+        store.appendChild(seed);
+        styleSeed(seed);
+      }
+    },
+    [styleSeed]
+  );
+
+  const initDisplay = useCallback(
+    (game) => {
+      // Set in-game seeds
+      game.board.forEach((row, rowIndex) => {
+        row.forEach((cellCount, cellIndex) => {
+          const pit = getPitAtPosition(rowIndex, cellIndex);
+          initSeedStore(pit, cellCount);
+          setSummaryTextContent(getPitSummary(pit), cellCount);
+        });
+      });
+
+      // Set captured seeds
+      game.captured.forEach((capturedCount, index) => {
+        const captureStore = captureStoreByPlayer(index);
+        initSeedStore(captureStore, capturedCount);
+      });
+
+      // Clear seeds in hands
+      [SowingHandRef.current, capturingHand.current].forEach((hand) => {
+        const seedsInHand = hand?.querySelectorAll(".ugo-seed");
+        seedsInHand.forEach((seed) => {
+          hand.removeChild(seed);
+        });
+      });
+
+      setWinner(null);
+
+      updateTurnBadges(game.nextPlayer);
+      enableOnlyPermissiblePits();
+    },
+    [setWinner, updateTurnBadges, enableOnlyPermissiblePits, initSeedStore]
+  );
+
+  const onNewGame = useCallback(
+    (playerTwoName) => {
+      game.on(Ayo.events.PICKUP_SEEDS, onPickupSeeds);
+      game.on(Ayo.events.MOVE_TO, onMoveTo);
+      game.on(Ayo.events.DROP_SEED, onDropSeed);
+      game.on(Ayo.events.SWITCH_TURN, onSwitchTurn);
+      game.on(Ayo.events.CAPTURE, onCapture);
+      game.on(Ayo.events.GAME_OVER, onGameOver);
+
+      setCurrentPlayer(playerTwoName);
+      // noGamePadding.style.display = "none";
+
+      initDisplay(game);
+
+      setCurrentEvent(null);
+      setEventQueue([]);
+    },
+    [
+      game,
+      initDisplay,
+      onCapture,
+      onDropSeed,
+      onSwitchTurn,
+      onGameOver,
+      onMoveTo,
+      onPickupSeeds,
+    ]
+  );
+
+  const onClickNewPVPGame = useCallback(() => {
     setGame(new Ayo());
     onNewGame("Player 2");
-  }
+  }, [setGame, onNewGame]);
 
-  function onClickNewAIGame() {
+  const onClickNewAIGame = useCallback(() => {
     setGame(Ayo.vsMinimax());
     onNewGame("AI");
-  }
-
-  function onNewGame(playerTwoName) {
-    game.on(Ayo.events.PICKUP_SEEDS, onPickupSeeds);
-    game.on(Ayo.events.MOVE_TO, onMoveTo);
-    game.on(Ayo.events.DROP_SEED, onDropSeed);
-    game.on(Ayo.events.SWITCH_TURN, onSwitchTurn);
-    game.on(Ayo.events.CAPTURE, onCapture);
-    game.on(Ayo.events.GAME_OVER, onGameOver);
-
-    setCurrentPlayer(playerTwoName);
-    // noGamePadding.style.display = "none";
-
-    initDisplay(game);
-
-    currentEvent = null;
-    eventQueue = [];
-  }
-
-  function initDisplay(game) {
-    // Set in-game seeds
-    game.board.forEach((row, rowIndex) => {
-      row.forEach((cellCount, cellIndex) => {
-        const pit = getPitAtPosition(rowIndex, cellIndex);
-        initSeedStore(pit, cellCount);
-        setSummaryTextContent(getPitSummary(pit), cellCount);
-      });
-
-      // console.log(game);
-    });
-
-    // Set captured seeds
-    game.captured.forEach((capturedCount, index) => {
-      const captureStore = captureStoreByPlayer(index);
-      initSeedStore(captureStore, capturedCount);
-      // setSummaryTextContent(
-      //   getCaptureStoreSummary(captureStore),
-      //   capturedCount
-      // );
-    });
-
-    // Clear seeds in hands
-    [SowingHandRef.current, capturingHand.current].forEach((hand) => {
-      const seedsInHand = hand?.querySelectorAll(".ugo-seed");
-      console.log(seedsInHand);
-      seedsInHand?.forEach((seed) => {
-        hand.removeChild(seed);
-      });
-      // console.log(
-      //   [SowingHandRef.current, capturingHand.current].querySelectorAll(
-      //     ".ugo-seed"
-      //   )
-      // );
-    });
-
-    setWinner(null);
-
-    updateTurnBadges(game.nextPlayer);
-    enableOnlyPermissiblePits();
-  }
-
-  function initSeedStore(store, count) {
-    store?.querySelectorAll(".ugo-seed").forEach((seed) => {
-      store.removeChild(seed);
-    });
-
-    for (let i = 0; i < count; i++) {
-      const seed = document.createElement("div");
-      seed.classList.add("ugo-seed");
-      store.appendChild(seed);
-      styleSeed(seed);
+  }, [setGame, onNewGame]);
+  // useEffect(() => {
+  useEffect(() => {
+    // Initialize the game when the component mounts
+    if (parameterName === "AI" || parameterName === "Player") {
+      if (parameterName === "AI") {
+        onClickNewAIGame();
+      } else {
+        onClickNewPVPGame();
+      }
     }
-  }
+  }, [parameterName, onClickNewAIGame, onClickNewPVPGame]);
 
   function handleEventQueue(time) {
     if (!currentEvent) {
@@ -210,7 +277,7 @@ function MainGame() {
         return;
       }
 
-      currentEvent = eventQueue.shift();
+      setCurrentEvent(eventQueue.shift());
       currentEvent.start = time;
     }
 
@@ -222,7 +289,7 @@ function MainGame() {
         enableOnlyPermissiblePits();
       }
 
-      currentEvent = null;
+      setCurrentEvent(null);
       requestAnimationFrame(handleEventQueue);
       return;
     }
@@ -303,6 +370,8 @@ function MainGame() {
       pitSummary,
       Number(pitSummary.textContent) + seedsInCapturingHand.length
     );
+
+    console.log(seedsInCapturingHand);
   }
 
   function handleSwitchTurnEvent(event, fractionDone) {
@@ -310,16 +379,6 @@ function MainGame() {
       const [nextPlayer] = event.args;
       updateTurnBadges(nextPlayer);
     }
-  }
-
-  function updateTurnBadges(nextPlayer) {
-    const otherPlayer = Ayo.togglePlayer(nextPlayer);
-
-    setCurrentPlayer(nextPlayer);
-    const turnBadge = document.querySelectorAll(".turn-badge");
-
-    turnBadge.item(nextPlayer).style.display = "inline-block";
-    turnBadge.item(otherPlayer).style.display = "none";
   }
 
   function handleCaptureEvent(event, fractionDone) {
@@ -332,7 +391,7 @@ function MainGame() {
     const [row, column, capturingPlayer] = event.args;
 
     const pit = getPitAtPosition(row, column);
-    const seedsInPit = pit.querySelectorAll(".seed");
+    const seedsInPit = pit.querySelectorAll(".ugo-seed");
     seedsInPit.forEach((seed) => {
       pit.removeChild(seed);
       capturingHand.current.appendChild(seed);
@@ -380,7 +439,6 @@ function MainGame() {
       setWinner(winner);
     }
   }
-  let eventQueue = [];
 
   function onGameEvent(type) {
     return function (...args) {
