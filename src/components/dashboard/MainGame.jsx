@@ -82,15 +82,14 @@ function MainGame() {
     init();
   }, []);
 
-  // useEffect(() => {
-  // Initialize the game when the component mounts
-  if (parameterName === "AI") {
-    onClickNewAIGame();
-  } else {
-    onClickNewPVPGame();
-  }
-
-  // }, [onClickNewPVPGame, onClickNewAIGame, parameterName]);
+  useEffect(() => {
+    // Initialize the game when the component mounts
+    if (parameterName === "AI") {
+      onClickNewAIGame();
+    } else {
+      onClickNewPVPGame();
+    }
+  }, [parameterName]);
 
   requestAnimationFrame(handleEventQueue);
   function onClickPit(e) {
