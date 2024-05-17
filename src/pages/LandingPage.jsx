@@ -1,11 +1,13 @@
-import Test from "../components/Test";
+import LandingPageWrapper from "../components/Landingpage/LandingPageWrapper";
+import Footer from "../components/Landingpage/Footer";
 
 function LandingPage() {
   return (
     <div>
-      <Test />
+      {/* <Nav /> */}
+      <LandingPageWrapper />
+      <Footer />
     </div>
   );
 }
-
 export default LandingPage;

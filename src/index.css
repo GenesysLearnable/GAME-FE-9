@@ -1,5 +1,12 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-brand-50: #dacbc0;
+  --color-brand-100: #cfbcae;
+  --color-brand-200: #814a1f;
+  --color-brand-300: #a58165;
+  --color-brand-500: #7a451d;
+  --color-brand-600: #663a18;
+  --color-brand-800: #3f240f;
+  --color-brand-900: #2c190a;
 }
 
 * {
@@ -8,14 +15,79 @@
   box-sizing: border-box;
 }
 
+.howto {
+  background: url(../dashboard/mainbg.png), var(--color-brand-600);
+  background-size: cover;
+  min-height: 100vh;
+  padding: 4rem;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
   font-size: 2rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .app {
-  padding: 4rem;
+  /* padding: 4rem; */
+}
+
+.spinner {
+  margin: 4.8rem auto;
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, var(--color-brand-50) 94%, #0000)
+      top/10px 10px no-repeat,
+    conic-gradient(#0000 30%, var(--color-brand-100));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 10px), #000 0);
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.quit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.quitt {
+  height: 60rem;
+  width: 80rem;
+}
+
+.quit h1 {
+  color: #f1f1f1;
+  font-family: "Lilita One";
+  font-size: 3.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 24px */
+  text-transform: capitalize;
+}
+
+.quit p {
+  color: var(--color-brand-100);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 16px */
+}
+
+@media screen and (max-width: 768px) {
+  .howto {
+    padding: 1.5rem;
+  }
 }
