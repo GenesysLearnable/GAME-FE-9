@@ -35,9 +35,10 @@ function SettingWrapper() {
       </div>
      
      
-      <a href="ChangeAvatar">Channge Avatar</a>
-      <a href="">Profile Settings</a>
-      <a href="">Logout</a>
+      <a href="ChangeAvatar"><p>Channge Avatar</p></a>
+      <a href="ChangeAvatar"><p>Profile Settings</p></a>
+      <a href="ChangeAvatar"><p>Logout</p></a>
+     
      </div>
 
     </div>
