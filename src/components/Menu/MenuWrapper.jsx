@@ -7,6 +7,10 @@ function MenuWrapper() {
 
   return (
     <div className="container">
+        
+        <div className="settingWrapper">
+         
+         <div className="setting-content">
       <Link onClick={() => navigate(-1)}>
         <img src={BkArrow} alt="" />
       </Link>
