@@ -1,11 +1,9 @@
-import React from 'react'
-import GameMusic from './GameMusic';
-import GameSound from './GameSound';
-
-import BkArrow from '../GameLevel/img/bk-arrow.png'
 import React from "react";
-import { Switch } from "antd";
+import GameMusic from "./GameMusic";
+import GameSound from "./GameSound";
+
 import BkArrow from "../GameLevel/img/bk-arrow.png";
+import { Switch } from "antd";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthenticationContext";
 import Modal from "../../ui/Modal";
@@ -19,6 +17,7 @@ function SettingWrapper() {
   }
   return (
     <div className="container">
+<<<<<<< HEAD
       <div className='top'>
       <a href="Menu"><img src={BkArrow} alt="" /></a>
 <h4>Settings</h4>
@@ -51,6 +50,8 @@ function SettingWrapper() {
       <a href=""><p>Profile Settings</p></a>
       <a href=""><p>Logout</p></a>
      </div>
+=======
+>>>>>>> 598516e (modified, merge conflicts)
       <Link to="/menu">
         <img src={BkArrow} alt="" />
       </Link>
