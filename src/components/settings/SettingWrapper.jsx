@@ -47,9 +47,9 @@ function SettingWrapper() {
       </div>
      
      
-      <a href="ChangeAvatar">Channge Avatar</a>
-      <a href="">Profile Settings</a>
-      <a href="">Logout</a>
+      <a href="ChangeAvatar"><p>Channge Avatar</p></a>
+      <a href=""><p>Profile Settings</p></a>
+      <a href=""><p>Logout</p></a>
      </div>
       <Link to="/menu">
         <img src={BkArrow} alt="" />
