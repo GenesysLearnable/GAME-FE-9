@@ -65,6 +65,9 @@ export default class AyoAyo extends EventEmitter {
     //toggle to next player
     this.nextPlayer = AyoAyo.togglePlayer(this.nextPlayer);
     this.emit(AyoAyo.events.SWITCH_TURN, this.nextPlayer);
+    console.log(
+      `SWITCH_TURN event emitted with nextPlayer: ${this.nextPlayer}`
+    );
 
     this.permissibleMoves = AyoAyo.getPermissibleMoves(
       this.board,
@@ -118,12 +121,7 @@ export default class AyoAyo extends EventEmitter {
   }
 
   //simulate sowing of seeds starting from cell and returns the updated board and number of captured seeds. Report events by calling emit. (made possible through EventEmitter).
-  static relaySow(
-    board,
-    player,
-    cell,
-    emit = function (eventType, ...args) {}
-  ) {
+  static relaySow(board, player, cell, emit = function(eventType, ...args) {}) {
     const captured = [0, 0];
 
     //pickup seeds
@@ -238,7 +236,7 @@ export default class AyoAyo extends EventEmitter {
   static vsMinimax(depth = 5) {
     const game = new AyoAyo();
     const oldPlayFunc = game.play.bind(game);
-    game.play = function (...args) {
+    game.play = function(...args) {
       oldPlayFunc(...args);
       if (game.winner == null) {
         const [_, moves] = minimax(game, depth, "", game.nextPlayer === 0);
@@ -250,4 +248,6 @@ export default class AyoAyo extends EventEmitter {
   }
 }
 
-console.log(AyoAyo.events);
+// const game = new AyoAyo();
+
+const game = new AyoAyo();

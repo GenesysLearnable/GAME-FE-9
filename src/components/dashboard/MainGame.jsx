@@ -34,8 +34,6 @@ function MainGame() {
 
   // let game;
 
-  // console.log(Ayo.getPermissibleMoves(game.board, 1));
-
   const SowingHandRef = useRef(null);
   const capturingHand = useRef(null);
 
@@ -78,16 +76,18 @@ function MainGame() {
     });
   }
 
-  useEffect(() => {
-    init();
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
+    console.log("Initializing game with parameter:", parameterName);
+
     // Initialize the game when the component mounts
     if (parameterName === "AI") {
       onClickNewAIGame();
+      init();
     } else {
       onClickNewPVPGame();
+      init();
     }
   }, [parameterName]);
 
@@ -102,10 +102,9 @@ function MainGame() {
         .find((className) => className.includes("pit-"))[startIndexOfCellIndex];
       game.play(cellIndex - 1);
 
-      console.log(cellIndex);
+      console.log(`Playing at cell index: ${cellIndex - 1}`);
       // const childCount = e.currentTarget.querySelectorAll(".ugo-seed");
     }
-    // console.log(cellIndex - 1, startIndexOfCellIndex);
   }
 
   // function onClickNewPVPGame() {
@@ -129,6 +128,11 @@ function MainGame() {
     setGame(Ayo.vsMinimax());
     onNewGame("AI");
   }
+
+  console.log(
+    game.on(Ayo.events.GAME_OVER, onGameOver),
+    game.on(Ayo.events.DROP_SEED, onDropSeed)
+  );
 
   function onNewGame(playerTwoName) {
     game.on(Ayo.events.PICKUP_SEEDS, onPickupSeeds);
@@ -238,6 +242,8 @@ function MainGame() {
   }
 
   function handlePickupSeedsEvent(event, fractionDone) {
+    console.log("Handling Pickup Seeds Event");
+
     if (fractionDone === 0) {
       const [row, column] = event.args;
       const [handX, handY] = getPitPosition(row, column, board);
@@ -258,6 +264,8 @@ function MainGame() {
   }
 
   function handleMoveToEvent(event, fractionDone) {
+    console.log("Handling Move To Event");
+
     const [[initialRow, initialColumn], [nextRow, nextColumn]] = event.args;
     const [initialPitX, initialPitY] = getPitPosition(
       initialRow,
@@ -273,6 +281,8 @@ function MainGame() {
   }
 
   function handleDropSeedEvent(event, fractionDone) {
+    console.log("Handling Drop Seed Event");
+
     if (fractionDone === 0) {
       const seedInHand = SowingHandRef.querySelector(".ugo-seed");
       SowingHandRef.current.removeChild(seedInHand);
@@ -305,6 +315,8 @@ function MainGame() {
   }
 
   function handleSwitchTurnEvent(event, fractionDone) {
+    console.log("Handling Switch Turn Event");
+
     if (fractionDone === 0) {
       const [nextPlayer] = event.args;
       updateTurnBadges(nextPlayer);
@@ -322,6 +334,8 @@ function MainGame() {
   }
 
   function handleCaptureEvent(event, fractionDone) {
+    console.log("Handling Capture Event");
+
     // In the final turn, multiple captures happen consecutively
     // and need to be cleaned up before the next one.
     if (fractionDone === 0) {
@@ -335,6 +349,7 @@ function MainGame() {
     seedsInPit.forEach((seed) => {
       pit.removeChild(seed);
       capturingHand.current.appendChild(seed);
+      console.log(pit, column);
     });
 
     const [pitX, pitY] = getPitPosition(row, column);
@@ -352,6 +367,8 @@ function MainGame() {
   }
 
   function handleGameOverEvent(event, fractionDone) {
+    console.log("Handling Game Over Event");
+
     if (fractionDone === 0) {
       finishLastCapture();
 
@@ -382,8 +399,9 @@ function MainGame() {
   let eventQueue = [];
 
   function onGameEvent(type) {
-    return function (...args) {
+    return function(...args) {
       eventQueue.push({ type, args });
+      console.log("Seed dropped at:", args);
     };
   }
 
