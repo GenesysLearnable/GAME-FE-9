@@ -1,5 +1,12 @@
+import AvatarList from "../components/Avatar/AvatarList";
+
+
 function ChangeAvatar() {
-  return <div>avatar</div>;
+  return (
+  <div>
+<AvatarList />
+  </div>
+  )
 }
 
 export default ChangeAvatar;

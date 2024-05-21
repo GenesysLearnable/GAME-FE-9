@@ -1,11 +1,16 @@
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 import { backButton } from "../../constants";
 
 function HowtoPlay() {
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
   return (
     <div className="how-to-play__wrapper">
       <div className="how-to-play__header">
-        <div className="back-button">
+        <div className="back-button" onClick={goBack}>
           <img src={backButton} alt="Go Back" />
         </div>
         <h1>How to play</h1>

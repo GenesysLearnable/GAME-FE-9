@@ -1,9 +1,5 @@
 function Error({ children }) {
-  return (
-    <div style={{ color: "red", fontSize: "18px", fontWeight: "400" }}>
-      {children}
-    </div>
-  );
+  return <p className="error">{children}</p>;
 }
 
 export default Error;
