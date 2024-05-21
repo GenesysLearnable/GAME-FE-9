@@ -21,8 +21,9 @@ function MenuWrapper() {
          </div>
     
         </div>
-        </div>
-  )
+      </div>
+    </div>
+  );
 }
 
-export default MenuWrapper
+export default MenuWrapper;

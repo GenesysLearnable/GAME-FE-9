@@ -65,12 +65,16 @@ const closeModal = () => {
   return (
     <div className="levelWrapper">
       <div className="top-container">
-      <a href="Menu"><img src={BkArrow} alt="" /></a>
-     
-      <button>
-      <img src={Coin} alt="" /><span>2000</span>
-      <img src={Add} alt="" />
-      </button>
+
+        <Link to="/menu">
+          <img src={BkArrow} alt="" />
+        </Link>
+        <h4>Choose your challenge</h4>
+        <button>
+          <img src={Coin} alt="" />
+          <span>2000</span>
+          <img src={Add} alt="" />
+        </button>
       </div>
       <h4>Choose your challenge</h4>
       <div className="level-content">
@@ -133,4 +137,4 @@ const closeModal = () => {
      
   )
 }
-export default GameLevelWrapper
+export default GameLevelWrapper;
