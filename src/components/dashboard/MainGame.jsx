@@ -19,8 +19,8 @@ function MainGame() {
   }, []);
 
   useEffect(() => {
-    init(); // Style the seeds whenever the board updates
-  }, [board]);
+    init();
+  }, []);
 
   function initBoard() {
     init();
@@ -54,28 +54,39 @@ function MainGame() {
     let curPotId = id;
     let lastPotId = id;
 
-    for (let i = 0; i < numSeeds; i++) {
+    function dropSeed(i, prevWasEmpty) {
+      if (i >= numSeeds) {
+        captureOrContinue(newBoard, lastPotId, prevWasEmpty);
+        setBoard(newBoard);
+        return;
+      }
+
       curPotId = (curPotId % totalPots) + 1;
       const nextPot = newBoard.find((pot) => pot.id === curPotId);
+      const wasEmpty = nextPot.seed.length === 0; // Check if the pot was empty before dropping the seed
       nextPot.seed.push({
         name: `pot_${nextPot.id}_seed_${nextPot.seed.length + 1}`,
         key: nextPot.name,
       });
       lastPotId = nextPot.id;
+
+      setBoard([...newBoard]);
+
+      setTimeout(() => {
+        requestAnimationFrame(() => dropSeed(i + 1, wasEmpty));
+      }, 1000); // Adjust the delay time as needed (300ms in this example)
     }
 
-    captureSeeds(newBoard, lastPotId);
-    setBoard(newBoard);
-    switchPlayer();
-    checkWinCondition(newBoard);
+    dropSeed(0, newBoard[id - 1].seed.length === 0);
   }
 
-  function captureSeeds(newBoard, lastPotId) {
+  function captureOrContinue(newBoard, lastPotId, wasEmpty) {
     const lastPot = newBoard.find((pot) => pot.id === lastPotId);
     const oppositePotId = 13 - lastPotId;
     const oppositePot = newBoard.find((pot) => pot.id === oppositePotId);
 
     if (
+      wasEmpty &&
       lastPot.seed.length === 1 &&
       ((currentPlayer === "Player 1" && lastPotId >= 1 && lastPotId <= 6) ||
         (currentPlayer === "Player 2" && lastPotId >= 7 && lastPotId <= 12))
@@ -95,7 +106,15 @@ function MainGame() {
           player2: prevScores.player2 + capturedSeeds,
         }));
       }
+
+      switchPlayer();
+    } else if (lastPot.seed.length > 1) {
+      distributeSeed({ seed: lastPot.seed, id: lastPotId });
+    } else {
+      switchPlayer();
     }
+
+    checkWinCondition(newBoard);
   }
 
   function switchPlayer() {
