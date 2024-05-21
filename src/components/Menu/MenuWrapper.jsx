@@ -1,9 +1,8 @@
-import React from "react";
-import BkArrow from "../GameLevel/img/bk-arrow.png";
-import { Link, useNavigate } from "react-router-dom";
+import React from 'react'
+
 
 function MenuWrapper() {
-  const navigate = useNavigate();
+
 
   return (
     <div className="container">
@@ -12,14 +11,17 @@ function MenuWrapper() {
         
         <div className="settingWrapper">
          
-         <div className="setting-content">
-      <Link onClick={() => navigate(-1)}>
-        <img src={BkArrow} alt="" />
-      </Link>
-
-      <div className="settingWrapper">
-        <div className="setting-content">
+         <div className="setting-content"  >
+         
           <h4>Menu</h4>
+  
+          <a href="Level"><p >Single player mode</p></a>
+          <a href="Level"><p >Play with friends</p></a>
+          <a href="LeaderBoard"><p>Leaderboard</p></a>
+          <a href=""><p>How to play</p></a>
+          <a href="Settings"><p>Settings</p></a>
+         </div>
+    
 
           <Link to={`/dashboard/AI`}>Single player mode</Link>
           <Link to={`/dashboard/Player 2`}>Play with friends</Link>

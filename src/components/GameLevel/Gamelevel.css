@@ -4,15 +4,10 @@
   box-sizing: border-box;
 }
 
-.levelWrapper,
-.container {
-  background: url(./img/background-png.png), #6a3b16;
-  background-size: cover;
-  min-height: 100vh;
-}
-
-.container {
-  padding: 4rem;
+body{
+    background: url(./img/background-png.png), #6A3B16;
+   background-size: cover;
+object-fit: contain;
 }
 
 .levelWrapper {
@@ -328,20 +323,140 @@ color: #DACBC0;
     margin: auto;
     /* flex-wrap: wrap; */
     overflow-x: auto;
+   
 }
 
 .level-content::-webkit-scrollbar{
     width: 0;
 }
 
-@media (max-width: 500px) {
+
+
+
+
+/* ============= POP-UP =============== */
+
+.pop-up-container{
+    position: fixed;
+    max-width: 600px;
+    height: 90vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    background-color: #4b260a;
+    margin-top: 70px;
+    border-radius: 50px;
+  text-align: center;
+ 
+}
+
+.pop-up-container h1{
+    text-align: center;
+    text-shadow: 0px 2px 0px #e8be9d;
+    -webkit-text-stroke-width: 0.1610850691795349;
+    -webkit-text-stroke-color: #000;
+    font-family: "Lilita One";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+   padding-top: 50px;
+    background: linear-gradient(180deg, #FFF 30.82%, #e69e5b 86.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pop-content{
+    display: flex;
+    justify-content: space-around;
+   margin-top: 80px;
+}
+
+.pop-content .player h3{
+    text-align: center;
+  
+    -webkit-text-stroke-width: 0.1610850691795349;
+    -webkit-text-stroke-color: #000;
+    font-family: "Lilita One";
+    background: linear-gradient(180deg, #FFF 30.82%, #edd9c6 86.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 20px;
+}
+
+.pop-up-container h4 img{
+    width: 20px;
+   
+   }
+
+.pop-up-container h4{
+    font-size: 20px;
+    /* text-align: start; */
+    padding-right: 20px;
+}
+
+.pop-up-container .stake{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DACBC0;
+    margin-bottom: 20px;
+    padding-top: 30px;
+}
+
+.pop-up-container .reward{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DACBC0;
+}
+
+.pop-up-container .reward img{
+   width: 22px;
+}
+.pop-up-container .stake img{
+   width: 22px;
+}
+
+.pop-up-container button{
+    width: 150px;
+    border-radius: 100px;
+background: #3F240F;
+padding: 10px;
+border-style: none;
+margin-top: 25px;
+margin-bottom: 40px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+font-family: "Lilita One";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+color: #DACBC0;
+margin-right: 20px;
+ transition: .5s ease-in-out;
+}
+
+.pop-up-container button:hover{
+    transform: scale(.9);
+    box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
+    cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
 
 
     .level-box {
         max-width: 400px;
         height: 75vh;
         margin-top: 20px;
-      
+        gap: 20px;
+    }
+
+    .level-content{
+        gap: 30px;
     }
 
     .levelWrapper h4{
@@ -360,7 +475,6 @@ color: #DACBC0;
 
     .level-box .box-content {
         height: 35vh;
-    
     }
 
     .level-box button {
@@ -390,12 +504,17 @@ width: 18px;
         font-size: 16px;
         
     }
-
-    .levelWrapper {
-        padding: 0px;
+    .pop-content .player img{
+        width: 100px;
     }
+  
+    
+.pop-up-container{
+   
+   max-width: 360px;
+    max-height: 75vh;
+    
+    margin-top: 20px;
+  
 }
-  .levelWrapper {
-    padding: 0px;
-  }
 }

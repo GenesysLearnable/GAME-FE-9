@@ -5,7 +5,7 @@ function GameLevel() {
 
   return (
   <div>
-    <GameLevelWrapper />
+  <GameLevelWrapper />
     </div>
   )
 }

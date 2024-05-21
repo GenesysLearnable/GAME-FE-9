@@ -17,7 +17,6 @@ function SettingWrapper() {
   }
   return (
     <div className="container">
-<<<<<<< HEAD
       <div className='top'>
       <a href="Menu"><img src={BkArrow} alt="" /></a>
 <h4>Settings</h4>
@@ -47,11 +46,13 @@ function SettingWrapper() {
      
      
       <a href="ChangeAvatar"><p>Channge Avatar</p></a>
+      <a href="ChangeAvatar"><p>Profile Settings</p></a>
+      <a href="ChangeAvatar"><p>Logout</p></a>
+     
+
       <a href=""><p>Profile Settings</p></a>
       <a href=""><p>Logout</p></a>
      </div>
-=======
->>>>>>> 598516e (modified, merge conflicts)
       <Link to="/menu">
         <img src={BkArrow} alt="" />
       </Link>
