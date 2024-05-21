@@ -1,6 +1,6 @@
-function BoardHole({ children, onClick }) {
+function BoardHole({ children, onClick, className }) {
   return (
-    <div className="ugo-hole" onClick={onClick}>
+    <div className={`ugo-hole ${className}`} onClick={onClick}>
       {children}
     </div>
   );

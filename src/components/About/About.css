@@ -1,0 +1,19 @@
+.About .about-container{
+    max-width: 800px;
+    margin: auto;
+    height: 100vh;
+    margin-top: 100px;
+}
+
+.About p{
+    color:  #CFBCAE;
+text-align: center;
+font-family: Roboto;
+font-size: 20px;
+font-weight: 400;
+line-height: 1.7; 
+}
+
+.About h3{
+    font-size: 50px;
+}

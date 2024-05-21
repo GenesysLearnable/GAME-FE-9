@@ -25,7 +25,7 @@ function Leaderboard() {
             alt="Leaderboard Star"
           />
         </header>
-        <LeaderboardItem users={data} />
+        <LeaderboardItem />
       </div>
     </div>
   );

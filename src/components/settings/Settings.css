@@ -7,7 +7,26 @@ box-shadow: 50.04px 33.36px 83.4px 0px #4A2A11 inset, -66.72px -58.38px 83.4px 0
 margin: auto;
 
 }
+.container .top{
+    display: grid;
+grid-template-columns: 3fr 1fr 3fr;
+    
+}
 
+.container .top h4{
+   
+    /* padding-left: 600px; */
+    float: left;
+    margin-bottom: 100px;
+font-family: "Lilita One";
+font-size: 60px;
+font-weight: 400;
+background: linear-gradient(180deg, #FFF 30.82%, #FFB672 86.99%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+       
+    }
 .setting-content{
    display: flex;
    flex-direction: column;
@@ -37,13 +56,16 @@ background-clip: text;
     font-size: 45px;
 }
 
-.setting-content a{
+.setting-content a p{
+    width: 300px;
+    height: 40px;
+    text-align: center;
     text-decoration: none;
     font-size: 30px;
     transition: .5s ease-in-out;
 }
 
-.setting-content a:hover{
+.setting-content a p:hover{
  
     border-radius: 50px;
     color: #feeddc;
@@ -55,22 +77,52 @@ background-clip: text;
     width: 40px;
 }
 
+.setting-content div{
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+   
+}
+
 @media (max-width: 500px) {
 
     .settingWrapper {
-        max-width: 400px;
-        height: 400px;
+        max-width: 500px;
+        height: 350px;
      
     }
+
+    .container .top h4{
+    margin: 0;
+    margin-bottom: 25px;
+font-family: "Lilita One";
+font-size: 32px;
+font-weight: 400;
+background: linear-gradient(180deg, #FFF 30.82%, #FFB672 86.99%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+       
+    }
+
+    .container a img{
+        width: 30px;
+    }
+
+    .setting-content label{
+      font-size: 22px;
+    }
     .setting-content {
-        font-size: 20px;
-        align-items: center;
-        padding: 90px;
+        text-align: center;
+        height: 100vh;
+        font-size: 28px;
+        padding: 0;
+        margin: 0;
       gap: 15px;
       padding-top: 55px;
     }
 
     .setting-content a{
-        font-size: 17.5px;
+        font-size: 22px;
     }
 }

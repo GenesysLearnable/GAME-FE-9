@@ -23,6 +23,7 @@ function GameLevelWrapper() {
           <img src={Add} alt="" />
         </button>
       </div>
+      <h4>Choose your challenge</h4>
       <div className="level-content">
         <div className="level-box">
           <h3>Amateur</h3>

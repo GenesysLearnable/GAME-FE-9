@@ -13,8 +13,11 @@
     "@tanstack/react-query": "^5.35.5",
     "antd": "^5.17.0",
     "axios": "^1.6.8",
+    "malachi-ayoayo": "^1.0.4",
+
+    "esbuild": "^0.21.2",
     "query": "github:tanstack/react-query",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.4",
     "react-hot-toast": "^2.4.1",
