@@ -18,8 +18,9 @@
   position: relative;
 }
 .back-button {
-  width: 90px;
-  height: 90px;
+  width: min(90px, 6.25vw);
+  min-width: 45px;
+  height: au;
 }
 .back-button img {
   object-fit: contain;

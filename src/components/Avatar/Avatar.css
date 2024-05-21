@@ -1,0 +1,83 @@
+.img-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* background-color: #fff; */
+    max-width: 800px;
+    height: 70vh;
+    margin: auto;
+    padding: 40px 10px;
+    gap: 20px;
+    border-radius: 50px;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.img-container::-webkit-scrollbar{
+    width: 0;
+}
+
+
+
+.container a img{
+    width: 40px;
+}
+
+.container h3{
+    font-family: "Lilita One";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    line-height: normal;
+    background: linear-gradient(180deg, #FFF 30.82%, #e69e5b 86.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 15px;
+}
+
+.container button{
+    width: 220px;
+    border-radius: 100px;
+background: #3F240F;
+padding: 10px;
+border-style: none;
+/* margin-bottom: 40px; */
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+font-family: "Lilita One";
+font-size: 26px;
+font-style: normal;
+font-weight: 400;
+color: #DACBC0;
+ transition: .5s ease-in-out;
+/* margin-left: 300px; */
+}
+
+.container button:hover{
+    transform: scale(.9);
+    box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
+    cursor: pointer;
+}
+
+.container .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 600px) {
+    .container a img{
+  width: 30px;
+    }
+
+    .img-container img {
+      width: 150px;
+    }
+
+.container h3{
+    font-size: 30px;
+}
+}
+
+

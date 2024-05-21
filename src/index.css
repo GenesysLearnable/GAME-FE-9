@@ -19,6 +19,7 @@
   background: url(../dashboard/mainbg.png), var(--color-brand-600);
   background-size: cover;
   min-height: 100vh;
+  padding: 4rem;
 }
 
 html {
@@ -83,4 +84,10 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 100%; /* 16px */
+}
+
+@media screen and (max-width: 768px) {
+  .howto {
+    padding: 1.5rem;
+  }
 }

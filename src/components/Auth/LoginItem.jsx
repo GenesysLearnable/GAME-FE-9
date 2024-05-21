@@ -5,6 +5,7 @@ import Button from "./Button";
 import { useLogin } from "../../services/useLogin";
 import Spinner from "../../ui/Spinner";
 import Error from "./Error";
+import { Link } from "react-router-dom";
 
 function LoginItem() {
   const [email, setEmail] = useState("");
@@ -37,6 +38,7 @@ function LoginItem() {
   return (
     <form className="signup ">
       <AuthNav title="Login" goto="Sign up" url="/signup" />
+      <h1 className="ayo-header">Ready to play? Sign up here</h1>
       <div className="page-auth">
         <AuthContainer>
           <input
@@ -57,6 +59,12 @@ function LoginItem() {
           />
 
           <Error>{error}</Error>
+
+          <span className="forspan">
+            <Link to="/passwordreset" className="forgotpwd">
+              Forgot Password?
+            </Link>
+          </span>
 
           <Button onClick={handleSubmit}>
             {isLoading ? <Spinner /> : <span>Login</span>}

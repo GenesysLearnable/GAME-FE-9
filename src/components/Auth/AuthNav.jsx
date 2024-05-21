@@ -15,6 +15,7 @@ function AuthNav({ title, goto, url }) {
       <h1>{title}</h1>
 
       <Link to={url}>{goto}</Link>
+      <div className="hempty"></div>
     </nav>
   );
 }
