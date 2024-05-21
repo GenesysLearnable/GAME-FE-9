@@ -168,8 +168,18 @@ input::placeholder {
   font-size: 2.4rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 36px; /* 150% */
+  /* line-height: 36px; */
   text-align: center;
+}
+
+.error {
+  color: red;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.hempty {
+  display: none;
 }
 
 .forspan {
@@ -204,3 +214,114 @@ input::placeholder {
   border-radius: 4rem;
   background: #dacbc0;
 }
+
+@media (max-width: 50em) {
+  .auth-cont {
+    width: 40rem;
+    height: 40rem;
+    position: relative;
+    gap: 0.8rem;
+    /* transform: rotate(90deg); */
+  }
+
+  .auth-cont input {
+    display: flex;
+    width: 24.8rem;
+    height: 4.5rem;
+    padding: 1.3rem 6rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .auth-cont input::placeholder {
+    font-size: 1.4rem;
+  }
+
+  .forspan {
+    position: absolute;
+    padding: 0 8rem;
+    top: 21.5rem;
+  }
+
+  .forgotpwd {
+    font-size: 1.2rem;
+  }
+
+  .btn-auth {
+    display: flex;
+    width: 24.8rem;
+    height: 4.8rem;
+    padding: 3.865px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
+  }
+
+  .btn-auth span {
+    font-size: 2.4rem;
+  }
+
+  .signup {
+    padding: 0 2rem;
+  }
+
+  .auth-nav img {
+    width: 4rem;
+  }
+
+  .ayo-header {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 25.5em) {
+  .auth-cont {
+    width: 30rem;
+    height: 30rem;
+    /* align-items: center; */
+    /* transform: rotate(90deg); */
+  }
+
+  .hempty {
+    display: flex;
+  }
+  .auth-cont input {
+    padding: 1rem 2rem;
+
+    width: 70%;
+  }
+
+  .forspan {
+    top: 16.4rem;
+    padding: 0 6rem;
+  }
+
+  .auth-cont input::placeholder {
+    font-size: 1rem;
+    padding: 0.4rem 0;
+  }
+
+  .btn-auth {
+    width: 18rem;
+    font-size: 1.2rem;
+  }
+
+  .auth-nav a {
+    position: absolute;
+    bottom: 8rem;
+    left: 45%;
+    /* right: 50%; */
+  }
+
+  /* .signup {
+    padding: 0;
+  } */
+}
+/* 
+
+@media (max-width: 50em) {
+} 
+
+*/
