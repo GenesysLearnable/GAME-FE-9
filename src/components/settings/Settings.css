@@ -85,7 +85,7 @@ width: 350px;
    
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 
     .settingWrapper {
    max-width: 500px;
