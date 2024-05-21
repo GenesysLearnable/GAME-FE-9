@@ -54,3 +54,275 @@ export function holeCount(index) {
 
   return parentEl?.querySelectorAll(".ugo-seed").length;
 }
+export const board = [
+  {
+    id: 1,
+    name: "pot_1",
+    seed: [
+      {
+        name: "pot_1_seed_1",
+        key: "pot_1",
+      },
+      {
+        name: "pot_1_seed_2",
+        key: "pot_1",
+      },
+      {
+        name: "pot_1_seed_3",
+        key: "pot_1",
+      },
+      {
+        name: "pot_1_seed_4",
+        key: "pot_1",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "pot_2",
+    seed: [
+      {
+        name: "pot_2_seed_1",
+        key: "pot_2",
+      },
+      {
+        name: "pot_2_seed_2",
+        key: "pot_2",
+      },
+      {
+        name: "pot_2_seed_3",
+        key: "pot_2",
+      },
+      {
+        name: "pot_2_seed_4",
+        key: "pot_2",
+      },
+    ],
+  },
+
+  {
+    id: 3,
+    name: "pot_3",
+    seed: [
+      {
+        name: "pot_3_seed_1",
+        key: "pot_3",
+      },
+      {
+        name: "pot_3_seed_2",
+        key: "pot_3",
+      },
+      {
+        name: "pot_3_seed_3",
+        key: "pot_3",
+      },
+      {
+        name: "pot_3_seed_4",
+        key: "pot_3",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "pot_4",
+    seed: [
+      {
+        name: "pot_4_seed_1",
+        key: "pot_4",
+      },
+      {
+        name: "pot_4_seed_2",
+        key: "pot_4",
+      },
+      {
+        name: "pot_4_seed_3",
+        key: "pot_4",
+      },
+      {
+        name: "pot_4_seed_4",
+        key: "pot_4",
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "pot_5",
+    seed: [
+      {
+        name: "pot_5_seed_1",
+        key: "pot_5",
+      },
+      {
+        name: "pot_5_seed_2",
+        key: "pot_5",
+      },
+      {
+        name: "pot_5_seed_3",
+        key: "pot_5",
+      },
+      {
+        name: "pot_5_seed_4",
+        key: "pot_5",
+      },
+    ],
+  },
+
+  {
+    id: 6,
+    name: "pot_6",
+    seed: [
+      {
+        name: "pot_6_seed_1",
+        key: "pot_6",
+      },
+      {
+        name: "pot_6_seed_2",
+        key: "pot_6",
+      },
+      {
+        name: "pot_6_seed_3",
+        key: "pot_6",
+      },
+      {
+        name: "pot_6_seed_4",
+        key: "pot_6",
+      },
+    ],
+  },
+
+  {
+    id: 7,
+    name: "pot_7",
+    seed: [
+      {
+        name: "pot_7_seed_1",
+        key: "pot_7",
+      },
+      {
+        name: "pot_7_seed_2",
+        key: "pot_7",
+      },
+      {
+        name: "pot_7_seed_3",
+        key: "pot_7",
+      },
+      {
+        name: "pot_7_seed_4",
+        key: "pot_7",
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: "pot_8",
+    seed: [
+      {
+        name: "pot_8_seed_1",
+        key: "pot_8",
+      },
+      {
+        name: "pot_8_seed_2",
+        key: "pot_8",
+      },
+      {
+        name: "pot_8_seed_3",
+        key: "pot_8",
+      },
+      {
+        name: "pot_8_seed_4",
+        key: "pot_8",
+      },
+    ],
+  },
+
+  {
+    id: 9,
+    name: "pot_9",
+    seed: [
+      {
+        name: "pot_9_seed_1",
+        key: "pot_9",
+      },
+      {
+        name: "pot_9_seed_2",
+        key: "pot_9",
+      },
+      {
+        name: "pot_9_seed_3",
+        key: "pot_9",
+      },
+      {
+        name: "pot_9_seed_4",
+        key: "pot_9",
+      },
+    ],
+  },
+
+  {
+    id: 10,
+    name: "pot_10",
+    seed: [
+      {
+        name: "pot_10_seed_1",
+        key: "pot_10",
+      },
+      {
+        name: "pot_10_seed_2",
+        key: "pot_10",
+      },
+      {
+        name: "pot_10_seed_3",
+        key: "pot_10",
+      },
+      {
+        name: "pot_10_seed_4",
+        key: "pot_10",
+      },
+    ],
+  },
+  {
+    id: 11,
+    name: "pot_11",
+    seed: [
+      {
+        name: "pot_11_seed_1",
+        key: "pot_11",
+      },
+      {
+        name: "pot_11_seed_2",
+        key: "pot_11",
+      },
+      {
+        name: "pot_11_seed_3",
+        key: "pot_11",
+      },
+      {
+        name: "pot_11_seed_4",
+        key: "pot_11",
+      },
+    ],
+  },
+
+  {
+    id: 12,
+    name: "pot_12",
+    seed: [
+      {
+        name: "pot_12_seed_1",
+        key: "pot_12",
+      },
+      {
+        name: "pot_12_seed_2",
+        key: "pot_12",
+      },
+      {
+        name: "pot_12_seed_3",
+        key: "pot_12",
+      },
+      {
+        name: "pot_12_seed_4",
+        key: "pot_12",
+      },
+    ],
+  },
+];

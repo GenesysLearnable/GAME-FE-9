@@ -1,30 +1,17 @@
-import React from 'react'
-
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function MenuWrapper() {
-
-
+  const navigate = useNavigate();
   return (
     <div className="container">
       <Link onClick={() => navigate(-1)}>
-        {" "}
-        
-        <div className="settingWrapper">
-         
-         <div className="setting-content"  >
-         
+        <img src="/dashboard/bk-arrow.png" alt="" />
+      </Link>{" "}
+      <div className="settingWrapper">
+        <div className="setting-content">
           <h4>Menu</h4>
-  
-          <a href="Level"><p >Single player mode</p></a>
-          <a href="Level"><p >Play with friends</p></a>
-          <a href="LeaderBoard"><p>Leaderboard</p></a>
-          <a href=""><p>How to play</p></a>
-          <a href="Settings"><p>Settings</p></a>
-         </div>
-    
 
-          <Link to={`/dashboard/AI`}>Single player mode</Link>
-          <Link to={`/dashboard/Player 2`}>Play with friends</Link>
           <Link to="/level">Single player mode</Link>
           <Link to="/invite">Play with friends</Link>
           <Link to="/leaderBoard">Leaderboard</Link>

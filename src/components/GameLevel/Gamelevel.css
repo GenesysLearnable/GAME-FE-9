@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 
-body{
-    background: url(./img/background-png.png), #6A3B16;
-   background-size: cover;
-object-fit: contain;
+body {
+  background: url(./img/background-png.png), #6a3b16;
+  background-size: cover;
+  object-fit: contain;
 }
 
 .levelWrapper {
@@ -183,13 +183,13 @@ object-fit: contain;
     margin-top: 20px;
   }
 
-.levelWrapper h4{
+  .levelWrapper h4 {
     font-size: 40px;
     font-weight: 400;
-    color: #DACBC0;
+    color: #dacbc0;
     font-family: "Lilita One";
     text-align: center;
-}
+  }
   .level-box h3 {
     font-size: 33px;
   }
@@ -209,61 +209,61 @@ object-fit: contain;
     height: 45px;
     font-size: 15px;
     padding: 10px;
-    background: #814A1F;
+    background: #814a1f;
     border-radius: 50px;
     border-style: none;
-    color: #DACBC0;
-    transition: .5s ease-in-out;
-    box-shadow: 10.93px 10.019px 27.325px 0px #4A2A11 inset, -20.038px -10.93px 27.325px 0px #5D3619 inset;
-}
+    color: #dacbc0;
+    transition: 0.5s ease-in-out;
+    box-shadow: 10.93px 10.019px 27.325px 0px #4a2a11 inset,
+      -20.038px -10.93px 27.325px 0px #5d3619 inset;
+  }
 
-.top-container button img{
-   width: 30px;
-}
+  .top-container button img {
+    width: 30px;
+  }
 
-.top-container button span{
+  .top-container button span {
     display: flex;
-   align-items: center;
-}
+    align-items: center;
+  }
 
-
-.top-container button:hover{
+  .top-container button:hover {
     box-shadow: 10.93px 10.019px 27.325px 0px #522f14 inset;
     cursor: pointer;
-}
+  }
 
-.level-box{
+  .level-box {
     max-width: 350px;
     height: 75vh;
     border-radius: 90px;
-background: linear-gradient(0deg, #814A1F 0%, #814A1F 100%), linear-gradient(0deg, #814A1F 0%, #814A1F 100%), #814A1F;
-box-shadow: 10.93px 10.019px 27.325px 0px #4A2A11 inset, -20.038px -10.93px 27.325px 0px #5D3619 inset;
-text-align: center;
-padding: 40px;
-margin-top: 100px;
-padding-bottom: 150px;
-margin-left: 10px;
+    background: linear-gradient(0deg, #814a1f 0%, #814a1f 100%),
+      linear-gradient(0deg, #814a1f 0%, #814a1f 100%), #814a1f;
+    box-shadow: 10.93px 10.019px 27.325px 0px #4a2a11 inset,
+      -20.038px -10.93px 27.325px 0px #5d3619 inset;
+    text-align: center;
+    padding: 40px;
+    margin-top: 100px;
+    padding-bottom: 150px;
+    margin-left: 10px;
+  }
 
-}
-
-.level-box h3{
+  .level-box h3 {
     text-shadow: 0px 2px 0px #e8be9d;
--webkit-text-stroke-width: 0.1610850691795349;
--webkit-text-stroke-color: #000;
-font-family: "Lilita One";
-font-size: 44px;
-font-style: normal;
-font-weight: 400;
-/* color: #ede6e2; */
-line-height: normal;
-background: linear-gradient(180deg, #FFF 30.82%, #e69e5b 86.99%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
+    -webkit-text-stroke-width: 0.1610850691795349;
+    -webkit-text-stroke-color: #000;
+    font-family: "Lilita One";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    /* color: #ede6e2; */
+    line-height: normal;
+    background: linear-gradient(180deg, #fff 30.82%, #e69e5b 86.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-.level-box .box-content{
-    
+  .level-box .box-content {
     display: flex;
     max-width: 270px;
     height: 45vh;
@@ -273,10 +273,203 @@ background-clip: text;
     align-items: center;
     gap: 20px;
     border-radius: 40px;
-background: #6A3B16;
-margin-top: 30px;
-
+    background: #6a3b16;
+    margin-top: 30px;
+  }
 }
+
+.top-container button img {
+  width: 18px;
+}
+
+.top-container img {
+  width: 20px;
+}
+
+.top-container h4 {
+  font-size: 16px;
+}
+
+.level-box button {
+  width: 220px;
+  border-radius: 100px;
+  background: #3f240f;
+  padding: 10px;
+  border-style: none;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+  font-family: "Lilita One";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  color: #dacbc0;
+  transition: 0.5s ease-in-out;
+}
+
+.level-box button:hover {
+  transform: scale(0.9);
+  box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
+  cursor: pointer;
+}
+
+.level-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  /* flex-wrap: wrap; */
+  overflow-x: auto;
+}
+
+.level-content::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ============= POP-UP =============== */
+
+.pop-up-container {
+  position: fixed;
+  max-width: 600px;
+  left: 0;
+  right: 0;
+  top: 80px;
+  margin: auto;
+  background-color: #4b260a;
+  margin-top: 70px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.pop-up-container h1 {
+  text-align: center;
+  text-shadow: 0px 2px 0px #e8be9d;
+  -webkit-text-stroke-width: 0.1610850691795349;
+  -webkit-text-stroke-color: #000;
+  font-family: "Lilita One";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  padding-top: 50px;
+  background: linear-gradient(180deg, #fff 30.82%, #e69e5b 86.99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pop-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
+}
+
+.pop-content .player h3 {
+  text-align: center;
+
+  -webkit-text-stroke-width: 0.1610850691795349;
+  -webkit-text-stroke-color: #000;
+  font-family: "Lilita One";
+  background: linear-gradient(180deg, #fff 30.82%, #edd9c6 86.99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 20px;
+}
+
+.pop-up-container h4 img {
+  width: 20px;
+}
+
+.pop-up-container h4 {
+  font-size: 20px;
+  /* text-align: start; */
+  padding-right: 20px;
+}
+
+.pop-up-container .stake {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dacbc0;
+  margin-bottom: 20px;
+  padding-top: 30px;
+}
+
+.pop-up-container .reward {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dacbc0;
+}
+
+.pop-up-container .reward img {
+  width: 22px;
+}
+.pop-up-container .stake img {
+  width: 22px;
+}
+
+.pop-up-container button {
+  width: 150px;
+  border-radius: 100px;
+  background: #3f240f;
+  padding: 10px;
+  border-style: none;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+  font-family: "Lilita One";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  color: #dacbc0;
+  margin-right: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.pop-up-container button:hover {
+  transform: scale(0.9);
+  box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .level-box {
+    max-width: 400px;
+    height: 75vh;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .level-content {
+    gap: 30px;
+  }
+
+  .levelWrapper h4 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+    color: #dacbc0;
+    font-family: "Lilita One";
+    padding-bottom: 10px;
+  }
+
+  .level-box h3 {
+    font-size: 33px;
+  }
+
+  .level-box .box-content {
+    height: 35vh;
+  }
+
+  .level-box button {
+    width: 150px;
+  }
+  .app {
+    padding: 1.5rem;
+  }
+  .top-container button {
+    width: 90px;
+    height: 45px;
     font-size: 12px;
     padding: 8px;
   }
@@ -292,229 +485,14 @@ margin-top: 30px;
   .top-container h4 {
     font-size: 16px;
   }
+  .pop-content .player img {
+    width: 100px;
+  }
 
-.level-box button{
-    width: 220px;
-    border-radius: 100px;
-background: #3F240F;
-padding: 10px;
-border-style: none;
-margin-top: 10px;
-margin-bottom: 40px;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-font-family: "Lilita One";
-font-size: 26px;
-font-style: normal;
-font-weight: 400;
-color: #DACBC0;
- transition: .5s ease-in-out;
-}
-
-
-.level-box button:hover{
-    transform: scale(.9);
-    box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
-    cursor: pointer;
-}
-
-.level-content{
-    display: flex;
-    justify-content: space-evenly;
-    margin: auto;
-    /* flex-wrap: wrap; */
-    overflow-x: auto;
-   
-}
-
-.level-content::-webkit-scrollbar{
-    width: 0;
-}
-
-
-
-
-
-/* ============= POP-UP =============== */
-
-.pop-up-container{
-    position: fixed;
-    max-width: 600px;
-    height: 90vh;
-    left: 0;
-    right: 0;
-    top: 0;
-    margin: auto;
-    background-color: #4b260a;
-    margin-top: 70px;
-    border-radius: 50px;
-  text-align: center;
- 
-}
-
-.pop-up-container h1{
-    text-align: center;
-    text-shadow: 0px 2px 0px #e8be9d;
-    -webkit-text-stroke-width: 0.1610850691795349;
-    -webkit-text-stroke-color: #000;
-    font-family: "Lilita One";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-   padding-top: 50px;
-    background: linear-gradient(180deg, #FFF 30.82%, #e69e5b 86.99%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.pop-content{
-    display: flex;
-    justify-content: space-around;
-   margin-top: 80px;
-}
-
-.pop-content .player h3{
-    text-align: center;
-  
-    -webkit-text-stroke-width: 0.1610850691795349;
-    -webkit-text-stroke-color: #000;
-    font-family: "Lilita One";
-    background: linear-gradient(180deg, #FFF 30.82%, #edd9c6 86.99%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding-top: 20px;
-}
-
-.pop-up-container h4 img{
-    width: 20px;
-   
-   }
-
-.pop-up-container h4{
-    font-size: 20px;
-    /* text-align: start; */
-    padding-right: 20px;
-}
-
-.pop-up-container .stake{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #DACBC0;
-    margin-bottom: 20px;
-    padding-top: 30px;
-}
-
-.pop-up-container .reward{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #DACBC0;
-}
-
-.pop-up-container .reward img{
-   width: 22px;
-}
-.pop-up-container .stake img{
-   width: 22px;
-}
-
-.pop-up-container button{
-    width: 150px;
-    border-radius: 100px;
-background: #3F240F;
-padding: 10px;
-border-style: none;
-margin-top: 25px;
-margin-bottom: 40px;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-font-family: "Lilita One";
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-color: #DACBC0;
-margin-right: 20px;
- transition: .5s ease-in-out;
-}
-
-.pop-up-container button:hover{
-    transform: scale(.9);
-    box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
-    cursor: pointer;
-}
-
-
-@media (max-width: 600px) {
-
-
-    .level-box {
-        max-width: 400px;
-        height: 75vh;
-        margin-top: 20px;
-        gap: 20px;
-    }
-
-    .level-content{
-        gap: 30px;
-    }
-
-    .levelWrapper h4{
-        text-align: center;
-        font-size: 25px;
-        font-weight: 400;
-        color: #DACBC0;
-        font-family: "Lilita One";
-        padding-bottom: 10px;
-    }
-
-    .level-box h3 {
-        font-size: 33px;
-        
-    }
-
-    .level-box .box-content {
-        height: 35vh;
-    }
-
-    .level-box button {
-        width: 150px;
-    }
-    .app{
-        padding: 1.5rem;
-    }
-    .top-container button {
-       
-        width: 90px;
-        height: 45px;
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .top-container button img{
-width: 18px;
-    }
-
-    .top-container img {
-        width: 20px;
-      
-    }
-
-    .top-container h4 {
-        font-size: 16px;
-        
-    }
-    .pop-content .player img{
-        width: 100px;
-    }
-  
-    
-.pop-up-container{
-   
-   max-width: 360px;
+  .pop-up-container {
+    max-width: 360px;
     max-height: 75vh;
-    
+
     margin-top: 20px;
-  
-}
+  }
 }

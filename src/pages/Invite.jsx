@@ -1,5 +1,5 @@
 function Invite() {
-  return <div>invite</div>;
+  return <div style={{ padding: "40px", color: "#ffff" }}>coming soon....</div>;
 }
 
 export default Invite;

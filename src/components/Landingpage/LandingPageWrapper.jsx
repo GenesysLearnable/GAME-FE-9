@@ -12,8 +12,11 @@ import {
   reviewLeft,
   reviewRight,
 } from "../../constants";
+import { useAuth } from "../../contexts/AuthenticationContext";
 
 function LandingPageWrapper() {
+  const { isAuthenticated } = useAuth();
+  //  <Link to={`${isAuthenticated ? "/level" : "/login"}`}>
   const navigate = useNavigate();
   return (
     <div className="landing--page">
@@ -29,7 +32,10 @@ function LandingPageWrapper() {
               calculation with a rich Nigerian heritage.
             </p>
           </div>
-          <div className="hero-btn" onClick={() => navigate("/dashboard")}>
+          <div
+            className="hero-btn"
+            onClick={() => navigate(`${isAuthenticated ? "/level" : "/login"}`)}
+          >
             Play Now
           </div>
         </div>
@@ -66,7 +72,12 @@ function LandingPageWrapper() {
               <img src={multiPlayer} alt="" />
             </div>
           </div>
-          <button>Play Now</button>
+          <button
+            onClick={() => navigate(`${isAuthenticated ? "/level" : "/login"}`)}
+            className="hero-btn"
+          >
+            Play Now
+          </button>
         </div>
       </section>
       <section className="explore">
@@ -103,7 +114,14 @@ function LandingPageWrapper() {
                   more.
                 </p>
               </div>
-              <button>Play Now</button>
+              <button
+                onClick={() =>
+                  navigate(`${isAuthenticated ? "/level" : "/login"}`)
+                }
+                className="hero-btn"
+              >
+                Play Now
+              </button>
             </div>
             <div className="explore-img">
               <img src={dashboard} alt="" />

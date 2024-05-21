@@ -1,3 +1,4 @@
+import HowtoPlayModal from "../../ui/HowtoPlayModal";
 import Modal from "../../ui/Modal";
 
 function TopNav() {
@@ -13,11 +14,7 @@ function TopNav() {
           <img src="/dashboard/stop.png" alt="stop" />
         </Modal.Open>
         <Modal.Window name="how">
-          <span>
-            <p style={{ color: "#ffff" }}>How to play</p>
-            <p style={{ color: "#ffff" }}>How to play</p>
-            <p style={{ color: "#ffff" }}>How to play</p>
-          </span>
+          <HowtoPlayModal />
         </Modal.Window>
       </Modal>
     </nav>
