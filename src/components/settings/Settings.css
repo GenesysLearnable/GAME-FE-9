@@ -1,6 +1,6 @@
 .settingWrapper{
-    max-width: 600px;
-height: 700px;
+    max-width: 700px;
+max-height: 700px;
 border-radius: 834px;
 background: linear-gradient(0deg, #814A1F 0%, #814A1F 100%), linear-gradient(0deg, #814A1F 0%, #814A1F 100%), #814A1F;
 box-shadow: 50.04px 33.36px 83.4px 0px #4A2A11 inset, -66.72px -58.38px 83.4px 0px #5D3619 inset;
@@ -33,13 +33,13 @@ background-clip: text;
    gap: 20px;
    align-items: center;
    padding: 100px;
-   /* text-shadow: 0px 2.577px 0px #723400; */
-/* -webkit-text-stroke-width: 0.1610850691795349; */
+   text-shadow: 0px 0.577px 0px #dfd5cd;
+-webkit-text-stroke-width: 0.1610850691795349;
 -webkit-text-stroke-color: #000;
 font-family: "Lilita One";
 font-size: 32px;
 font-weight: 400;
-background: linear-gradient(180deg, #FFF 30.82%, #FFB672 86.99%);
+background: linear-gradient(180deg, #c3c0c0 30.82%, #f49741 86.99%);
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -57,10 +57,10 @@ background-clip: text;
 }
 
 .setting-content a p{
-width: 300px;
- height: 40px;
- /* padding: 10px 10px 10px; */
+width: 350px;
+ height: 50px;
  text-align: center;
+
     text-decoration: none;
     font-size: 30px;
     transition: .5s ease-in-out;
@@ -81,16 +81,15 @@ width: 300px;
 .setting-content div{
     display: inline-flex;
     align-items: center;
-    gap: 30px;
+    gap: 80px;
    
 }
 
 @media (max-width: 500px) {
 
     .settingWrapper {
-        max-width: 500px;
-        height: 350px;
-     
+   max-width: 500px;
+     max-height: 500px;
     }
 
     .container .top h4{
@@ -115,7 +114,7 @@ background-clip: text;
     }
     .setting-content {
         text-align: center;
-        height: 100vh;
+      
         font-size: 28px;
         padding: 0;
         margin: 0;
@@ -126,4 +125,5 @@ background-clip: text;
     .setting-content a{
         font-size: 22px;
     }
+   
 }
