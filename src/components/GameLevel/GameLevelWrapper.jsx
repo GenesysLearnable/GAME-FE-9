@@ -2,9 +2,14 @@ import React from "react";
 import BkArrow from "./img/bk-arrow.png";
 import Coin from "./img/Dollar Coin.png";
 import Add from "./img/add.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function GameLevelWrapper() {
+  const navigate = useNavigate();
+
+  function play() {
+    navigate("/dashboard");
+  }
   return (
     <div className="levelWrapper">
       <div className="top-container">
@@ -18,6 +23,7 @@ function GameLevelWrapper() {
           <img src={Add} alt="" />
         </button>
       </div>
+      <h4>Choose your challenge</h4>
       <div className="level-content">
         <div className="level-box">
           <h3>Amateur</h3>
@@ -33,7 +39,7 @@ function GameLevelWrapper() {
               200
             </span>
           </div>
-          <button>Play</button>
+          <button onClick={play}>Play</button>
         </div>
         <div className="level-box">
           <h3>Intermediate</h3>
@@ -50,7 +56,7 @@ function GameLevelWrapper() {
               1000
             </span>
           </div>
-          <button>Play</button>
+          <button onClick={play}>Play</button>
         </div>
         <div className="level-box">
           <h3>Master</h3>
@@ -67,7 +73,7 @@ function GameLevelWrapper() {
               3000
             </span>
           </div>
-          <button>Play</button>
+          <button onClick={play}>Play</button>
         </div>
       </div>
     </div>

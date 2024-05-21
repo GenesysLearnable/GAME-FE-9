@@ -1,10 +1,12 @@
 import LandingPageWrapper from "../components/Landingpage/LandingPageWrapper";
-import Spinner from "../ui/Spinner";
+import Footer from "../components/Landingpage/Footer";
 
 function LandingPage() {
   return (
     <div>
+      {/* <Nav /> */}
       <LandingPageWrapper />
+      <Footer />
     </div>
   );
 }

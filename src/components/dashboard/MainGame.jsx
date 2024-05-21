@@ -31,6 +31,32 @@ function MainGame() {
   const { parameterName } = useParams();
   // console.log(parameterName);
   // console.log(game);
+const MainGame = () => {
+  const [playerScores, setPlayerScores] = useState([0, 0]); // Player scores
+  const [currentPlayer, setCurrentPlayer] = useState(0); // Current player (0 or 1)
+  const player1 = [4, 4, 4, 4, 4, 4];
+  const player2 = [4, 4, 4, 4, 4, 4];
+
+  const [boardState, setBoardState] = useState([player1, player2]); // Initial board state
+  const [winner, setWinner] = useState(null); // Game winner
+  const handleMove = (rowIndex, holeIndex) => {
+    // Get the number of seeds in the selected hole
+    let seedsToMove = boardState[rowIndex][holeIndex];
+
+    // Clear the selected hole
+    let newBoardState = [...boardState];
+    newBoardState[rowIndex][holeIndex] = 0;
+
+    // Distribute seeds counterclockwise
+    let currentHoleIndex = holeIndex;
+    while (seedsToMove > 0) {
+      // Move to the next hole counterclockwise
+      currentHoleIndex = (currentHoleIndex + 1) % 6;
+
+      // Distribute seeds to the next hole
+      newBoardState[rowIndex][currentHoleIndex]++;
+      seedsToMove--;
+    }
 
   // let game;
 

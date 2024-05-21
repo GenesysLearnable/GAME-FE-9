@@ -19,6 +19,7 @@
   background: url(../dashboard/mainbg.png), var(--color-brand-600);
   background-size: cover;
   min-height: 100vh;
+  padding: 4rem;
 }
 
 html {
@@ -33,6 +34,7 @@ body {
 .app {
   /* padding: 4rem; */
 }
+
 .spinner {
   margin: 4.8rem auto;
   width: 4rem;
@@ -48,5 +50,44 @@ body {
 @keyframes rotate {
   to {
     transform: rotate(1turn);
+  }
+}
+
+.quit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.quitt {
+  height: 60rem;
+  width: 80rem;
+}
+
+.quit h1 {
+  color: #f1f1f1;
+  font-family: "Lilita One";
+  font-size: 3.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 24px */
+  text-transform: capitalize;
+}
+
+.quit p {
+  color: var(--color-brand-100);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 16px */
+}
+
+@media screen and (max-width: 768px) {
+  .howto {
+    padding: 1.5rem;
   }
 }

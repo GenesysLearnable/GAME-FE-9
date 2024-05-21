@@ -1,43 +1,15 @@
 import React from "react";
 import "./App.css";
 import { Link, useNavigate } from "react-router-dom";
-function LandingPage() {
+import Nav from "./Nav";
+
+function LandingPageWrapper() {
   const navigate = useNavigate();
   return (
     <div className="landing--page">
+      <Nav />
       <section className="hero">
         <div className="main-width">
-          <header>
-            <div className="logo">
-              <img src="/image/Ellipse 17.png" alt="" />
-            </div>
-            <nav>
-              <ul>
-                <li className="active">
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/level">New</Link>
-                </li>
-                <li>
-                  <Link to="/how-to-play">Feature</Link>
-                </li>
-              </ul>
-              <div className="btns">
-                <button className="btn" onClick={() => navigate("/login")}>
-                  {/* <Link to="#">sign in</Link> */}
-                  Sign in
-                </button>
-                <button className="btn" onClick={() => navigate("/signup")}>
-                  {/* <Link to="#">sign up</Link> */}
-                  Sign up
-                </button>
-              </div>
-            </nav>
-          </header>
           <div className="content">
             <div className="main-text">
               <h1>
@@ -90,7 +62,7 @@ function LandingPage() {
             <h5> Beginner</h5>
             <div className="pra">
               <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="#">
+              <Link className="button" to="/login">
                 Play now!
               </Link>
             </div>
@@ -101,7 +73,7 @@ function LandingPage() {
             <h5> Beginner</h5>
             <div className="pra">
               <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="/dashboard">
+              <Link className="button" to="/login">
                 Play now!
               </Link>
             </div>
@@ -112,7 +84,7 @@ function LandingPage() {
             <h5> Beginner</h5>
             <div className="pra">
               <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="/dashboard">
+              <Link className="button" to="/login">
                 Play now!
               </Link>
             </div>
@@ -130,7 +102,7 @@ function LandingPage() {
             <h5> Play with friends</h5>
             <div className="pra">
               <p>Time for some Ayo Fun with a friend</p>
-              <Link className="button" to="/dashboard">
+              <Link className="button" to="/login">
                 Start now!
               </Link>
             </div>
@@ -141,39 +113,20 @@ function LandingPage() {
             <h5> Play Single mode</h5>
             <div className="pra">
               <p>Test your Ayo Mastery in Single Player mode</p>
-              <Link className="button" to="/dashboard">
+              <Link className="button" to="/login">
                 Start now!
               </Link>
             </div>
           </div>
         </div>
         <div className="get">
-          <Link className="button-two" to="#">
+          <Link className="button-two" to="/about">
             get more info
           </Link>
         </div>
       </div>
-
-      <footer>
-        <span>
-          <p>FAQ</p>
-          <p>Contact us</p>
-        </span>
-
-        <div className="social">
-          <Link to="#">
-            <img src="/image/fb.png" alt="facebook" />
-          </Link>
-          <Link to="#">
-            <img src="/image/insta.png" alt="instagram" />
-          </Link>
-          <Link to="#">
-            <img src="/image/google.png" alt="google" />
-          </Link>
-        </div>
-      </footer>
     </div>
   );
 }
 
-export default LandingPage;
+export default LandingPageWrapper;
