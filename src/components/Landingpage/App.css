@@ -44,10 +44,12 @@ header .logo img {
 }
 .navbar--wrapper,
 .navbar {
-  gap: 40px;
+  gap: clamp(10px, 2.8vw, 40px);
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  @media screen and (max-width: 540px) {
+    display: none;
+  }
 }
 
 .navbar li {
@@ -58,7 +60,7 @@ header .logo img {
   color: #3b3a3a;
   font-family: Roboto;
   text-decoration: none;
-  font-size: 24px;
+  font-size: clamp(14px, 1.7vw, 24px);
   font-style: normal;
   font-weight: 500;
   text-transform: capitalize;
@@ -76,12 +78,12 @@ nav ul li.active a {
 
 .btn {
   list-style: none;
-  background: #7a451d;
   border-radius: 35px;
-  padding: 16px 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 11px min(60px, 4vw);
+}
+.btn-primary {
+  background: #7a451d;
+  color: #fff;
 }
 
 .btn a {
@@ -144,7 +146,7 @@ nav ul li.btn.hover a {
   color: #f1f1f1;
   text-align: center;
   font-family: Roboto;
-  font-size: clamp(12px, 1.7vw, 24px);
+  font-size: clamp(14px, 1.7vw, 24px);
   line-height: 1.5;
 }
 
@@ -169,20 +171,19 @@ nav ul li.btn.hover a {
 }
 
 .hero-btn {
-  display: inline-flex;
+  /* display: inline-flex;
   justify-content: center;
   align-items: center;
   border-radius: 100px;
+  padding: 16px 45px; */
   border: 2px solid rgba(255, 255, 255, 0.5);
   opacity: 0.7;
   background: #422610;
   color: #fff;
-  font-family: Roboto;
   font-size: 32px;
   font-weight: 500;
   line-height: 100%;
   text-transform: capitalize;
-  padding: 16px 45px;
 }
 
 .about-content {
@@ -273,8 +274,20 @@ nav ul li.btn.hover a {
   flex-direction: column;
   gap: clamp(10px, 2.7vw, 40px);
 }
+.explore-text .btn {
+  max-width: 200px;
+  margin: 0 auto;
+}
 .explore-img img {
   width: 100%;
+}
+.explore-text h4 {
+  font-size: clamp(16px, 1.7vw, 24px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.explore-text p {
+  font-size: clamp(14px, 1.7vw, 20px);
 }
 .review {
   padding: min(90px, 6.25vw) 0;
@@ -307,6 +320,10 @@ nav ul li.btn.hover a {
   margin: 0 auto;
   margin-bottom: 50px;
 }
+.carousel img,
+.carousel .slide img {
+  width: unset;
+}
 .features {
   color: #fff;
   padding: 0 20px min(90px, 6.25vw);
@@ -328,7 +345,11 @@ nav ul li.btn.hover a {
 }
 .feature {
   display: flex;
-  align-items: flex-start;
+  gap: 16px;
+  align-items: center;
+  @media screen and (max-width: 540px) {
+    align-items: flex-start;
+  }
 }
 .feature img {
   width: max(28px, 2.8vw);
@@ -339,39 +360,24 @@ nav ul li.btn.hover a {
   line-height: 1;
   font-weight: 500;
 }
-.levels--game span,
-.levels--game div span {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.7rem;
-}
 
-.levels--game span p,
-.levels--game div span p {
-  color: #fff;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%; /* 18px */
-  text-transform: capitalize;
-  /* width: 100px; */
-}
 .contact {
   background-color: #f4eee9;
   padding: min(90px, 6.25vw) 20px;
+}
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 5vw, 75px);
 }
 .form-header {
   max-width: 632px;
   margin: 0 auto;
 }
-.form-header h3 {
+.form-header h2 {
   color: #2c190a;
   text-align: center;
-  font-size: 48px;
+  font-size: clamp(32px, 3.5vw, 48px);
   font-weight: 500;
 }
 .form-header p {
@@ -384,10 +390,9 @@ nav ul li.btn.hover a {
   display: flex;
   border-radius: 15px;
   background: #2c190a;
-  margin-top: 75px;
   flex-direction: column;
-  gap: 30px;
-  padding: 60px 50px;
+  gap: clamp(10px, 2vw, 30px);
+  padding: min(60px, 4vw) min(50px, 3.5vw);
 }
 .contact form input,
 .contact form textarea {
@@ -396,6 +401,17 @@ nav ul li.btn.hover a {
   border-radius: 8px;
   background: #f1f1f1;
   padding: 10px 35px;
+  @media screen and (max-width: 540px) {
+    padding: 8px 25px;
+  }
+}
+.contact form input[type="submit"] {
+  max-width: 200px;
+  margin: 0 auto;
+  background-color: #7a451d;
+  color: #fff;
+  border-radius: 32px;
+  border: transparent;
 }
 footer {
   position: relative;
@@ -411,7 +427,7 @@ footer {
 }
 .social {
   display: flex;
-  gap: 126px;
+  gap: clamp(10px, 2.5vw, 126px);
   justify-content: center;
   padding: 30px 0;
   border-top: 1px solid #3f240f;
@@ -421,12 +437,16 @@ footer {
 .legal a {
   color: #3f240f;
   text-decoration: none;
+  font-size: 16px;
 }
 .legal {
   display: flex;
-  gap: 32px;
+  gap: clamp(10px, 2vw, 26px);
   justify-content: center;
   padding: 30px 0;
+}
+.legal p {
+  font-size: 16px;
 }
 footer span {
   display: flex;

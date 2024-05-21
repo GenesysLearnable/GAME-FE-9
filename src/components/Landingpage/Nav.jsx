@@ -26,7 +26,7 @@ function Nav() {
           </ul>
         </nav>
         <div className="btns">
-          <li className="btn">
+          <li className="btn btn-primary">
             <Link to="/login">Play Now</Link>
           </li>
         </div>

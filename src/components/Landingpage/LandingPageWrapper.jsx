@@ -11,6 +11,8 @@ import {
   dashboard,
   reviewLeft,
   reviewRight,
+  shakur,
+  featuresStar,
 } from "../../constants";
 
 function LandingPageWrapper() {
@@ -29,7 +31,7 @@ function LandingPageWrapper() {
               calculation with a rich Nigerian heritage.
             </p>
           </div>
-          <div className="hero-btn" onClick={() => navigate("/dashboard")}>
+          <div className="hero-btn btn" onClick={() => navigate("/dashboard")}>
             Play Now
           </div>
         </div>
@@ -66,7 +68,7 @@ function LandingPageWrapper() {
               <img src={multiPlayer} alt="" />
             </div>
           </div>
-          <button>Play Now</button>
+          <div className="btn btn-primary">Play Now</div>
         </div>
       </section>
       <section className="explore">
@@ -103,7 +105,7 @@ function LandingPageWrapper() {
                   more.
                 </p>
               </div>
-              <button>Play Now</button>
+              <div className="btn btn-primary">Play Now</div>
             </div>
             <div className="explore-img">
               <img src={dashboard} alt="" />
@@ -118,9 +120,15 @@ function LandingPageWrapper() {
           </div>
 
           <div className="reviews-slider">
-            <Carousel showThumbs={false} showStatus={false}>
+            <Carousel
+              showThumbs={false}
+              showStatus={false}
+              showArrows={false}
+              autoPlay={true}
+              infiniteLoop={true}
+            >
               <div className="reviews">
-                <img src="" alt="" />
+                <img src={shakur} alt="" />
                 <p>shakur V.</p>
                 <p>
                   “I absolutely loved playing the traditional Nigerian games
@@ -161,7 +169,7 @@ function LandingPageWrapper() {
           <h2>FEATURES</h2>
           <div className="features-text">
             <div className="feature">
-              <img src={landingPageStar} alt="" />
+              <img src={featuresStar} alt="" />
               <div className="feature-description">
                 <h4>Gameplay</h4>
                 <p>
@@ -171,7 +179,7 @@ function LandingPageWrapper() {
               </div>
             </div>
             <div className="feature">
-              <img src={landingPageStar} alt="" />
+              <img src={featuresStar} alt="" />
               <div className="feature-description">
                 <h4>Accessibility</h4>
                 <p>
@@ -181,7 +189,7 @@ function LandingPageWrapper() {
               </div>
             </div>
             <div className="feature">
-              <img src={landingPageStar} alt="" />
+              <img src={featuresStar} alt="" />
               <div className="feature-description">
                 <h4>Game Features</h4>
                 <p>
@@ -191,7 +199,7 @@ function LandingPageWrapper() {
               </div>
             </div>
             <div className="feature">
-              <img src={landingPageStar} alt="" />
+              <img src={featuresStar} alt="" />
               <div className="feature-description">
                 <h4>Competition</h4>
                 <p>
@@ -204,9 +212,9 @@ function LandingPageWrapper() {
         </div>
       </section>
       <section className="contact">
-        <div className="max-width">
+        <div className="max-width contact-content">
           <div className="form-header">
-            <h3>Contact us today.</h3>
+            <h2>Contact us today.</h2>
             <p>
               Have a question or want to learn more about our web-based
               adaptations of traditional Nigerian games?{" "}
