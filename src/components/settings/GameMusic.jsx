@@ -6,17 +6,26 @@ function GameMusic() {
     const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
+  const handleEnded = () => {
+    audioRef.current.play();
+  };
+
   const togglePlayPause = () => {
     if (isPlaying) {
       audioRef.current.pause();
     } else {
       audioRef.current.play();
+      
     }
     setIsPlaying(!isPlaying);
   };
   return (
     <div className='Toggle'>
-         <audio ref={audioRef} src={Music} />
+      
+            <audio id='audio' ref={audioRef} src={Music}
+            onEnded={handleEnded}
+            autoPlay
+            />
         <Switch onClick={togglePlayPause}
         />
     </div>

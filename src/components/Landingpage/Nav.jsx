@@ -1,7 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../../constants";
+import { useAuth } from "../../contexts/AuthenticationContext";
 function Nav() {
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+
+  // function onRoute(route) {
+  //   if (!isAuthenticated) navigate("/login");
+
+  //   navigate(route);
+  //   console.log(route, isAuthenticated);
+  // }
 
   return (
     <header className="header">
@@ -15,19 +24,23 @@ function Nav() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to={`${isAuthenticated ? "/about" : "/login"}`}>About</Link>
             </li>
             <li>
-              <Link to="/level">New</Link>
+              <Link to={`${isAuthenticated ? "/level" : "/login"}`}>New</Link>
             </li>
             <li>
-              <Link to="/how-to-play">Feature</Link>
+              <Link to={`${isAuthenticated ? "/how-to-play" : "/login"}`}>
+                Feature
+              </Link>
             </li>
           </ul>
         </nav>
         <div className="btns">
           <li className="btn btn-primary">
-            <Link to="/login">Play Now</Link>
+            <Link to={`${isAuthenticated ? "/level" : "/login"}`}>
+              Play Now
+            </Link>
           </li>
         </div>
       </div>

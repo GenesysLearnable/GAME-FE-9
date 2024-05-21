@@ -55,10 +55,7 @@ function App() {
                 >
                   <Route path="about" element={<About />} />
                   <Route path="avatar" element={<ChangeAvatar />} />
-                  <Route
-                    path="/dashboard/:parameterName"
-                    element={<Dashboard />}
-                  />
+                  <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="level" element={<GameLevel />} />
                   <Route path="how-to-play" element={<HowToPlay />} />
                   <Route path="leaderboard" element={<LeaderBoard />} />

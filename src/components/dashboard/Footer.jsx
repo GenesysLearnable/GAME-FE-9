@@ -44,8 +44,7 @@ function Footer() {
             <img src="/dashboard/chat.svg" alt="chat" />
           </Modal.Open>
           <Modal.Window name={"chat"}>
-            {/* <Chatmodal /> */}
-            <p>chat</p>
+            <p style={{ padding: "40px" }}>coming soon</p>
           </Modal.Window>
         </Modal>
       </ImgContainer>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Nav from "./Nav";
@@ -14,8 +14,11 @@ import {
   shakur,
   featuresStar,
 } from "../../constants";
+import { useAuth } from "../../contexts/AuthenticationContext";
 
 function LandingPageWrapper() {
+  const { isAuthenticated } = useAuth();
+  //  <Link to={`${isAuthenticated ? "/level" : "/login"}`}>
   const navigate = useNavigate();
   return (
     <div className="landing--page">
@@ -31,7 +34,10 @@ function LandingPageWrapper() {
               calculation with a rich Nigerian heritage.
             </p>
           </div>
-          <div className="hero-btn btn" onClick={() => navigate("/dashboard")}>
+          <div
+            className="hero-btn btn"
+            onClick={() => navigate(`${isAuthenticated ? "/level" : "/login"}`)}
+          >
             Play Now
           </div>
         </div>
@@ -68,7 +74,12 @@ function LandingPageWrapper() {
               <img src={multiPlayer} alt="" />
             </div>
           </div>
-          <div className="btn btn-primary">Play Now</div>
+          <div
+            className="btn btn-primary"
+            onClick={() => navigate(`${isAuthenticated ? "/level" : "/login"}`)}
+          >
+            Play Now
+          </div>
         </div>
       </section>
       <section className="explore">
@@ -105,7 +116,14 @@ function LandingPageWrapper() {
                   more.
                 </p>
               </div>
-              <div className="btn btn-primary">Play Now</div>
+              <div
+                className="btn btn-primary"
+                onClick={() =>
+                  navigate(`${isAuthenticated ? "/level" : "/login"}`)
+                }
+              >
+                Play Now
+              </div>
             </div>
             <div className="explore-img">
               <img src={dashboard} alt="" />

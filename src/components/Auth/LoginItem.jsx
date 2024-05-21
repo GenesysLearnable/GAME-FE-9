@@ -38,7 +38,7 @@ function LoginItem() {
   return (
     <form className="signup ">
       <AuthNav title="Login" goto="Sign up" url="/signup" />
-      <h1 className="ayo-header">Ready to play? Sign up here</h1>
+      <h1 className="ayo-header">Ready to play? Sign in here</h1>
       <div className="page-auth">
         <AuthContainer>
           <input
