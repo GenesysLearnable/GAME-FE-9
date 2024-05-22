@@ -12,7 +12,7 @@ function MenuWrapper() {
         <div className="settingWrapper">
        
          <div className="setting-content"  >
-         
+    
           
           <Link to="/level">
           <p >Single player mode</p>
