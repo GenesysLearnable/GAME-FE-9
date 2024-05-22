@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-
+import i18n from "./components/i18n";
 import LandingPage from "./pages/LandingPage";
 import AppLayout from "./ui/AppLayout";
 import About from "./pages/About";

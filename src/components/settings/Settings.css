@@ -1,7 +1,7 @@
 .settingWrapper{
     max-width: 700px;
-max-height: 700px;
-border-radius: 834px;
+
+border-radius: 50%;
 background: linear-gradient(0deg, #814A1F 0%, #814A1F 100%), linear-gradient(0deg, #814A1F 0%, #814A1F 100%), #814A1F;
 box-shadow: 50.04px 33.36px 83.4px 0px #4A2A11 inset, -66.72px -58.38px 83.4px 0px #5D3619 inset;
 margin: auto;
@@ -10,14 +10,14 @@ margin: auto;
 .container .top{
     display: grid;
 grid-template-columns: 3fr 1fr 3fr;
-    
+    padding: 40px;
 }
 
 .container .top h4{
    
     /* padding-left: 600px; */
     float: left;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
 font-family: "Lilita One";
 font-size: 60px;
 font-weight: 400;
@@ -30,19 +30,9 @@ background-clip: text;
 .setting-content{
    display: flex;
    flex-direction: column;
-   gap: 20px;
+   gap: 45px;
    align-items: center;
    padding: 100px;
-   text-shadow: 0px 0.577px 0px #dfd5cd;
--webkit-text-stroke-width: 0.1610850691795349;
--webkit-text-stroke-color: #000;
-font-family: "Lilita One";
-font-size: 32px;
-font-weight: 400;
-background: linear-gradient(180deg, #c3c0c0 30.82%, #f49741 86.99%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
 }
 
 .setting-content select{
@@ -56,7 +46,7 @@ background-clip: text;
     font-size: 45px;
 }
 
-.setting-content a p{
+.setting-content p{
 width: 350px;
  height: 50px;
  text-align: center;
@@ -66,15 +56,15 @@ width: 350px;
     transition: .5s ease-in-out;
 }
 
-.setting-content a p:hover{
+.setting-content p:hover{
  
     border-radius: 50px;
     color: #feeddc;
-    background: transparent;
-    box-shadow: 2.04px 2px 3.4px 0px #f4efec inset; 
+    /* background: transparent; */
+    box-shadow: 2.04px 2px 3.4px 3px #723400 inset; 
 }
 
-.container a img{
+.container  img{
     width: 40px;
 }
 
@@ -85,45 +75,45 @@ width: 350px;
    
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 
     .settingWrapper {
-   max-width: 500px;
-     max-height: 500px;
+   max-width: 700vw;
+     max-height: 550px;
     }
 
-    .container .top h4{
+    .container .top h4 {
     margin: 0;
     margin-bottom: 25px;
-font-family: "Lilita One";
 font-size: 32px;
 font-weight: 400;
-background: linear-gradient(180deg, #FFF 30.82%, #FFB672 86.99%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+
        
     }
 
-    .container a img{
+    .container img{
         width: 30px;
     }
 
     .setting-content label{
-      font-size: 22px;
+      font-size: 15px;
+     
     }
+    
+    
     .setting-content {
-        text-align: center;
-      
-        font-size: 28px;
-        padding: 0;
-        margin: 0;
-      gap: 15px;
-      padding-top: 55px;
+    gap: 10px;
+    height: 390px;
+    max-width: 650px;
+  
     }
 
-    .setting-content a{
-        font-size: 22px;
+    .container .top {
+     
+        padding: 10px;
     }
-   
+    
+
 }
+    
+

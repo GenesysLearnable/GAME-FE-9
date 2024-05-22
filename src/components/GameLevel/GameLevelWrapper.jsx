@@ -4,7 +4,7 @@ import Coin from './img/Dollar Coin.png'
 import Add from './img/add.png'
 import Avatar1 from './img/Avatar (1).png'
 import Avatar2 from './img/Avatar (2).png'
-
+import { Link } from 'react-router-dom'
 
 
 const Levels = [
@@ -69,7 +69,7 @@ const closeModal = () => {
         <Link to="/menu">
           <img src={BkArrow} alt="" />
         </Link>
-        <h4>Choose your challenge</h4>
+  
         <button>
           <img src={Coin} alt="" />
           <span>2000</span>
@@ -87,7 +87,7 @@ const closeModal = () => {
                 <h4>{Info.Text1}</h4>
                 <span className='stake-fee'><img src={Coin} alt="" />{Info.Stake1}</span>
            
-           <h4>{Info.Level}</h4>
+           <h4>{Info.Text2}</h4>
            <span className='reward'><img src={Coin} alt="" />{Info.Stake2}</span>
                 </div>
                 <button onClick={openModal}>Play</button>
@@ -103,7 +103,7 @@ const closeModal = () => {
         </div>
         { isOpen &&  (
          <div className='pop-up-container'>
-         <h1>{selectedLevel.Level}</h1>
+         <h1>{selectedLevel.Level} Challenge</h1>
          <div className='pop-content'>
           <div className='player'>
             <img src={Avatar1} alt="" />
@@ -128,8 +128,9 @@ const closeModal = () => {
     </div>
    
     <span className='reward'></span>
-         <button onClick={closeModal} >Cancel</button>
-         <button >Continue</button>
+         <button onClick={closeModal} className='cancel'>Cancel</button>
+         <Link to="/dashboard"><button >Continue</button></Link>
+         
     </div>
         )}
        
