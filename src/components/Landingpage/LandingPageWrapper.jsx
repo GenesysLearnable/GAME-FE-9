@@ -1,7 +1,17 @@
 import React from "react";
 import "./App.css";
 import { Link, useNavigate } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Nav from "./Nav";
+import {
+  singlePlayer,
+  multiPlayer,
+  landingPageStar,
+  dashboard,
+  reviewLeft,
+  reviewRight,
+} from "../../constants";
 
 function LandingPageWrapper() {
   const navigate = useNavigate();
@@ -9,122 +19,213 @@ function LandingPageWrapper() {
     <div className="landing--page">
       <Nav />
       <section className="hero">
-        <div className="main-width">
-          <div className="content">
-            <div className="main-text">
-              <h1>
-                Ayo: The Classic Nigerian <br /> Strategy Game Awaits!
-              </h1>
+        <div className="max-width hero-content">
+          <div className="main-text">
+            <h1>
+              Ayo: The Classic Nigerian <br /> Strategy Game Awaits!
+            </h1>
+            <p>
+              Challenge your friends or our AI in Ayo, a game of wit <br /> and
+              calculation with a rich Nigerian heritage.
+            </p>
+          </div>
+          <div className="hero-btn" onClick={() => navigate("/dashboard")}>
+            Play Now
+          </div>
+        </div>
+      </section>
+      <section className="about">
+        <div className="max-width about-content">
+          <h2>About Us</h2>
+          <div className="mode">
+            <div className="mode-text">
+              <h3>Single-Player Mode</h3>
               <p>
-                Challenge your friends or our AI in Ayo, a game of wit <br />{" "}
-                and calculation with a rich Nigerian heritage.
+                Experience the thrill of our single-player mode, where you can
+                sharpen your skills against a challenging AI opponent. Test your
+                strategy and wit while enjoying the traditional gameplay of
+                Nigerian classics.
               </p>
-              <img src="/image/image 4 (1).png" alt="" />
-              <button className="btttn" onClick={() => navigate("/dashboard")}>
-                Play Now
-              </button>
+            </div>
+            <div className="mode-img">
+              <img src={singlePlayer} alt="" />
+            </div>
+          </div>
+          <div className="mode">
+            <div className="mode-text">
+              <h3>Multiplayer Mode</h3>
+              <p>
+                Elevate your online gaming experience with our interactive
+                multiplayer mode that allows you to challenge friends or test
+                your skills against AI opponents. Dive into the excitement of
+                competitive play and enjoy hours of fun with your favorite
+                Nigerian games.
+              </p>
+            </div>
+            <div className="mode-img">
+              <img src={multiPlayer} alt="" />
+            </div>
+          </div>
+          <button>Play Now</button>
+        </div>
+      </section>
+      <section className="explore">
+        <div className="max-width explore-wrapper">
+          <h2>Explore Ayo Game</h2>
+          <div className="explore-content">
+            <div className="explore-text">
+              <div>
+                <img src={landingPageStar} alt="" />
+                <h4>Exciting Gameplay</h4>
+                <p>
+                  Experience our first additional service that promises
+                  excitement and enjoyment. Engage in thrilling gameplay and
+                  unique feature that will make your time with us unforgettable.
+                </p>
+              </div>
+              <div>
+                <img src={landingPageStar} alt="" />
+                <h4>Interactive and Engaging</h4>
+                <p>
+                  Explore our second additional service that will elevate your
+                  experience and provide hours of entertainment. Engaging
+                  gameplay and interactive features await you in this exciting
+                  offering.
+                </p>
+              </div>
+              <div>
+                <img src={landingPageStar} alt="" />
+                <h4>Innovative Gaming Experience</h4>
+                <p>
+                  Discover our third additional service that brings a new level
+                  of fun and challenge. With innovative gameplay mechanics and
+                  engaging content, this service will keep you coming back for
+                  more.
+                </p>
+              </div>
+              <button>Play Now</button>
+            </div>
+            <div className="explore-img">
+              <img src={dashboard} alt="" />
             </div>
           </div>
         </div>
       </section>
-
-      <div className="levels--game">
-        <span>
-          <img src="/image/Ellipse-hand.svg" alt="sound" />
-          <p>Music, sound effects</p>
-        </span>
-
-        <div>
-          <span>
-            <img src="/image/Ellipse-16.svg" alt="multuplayer" />
-            <p>Online Multi player</p>
-          </span>
-
-          <span>
-            <img src="/image/Ellipse-color.svg" alt="" />
-            <p>Leaderboard and achievement</p>
-          </span>
-
-          <span>
-            <img src="/image/Ellipse-h.svg" alt="" />
-            <p>Ayo variations Oware, Owari</p>
-          </span>
-        </div>
-      </div>
-
-      <div className="service">
-        <div className="title">
-          <h2>Top Challengers</h2>
-        </div>
-        <div className="box">
-          <div className="card">
-            <img src="/image/image 18.png" alt="" />
-            <h5> Beginner</h5>
-            <div className="pra">
-              <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="/login">
-                Play now!
-              </Link>
-            </div>
+      <section className="review">
+        <div className="review-content">
+          <div className="review-img">
+            <img src={reviewLeft} alt="" />
           </div>
 
-          <div className="card">
-            <img src="/image/image 20.png" alt="" />
-            <h5> Beginner</h5>
-            <div className="pra">
-              <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="/login">
-                Play now!
-              </Link>
-            </div>
+          <div className="reviews-slider">
+            <Carousel showThumbs={false} showStatus={false}>
+              <div className="reviews">
+                <img src="" alt="" />
+                <p>shakur V.</p>
+                <p>
+                  “I absolutely loved playing the traditional Nigerian games
+                  online. The web-based adaptation was so well done, and it
+                  brought back cherished memories of playing these game with my
+                  friends and family. Great job!”
+                </p>
+              </div>
+              <div className="reviews">
+                <img src="" alt="" />
+                <p>Lisa V.</p>
+                <p>
+                  “I absolutely loved playing the traditional Nigerian games
+                  online. The web-based adaptation was so well done, and it
+                  brought back cherished memories of playing these game with my
+                  friends and family. Great job!”
+                </p>
+              </div>
+              <div className="reviews">
+                <img src="" alt="" />
+                <p>Ellie V.</p>
+                <p>
+                  “I absolutely loved playing the traditional Nigerian games
+                  online. The web-based adaptation was so well done, and it
+                  brought back cherished memories of playing these game with my
+                  friends and family. Great job!”
+                </p>
+              </div>
+            </Carousel>
           </div>
-
-          <div className="card">
-            <img src="/image/image 17.png" alt="" />
-            <h5> Beginner</h5>
-            <div className="pra">
-              <p>Ayo is a fun game where you capture your opponents seeds!</p>
-              <Link className="button" to="/login">
-                Play now!
-              </Link>
+          <div className="review-img">
+            <img src={reviewRight} alt="" />
+          </div>
+        </div>
+      </section>
+      <section className="features">
+        <div className="max-width">
+          <h2>FEATURES</h2>
+          <div className="features-text">
+            <div className="feature">
+              <img src={landingPageStar} alt="" />
+              <div className="feature-description">
+                <h4>Gameplay</h4>
+                <p>
+                  Yes, Our web-based game is design to be accessible and
+                  enjoyable for all players.
+                </p>
+              </div>
+            </div>
+            <div className="feature">
+              <img src={landingPageStar} alt="" />
+              <div className="feature-description">
+                <h4>Accessibility</h4>
+                <p>
+                  Join the fun and immerse yourself in the world of traditional
+                  Nigerian games.
+                </p>
+              </div>
+            </div>
+            <div className="feature">
+              <img src={landingPageStar} alt="" />
+              <div className="feature-description">
+                <h4>Game Features</h4>
+                <p>
+                  Our games offer a range of features and challenges to keep you
+                  engaged and excited.
+                </p>
+              </div>
+            </div>
+            <div className="feature">
+              <img src={landingPageStar} alt="" />
+              <div className="feature-description">
+                <h4>Competition</h4>
+                <p>
+                  Experience the thrill of competition and strategy with our
+                  multiplayer mode.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="service">
-        <div className="title">
-          <h2>MEET OUR FEATURES</h2>
-        </div>
-        <div className="box">
-          <div className="card">
-            <img src="/image/image 21.png" alt="" />
-            <h5> Play with friends</h5>
-            <div className="pra">
-              <p>Time for some Ayo Fun with a friend</p>
-              <Link className="button" to="/login">
-                Start now!
-              </Link>
-            </div>
+      </section>
+      <section className="contact">
+        <div className="max-width">
+          <div className="form-header">
+            <h3>Contact us today.</h3>
+            <p>
+              Have a question or want to learn more about our web-based
+              adaptations of traditional Nigerian games?{" "}
+            </p>
           </div>
-
-          <div className="card">
-            <img src="/image/image 23.png" alt="" />
-            <h5> Play Single mode</h5>
-            <div className="pra">
-              <p>Test your Ayo Mastery in Single Player mode</p>
-              <Link className="button" to="/login">
-                Start now!
-              </Link>
-            </div>
-          </div>
+          <form action="">
+            <input type="text" name="name" id="name" placeholder="Name" />
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Message"
+            ></textarea>
+            <input type="submit" value="Submit" />
+          </form>
         </div>
-        <div className="get">
-          <Link className="button-two" to="/about">
-            get more info
-          </Link>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }

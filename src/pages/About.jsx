@@ -1,5 +1,11 @@
+import AboutWrapper from "../components/About/AboutWrapper";
+
 function About() {
-  return <div>About</div>;
+  return(
+    <div>
+<AboutWrapper />
+    </div>
+  )
 }
 
-export default About;
+export default About

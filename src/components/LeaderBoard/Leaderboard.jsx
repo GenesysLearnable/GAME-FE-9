@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import { backButton, leaderboardStar } from "../../constants";
+import { data } from "./data";
 import LeaderboardItem from "./LeaderBoardItem";
 
 function Leaderboard() {

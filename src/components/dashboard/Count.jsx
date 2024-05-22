@@ -1,5 +1,5 @@
-function Count({ children }) {
-  return <p className="ugo-count">{children}</p>;
+function Count() {
+  return <p className="ugo-count"></p>;
 }
 
 export default Count;
