@@ -15,7 +15,7 @@ import WinModal from "../../ui/WinModal";
 import WinBadge from "./WinBadge";
 
 function MainGame() {
-  const [currentPlayer, setCurrentPlayer] = useState("");
+  const [currentPlayer, setCurrentPlayer] = useState("Player 1");
   const [winner, setWinner] = useState("");
   const [board, setBoard] = useState(initialBoard);
   const [scores, setScores] = useState(initialPlayerScores);
@@ -33,14 +33,20 @@ function MainGame() {
   }
 
   useEffect(() => {
-    const num = Math.random();
+    // const num = Math.random();
 
-    if (num >= 0 && num <= 0.5) setCurrentPlayer("Player 1");
+    // if (num >= 0 && num <= 0.5) setCurrentPlayer("Player 1");
 
-    if (num > 0.5) setCurrentPlayer("Player 2");
+    // if (num > 0.5) setCurrentPlayer("Player 2");
 
     initBoard();
   }, []);
+
+  useEffect(() => {
+    if (currentPlayer === "Player 2") {
+      setTimeout(() => makeAiMove(), 1000);
+    }
+  }, [currentPlayer]);
 
   useEffect(() => {
     init();
@@ -49,6 +55,25 @@ function MainGame() {
   function initBoard() {
     init();
     setBoard([...initialBoard]); // Ensure initial board state is set
+  }
+
+  function makeAiMove() {
+    const validMoves = board.filter((pot, index) => {
+      return (
+        currentPlayer === "Player 2" &&
+        index >= 6 &&
+        index < 12 &&
+        pot.seed.length > 0
+      );
+    });
+
+    if (validMoves.length === 0) {
+      return;
+    }
+
+    const randomMove =
+      validMoves[Math.floor(Math.random() * validMoves.length)];
+    onClickPit(randomMove, "Player 2");
   }
 
   function onClickPit(data, player) {
@@ -260,7 +285,7 @@ function MainGame() {
           <div className="separator"></div>
         </div>
         <div className="captured">
-          <div className="pit-summary">Score: {scores.player1}</div>
+          {/* <div className="pit-summary">Score: {scores.player1}</div> */}
         </div>
       </div>
 
