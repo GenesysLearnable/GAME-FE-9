@@ -1,0 +1,53 @@
+.avatarContainer .header {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding-block: 15px;
+    gap: 500px;
+    color: #FFFBF8;
+    font-family: "Lilita One";
+    font-size: 25px;
+}
+
+.avatarContainer .gridContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.gridContainer .gridItems {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
+    height: 70vh;
+    margin: auto;
+    padding: 40px 10px;
+    gap: 20px;
+    border-radius: 50px;
+}
+
+.gridContainer .leftArrow {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.nextButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: #3f240f;
+    border: none;
+    border-radius: 30px;
+    font-weight: 800;
+    color: #FFB672;
+    font-family: Roboto, sans-serif;
+    margin: auto;
+    margin-top: 50px;
+}
