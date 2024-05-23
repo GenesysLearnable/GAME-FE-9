@@ -54,6 +54,9 @@ export function holeCount(index) {
 
   return parentEl?.querySelectorAll(".ugo-seed").length;
 }
+
+export const initialPlayerScores = { player1: 0, player2: 0 };
+
 export const board = [
   {
     id: 1,

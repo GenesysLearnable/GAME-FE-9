@@ -5,16 +5,40 @@ import GameBoard from "./GameBoard";
 import GameSeed from "./GameSeed";
 import ScoreCard from "./ScoreCard";
 import Hole from "./Hole";
-import { init, board as initialBoard } from "./utils/gameFunctions";
+import {
+  init,
+  board as initialBoard,
+  initialPlayerScores,
+} from "./utils/gameFunctions";
 import toast from "react-hot-toast";
+import WinModal from "../../ui/WinModal";
+import WinBadge from "./WinBadge";
 
 function MainGame() {
-  const [currentPlayer, setCurrentPlayer] = useState("Player 1");
+  const [currentPlayer, setCurrentPlayer] = useState("");
   const [winner, setWinner] = useState("");
   const [board, setBoard] = useState(initialBoard);
-  const [scores, setScores] = useState({ player1: 0, player2: 0 });
+  const [scores, setScores] = useState(initialPlayerScores);
+
+  // console.log(board);
+
+  function resetGame() {
+    setScores(initialPlayerScores);
+    setCurrentPlayer("Player 1");
+    setWinner("");
+
+    initBoard();
+
+    window.location.reload();
+  }
 
   useEffect(() => {
+    const num = Math.random();
+
+    if (num >= 0 && num <= 0.5) setCurrentPlayer("Player 1");
+
+    if (num > 0.5) setCurrentPlayer("Player 2");
+
     initBoard();
   }, []);
 
@@ -37,11 +61,10 @@ function MainGame() {
     } else if (player === "Player 2" && (data.id < 7 || data.id > 12)) {
       alert("You can't play from this pot");
     } else {
-      distributeSeed(data);
+      distributeSeed(data, player);
     }
   }
-
-  function distributeSeed(data) {
+  function distributeSeed(data, currentPlayer) {
     const newBoard = [...board];
     const { seed, id } = data;
     const numSeeds = seed.length;
@@ -54,67 +77,117 @@ function MainGame() {
     let curPotId = id;
     let lastPotId = id;
 
-    function dropSeed(i, prevWasEmpty) {
+    function dropSeed(i) {
       if (i >= numSeeds) {
-        captureOrContinue(newBoard, lastPotId, prevWasEmpty);
+        captureOrContinue(newBoard, lastPotId, currentPlayer);
         setBoard(newBoard);
         return;
       }
 
       curPotId = (curPotId % totalPots) + 1;
       const nextPot = newBoard.find((pot) => pot.id === curPotId);
-      const wasEmpty = nextPot.seed.length === 0; // Check if the pot was empty before dropping the seed
       nextPot.seed.push({
         name: `pot_${nextPot.id}_seed_${nextPot.seed.length + 1}`,
         key: nextPot.name,
       });
       lastPotId = nextPot.id;
 
+      // Check and capture seeds if the pot now has exactly 4 seeds
+      if (nextPot.seed.length === 4) {
+        if (
+          (currentPlayer === "Player 1" && curPotId >= 1 && curPotId <= 6) ||
+          (currentPlayer === "Player 2" && curPotId >= 7 && curPotId <= 12)
+        ) {
+          captureSeeds(newBoard, nextPot.id, currentPlayer);
+        } else {
+          // Capture the seeds if it's the last pot and has exactly 4 seeds
+          if (i === numSeeds - 1) {
+            captureSeeds(newBoard, nextPot.id, currentPlayer);
+          } else {
+            // Capture the seeds for the owner of the pit
+            const owner =
+              curPotId >= 1 && curPotId <= 6 ? "Player 1" : "Player 2";
+            captureSeeds(newBoard, nextPot.id, owner);
+          }
+        }
+      }
+
       setBoard([...newBoard]);
 
       setTimeout(() => {
-        requestAnimationFrame(() => dropSeed(i + 1, wasEmpty));
-      }, 1000); // Adjust the delay time as needed (300ms in this example)
+        requestAnimationFrame(() => dropSeed(i + 1));
+      }, 1000); // Adjust the delay time as needed (1000ms in this example)
     }
 
-    dropSeed(0, newBoard[id - 1].seed.length === 0);
+    dropSeed(0);
+    init();
   }
 
-  function captureOrContinue(newBoard, lastPotId, wasEmpty) {
+  function captureOrContinue(newBoard, lastPotId, currentPlayer) {
     const lastPot = newBoard.find((pot) => pot.id === lastPotId);
-    const oppositePotId = 13 - lastPotId;
-    const oppositePot = newBoard.find((pot) => pot.id === oppositePotId);
 
-    if (
-      wasEmpty &&
-      lastPot.seed.length === 1 &&
-      ((currentPlayer === "Player 1" && lastPotId >= 1 && lastPotId <= 6) ||
-        (currentPlayer === "Player 2" && lastPotId >= 7 && lastPotId <= 12))
-    ) {
-      const capturedSeeds = lastPot.seed.length + oppositePot.seed.length;
-      lastPot.seed = [];
-      oppositePot.seed = [];
+    // Check if the board is no longer in its initial state
+    const isInitialState = board.every(
+      (pot) => pot.seed.length === initialBoard[pot.id - 1].seed.length
+    );
 
-      if (currentPlayer === "Player 1") {
-        setScores((prevScores) => ({
-          ...prevScores,
-          player1: prevScores.player1 + capturedSeeds,
-        }));
-      } else {
-        setScores((prevScores) => ({
-          ...prevScores,
-          player2: prevScores.player2 + capturedSeeds,
-        }));
+    if (!isInitialState) {
+      // Capture seeds if any pot on the current player's side or opponent's side has exactly four seeds
+      newBoard.forEach((pot) => {
+        if (pot.seed.length === 4) {
+          captureSeeds(newBoard, pot.id, currentPlayer);
+        }
+      });
+
+      // Capture seeds if the last seed makes the seed count in that pot exactly 4
+      if (lastPot.seed.length === 4) {
+        captureSeeds(newBoard, lastPotId, currentPlayer);
       }
+    }
 
-      switchPlayer();
-    } else if (lastPot.seed.length > 1) {
-      distributeSeed({ seed: lastPot.seed, id: lastPotId });
+    // Continue playing if the last pot had more than one seed
+    if (lastPot.seed.length > 1) {
+      distributeSeed({ seed: lastPot.seed, id: lastPotId }, currentPlayer);
     } else {
+      // Switch player if the last pot had only one seed
       switchPlayer();
     }
 
     checkWinCondition(newBoard);
+  }
+
+  function captureSeeds(newBoard, potId, currentPlayer) {
+    const pot = newBoard.find((p) => p.id === potId);
+    const capturedSeeds = pot.seed.length;
+    pot.seed = [];
+
+    if (currentPlayer === "Player 1" && potId >= 1 && potId <= 6) {
+      // Player 1 captures from their side
+      setScores((prevScores) => ({
+        ...prevScores,
+        player1: prevScores.player1 + capturedSeeds,
+      }));
+    } else if (currentPlayer === "Player 2" && potId >= 7 && potId <= 12) {
+      // Player 2 captures from their side
+      setScores((prevScores) => ({
+        ...prevScores,
+        player2: prevScores.player2 + capturedSeeds,
+      }));
+    } else if (potId >= 1 && potId <= 6 && currentPlayer === "Player 2") {
+      // Player 2 captures from Player 1's side
+      setScores((prevScores) => ({
+        ...prevScores,
+        player2: prevScores.player2 + capturedSeeds,
+      }));
+    } else if (potId >= 7 && potId <= 12 && currentPlayer === "Player 1") {
+      // Player 1 captures from Player 2's side
+      setScores((prevScores) => ({
+        ...prevScores,
+        player1: prevScores.player1 + capturedSeeds,
+      }));
+    }
+
+    setBoard([...newBoard]);
   }
 
   function switchPlayer() {
@@ -200,11 +273,14 @@ function MainGame() {
             {renderHoles(board.slice(0, 6), "Player 1")}
           </GameBoard>
 
-          <div className="hand sowing"></div>
-          <div className="hand capturing"></div>
+          {winner && (
+            <WinModal>
+              <WinBadge winner={winner} resetPlay={resetGame} />
+            </WinModal>
+          )}
 
           <GameBoard num={2}>
-            {renderHoles(board.slice(6), "Player 2")}
+            {renderHoles(board.slice(6).reverse(), "Player 2")}
           </GameBoard>
         </div>
         <ScoreCard>
@@ -231,9 +307,6 @@ function MainGame() {
             </span>
           </div>
           <div className="separator"></div>
-        </div>
-        <div className="captured">
-          <div className="pit-summary">Score: {scores.player2}</div>
         </div>
       </div>
     </>

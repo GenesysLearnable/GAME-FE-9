@@ -438,6 +438,46 @@
   color: #999;
 }
 
+.winb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--color-brand-50);
+}
+
+.winb button {
+  padding: 2rem;
+  border: none;
+
+  background-color: var(--color-brand-100);
+  color: var(--color-brand-800);
+  border-radius: 5px;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.quitBtn {
+  padding: 2rem 4rem;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+}
+
+.winb button:last-child,
+.quitBtn {
+  background-color: var(--color-brand-800);
+  color: var(--color-brand-50);
+}
+
+.winb span {
+  display: flex;
+  gap: 2rem;
+}
+
 @media (max-width: 89.2em) {
   .ugo-nav,
   .ugo-main-dashboard,
