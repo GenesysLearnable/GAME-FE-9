@@ -14,7 +14,7 @@ function Footer() {
         <div className="legal">
           <a href="#"> Privacy Policy</a>
           <p>Terms of Use</p>
-          <p> All rights reserved </p>
+          <p> &copy;2024 Ayo. All rights reserved </p>
         </div>
       </div>
     </footer>

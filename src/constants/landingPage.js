@@ -1,4 +1,4 @@
-export const logo = "/assets/logo.png";
+export const logo = "/src/assets/logo.svg";
 export const singlePlayer = "/src/assets/single-player.png";
 export const multiPlayer = "/src/assets/multi-player.png";
 export const landingPageStar = "/src/assets/landing-page-star.svg";

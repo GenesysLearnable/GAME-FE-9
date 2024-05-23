@@ -1,8 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { logo } from "../../constants";
 import { useAuth } from "../../contexts/AuthenticationContext";
 function Nav() {
-  const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
 
   // function onRoute(route) {
@@ -16,7 +15,7 @@ function Nav() {
     <header className="header">
       <div className="max-width header--wrapper">
         <div className="logo">
-          <h1>AYo</h1>{" "}
+          <img src={logo} alt="" />{" "}
         </div>
         <nav className="navbar--wrapper">
           <ul className="navbar">

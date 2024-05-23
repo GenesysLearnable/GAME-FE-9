@@ -29,7 +29,7 @@
 }
 .how-to-play__header h1 {
   font-family: "Lilita One", sans-serif;
-  font-size: clamp(48px, 10vw, 96px);
+  font-size: clamp(36px, 2.8vw, 78px);
   background: linear-gradient(180deg, #fff 30.82%, #ffb672 86.99%);
   background-clip: text;
   -webkit-background-clip: text;

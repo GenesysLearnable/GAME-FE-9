@@ -142,7 +142,7 @@ function LandingPageWrapper() {
               showThumbs={false}
               showStatus={false}
               showArrows={false}
-              autoPlay={true}
+              autoPlay={false}
               infiniteLoop={true}
             >
               <div className="reviews">
