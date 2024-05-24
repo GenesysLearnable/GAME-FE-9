@@ -1,74 +1,78 @@
-import React from 'react'
-import { useState } from 'react'
-import avatarImg1 from '../img/Avatar(1).png'
-import avatarImg2 from '../img/Avatar(2).png'
-import avatarImg3 from '../img/Avatar(3).png'
-import avatarImg4 from '../img/Avatar(4).png'
-import avatarImg5 from '../img/Avatar(5).png'
-import avatarImg6 from '../img/Avatar(6).png'
-import avatarImg7 from '../img/Avatar(7).png'
-import avatarImg8 from '../img/Avatar(5).png'
+
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import BkArrow from '../GameLevel/img/bk-arrow.png'
 
-function Avatar()  {
+function Avatar() {
+  const [avatars, setAvatars] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // const history = useHistory();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://ayo-ayo.onrender.com/api/v1/avatar-list');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        setAvatars(result.data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div className='load'>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className='load'>Error: {error.message}</div>;
+  }
 
   
+// console.log(avatars);
+  return (
+    <div className='container'>
 
-    return (
-        <>
-        <div className="container">
+<Link to="/Nickname">
+<img src={BkArrow} alt="" />
+</Link>
 
-    
-            <a href="Login"><img src={BkArrow} alt="" /></a>
 
-<h3>Select your Avatar</h3>
-<div className="img-container">
-    
-    <div>
-    <img src={avatarImg1} alt="" onClick={() => setIsLoggedIn(true)}/>
+     <h3>Select your Avatar</h3>
+      <div className='img-container'>
+        
+      {
+        avatars.map((data, id) => {
+            return (
+                
+                <div>
+ <img src={data.avatar_url} alt=""  key={id} onClick={() => setIsLoggedIn(true)}/>
+                </div>
+              
+            )
+           
+        })
+      }
+      </div>
+      {
+        isLoggedIn && <div className="btn">
+        <Link to="/Level">
+        <button >Next</button>
+        </Link>
+        </div>
+      }
+      
+     
     </div>
-    <div>
-    <img src={avatarImg2} alt="" onClick={() => setIsLoggedIn(true)}/>
-    </div>
-    <div>
-    <img src={avatarImg3} alt="" onClick={() => setIsLoggedIn(true)} />
-    </div>
-    <div>
-    <img src={avatarImg4} alt="" onClick={() => setIsLoggedIn(true)} />
-    </div>
-    <div>
-    <img src={avatarImg5} alt="" onClick={() => setIsLoggedIn(true)}/>
-    </div>
-    <div>
-    <img src={avatarImg6} alt="" onClick={() => setIsLoggedIn(true)}/>
-    </div>
-    <div>
-    <img src={avatarImg7} alt="" onClick={() => setIsLoggedIn(true)}/>
-    </div>
-    <div>
-    <img src={avatarImg8} alt="" onClick={() => setIsLoggedIn(true)}/>
-    </div>
-</div>
-{
-   isLoggedIn && <div className="btn">
-    <a href="Level"><button >Next</button></a>
+  );
+};
 
-</div>
-}
-
-
-</div>
-        </>
-       
-    )
-
-    
-    }
-  
-
-
-
-export default Avatar
+export default Avatar;

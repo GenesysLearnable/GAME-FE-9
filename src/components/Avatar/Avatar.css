@@ -1,15 +1,12 @@
 .img-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* background-color: #fff; */
-    max-width: 800px;
-    height: 70vh;
     margin: auto;
-    padding: 40px 10px;
+    padding: 40px;
     gap: 20px;
     border-radius: 50px;
-    overflow-x: auto;
-    margin-top: 20px;
+    /* overflow-x: auto; */
+ margin-top: 20px;
 }
 
 .img-container::-webkit-scrollbar{
@@ -17,14 +14,28 @@
 }
 
 
-
-.container a img{
-    width: 40px;
+.load{
+    font-family: "Lilita One";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    line-height: normal;
+    background: linear-gradient(180deg, #FFF 30.82%, #e69e5b 86.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+
+
+/* .container img{
+    width: 40px;
+} */
 
 .container h3{
     font-family: "Lilita One";
-    font-size: 40px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 400;
     text-align: center;
@@ -36,17 +47,17 @@
     padding-top: 15px;
 }
 
-.container button{
+.container a button{
     width: 220px;
     border-radius: 100px;
 background: #3F240F;
 padding: 10px;
 border-style: none;
-/* margin-bottom: 40px; */
+text-align: center;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
 font-family: "Lilita One";
 font-size: 26px;
-font-style: normal;
+text-decoration: none;
 font-weight: 400;
 color: #DACBC0;
  transition: .5s ease-in-out;
@@ -63,6 +74,7 @@ color: #DACBC0;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 
@@ -74,10 +86,27 @@ color: #DACBC0;
     .img-container img {
       width: 150px;
     }
+    .img-container {
+     grid-template-columns: repeat(2, 1fr);
+     padding: 5px;
+    }
 
 .container h3{
+padding-bottom: 20px;
     font-size: 30px;
 }
+
+.container .btn{
+  
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.container a button{
+width: 300px;
+}
+
 }
 
 
