@@ -1,7 +1,9 @@
-export const logo = "/assets/logo.png";
+export const logo = "/src/assets/logo.svg";
 export const singlePlayer = "/src/assets/single-player.png";
 export const multiPlayer = "/src/assets/multi-player.png";
 export const landingPageStar = "/src/assets/landing-page-star.svg";
+export const featuresStar = "/src/assets/landing-page-star-2.svg";
 export const dashboard = "/src/assets/dashboard.png";
 export const reviewLeft = "/src/assets/review-left.png";
 export const reviewRight = "/src/assets/review-right.png";
+export const shakur = "/src/assets/shakur.svg";

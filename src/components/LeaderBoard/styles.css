@@ -28,7 +28,7 @@
   width: 52%;
   min-width: 230px;
   height: min(150px, 10.5vw);
-  padding: 35px 82px;
+  /* padding: 35px 82px; */
   background: #ffb672;
   border: 5px solid #b67800;
   border-radius: 0px 0px 60px 60px;
