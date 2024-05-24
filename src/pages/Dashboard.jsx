@@ -7,8 +7,10 @@ function Dashboard() {
   return (
     <div>
       <TopNav />
-      <MainDashboard />
-{/* <Chatmod /> */}
+      <div className="ugo--dashboard-ugo">
+        <MainDashboard />
+      </div>
+      {/* <Chatmod /> */}
       <Footer />
     </div>
   );

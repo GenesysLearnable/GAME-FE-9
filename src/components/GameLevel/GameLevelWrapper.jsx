@@ -5,6 +5,8 @@ import Add from "./img/add.png";
 import Avatar1 from "./img/Avatar (1).png";
 import Avatar2 from "./img/Avatar (2).png";
 import { Link, useNavigate } from "react-router-dom";
+import { useAvatar } from "../../contexts/AvatarContext";
+import { useUserData } from "../../contexts/UserContext";
 
 const Levels = [
   {
@@ -45,6 +47,12 @@ const GameLevelWrapper = () => {
   const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
+  const { userData } = useAvatar();
+  const { user } = useUserData();
+
+  // console.log(user, userData);
+
+  const { avatar_url } = userData;
 
   const openModal = () => {
     setIsOpen(true);
@@ -98,15 +106,16 @@ const GameLevelWrapper = () => {
       {isOpen && (
         <div className="pop-up-container">
           <h1>{selectedLevel.Level}</h1>
+
           <div className="pop-content">
             <div className="player">
-              <img src={Avatar1} alt="" />
+              <img src={Avatar2} alt="" />
               <h3>Smart</h3>
             </div>
             <h1>VS</h1>
             <div className="player">
-              <img src={Avatar2} alt="" />
-              <h3>Lisa</h3>
+              <img src={Avatar1} alt="" />
+              <h3>AI</h3>
             </div>
           </div>
 
@@ -122,8 +131,12 @@ const GameLevelWrapper = () => {
           </div>
 
           <span className="reward"></span>
-          <button onClick={closeModal}>Cancel</button>
-          <button onClick={() => navigate("/dashboard")}>Continue</button>
+          <div
+            style={{ display: "flex", gap: "20px", justifyContent: "center" }}
+          >
+            <button onClick={closeModal}>Cancel</button>
+            <button onClick={() => navigate("/dashboard")}>Continue</button>
+          </div>
         </div>
       )}
     </div>

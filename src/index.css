@@ -33,6 +33,7 @@ body {
 
 .app {
   /* padding: 4rem; */
+  height: 100vh;
 }
 
 .spinner {
@@ -114,5 +115,19 @@ body {
 @media screen and (max-width: 768px) {
   .howto {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 38em) {
+  .quitt {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .quitt p {
+    font-size: 1.6rem;
+  }
+
+  .setting-content {
   }
 }

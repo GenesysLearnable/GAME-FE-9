@@ -263,8 +263,8 @@ function MainGame() {
   };
 
   return (
-    <>
-      <div className="player player-1">
+    <div className="main--game">
+      {/* <div className="player player-1">
         <div className="player-display">
           <div className="separator"></div>
           <div>
@@ -285,9 +285,9 @@ function MainGame() {
           <div className="separator"></div>
         </div>
         <div className="captured">
-          {/* <div className="pit-summary">Score: {scores.player1}</div> */}
+         
         </div>
-      </div>
+      </div> */}
 
       <div className="ugo-game">
         <ScoreCard>
@@ -313,7 +313,7 @@ function MainGame() {
         </ScoreCard>
       </div>
 
-      <div className="player player-2">
+      {/* <div className="player player-2">
         <div className="player-display">
           <div className="separator"></div>
           <div>
@@ -333,8 +333,8 @@ function MainGame() {
           </div>
           <div className="separator"></div>
         </div>
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 }
 

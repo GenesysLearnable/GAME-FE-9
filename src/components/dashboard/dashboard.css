@@ -61,7 +61,6 @@
   /* top: 9.6rem; */
   padding: 2rem 18rem;
   width: 100vw;
-  position: relative;
   height: 100vh;
 }
 
@@ -215,7 +214,7 @@
   padding: 1.6rem 5rem;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 0.4rem;
 
   border-radius: 8.9rem;
   background: var(--color-brand-500);
@@ -316,7 +315,7 @@
   border-radius: 4rem 4rem 0 0;
   padding: 0 18rem;
 
-  position: fixed;
+  /* position: absolute; */
   width: 100%;
   bottom: 0;
   left: 0;
@@ -490,11 +489,148 @@
   .ugo-main-dashboard {
     padding: 0 2rem;
   }
+
+  .quitt {
+  }
+}
+@media (max-width: 38em) {
+  .app {
+    height: 100vh;
+  }
+
+  .ugo--dashboard-ugo {
+    /* transform: rotate(90deg); */
+    /* max-width: 60rem; */
+    /* display: flex;
+    width: 100%;
+    */
+    /* height: 60rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ugo-main-dashboard {
+    /* max-width: 95rem; */
+    transform: rotate(90deg);
+
+    width: unset;
+    height: unset;
+    position: relative;
+    /* gap: unset; */
+
+    top: 16rem;
+  }
+
+  /* .ugo-main-game-v2 {
+    position: relative;
+    width: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  .ugo-nav {
+    padding: 0 2rem;
+    height: 6rem;
+  }
+
+  .ugo-nav img {
+    width: 4rem;
+  }
+
+  .ugo-coin span {
+    font-size: 2rem;
+  }
+
+  .ugo-coin img {
+    width: 2.8rem;
+  }
+
+  .ugo-playername {
+    font-size: 1.6rem;
+  }
+
+  .player {
+    position: absolute;
+    top: 4rem;
+  }
+
+  .ugo-timer {
+    font-size: 1.4rem;
+  }
+
+  .ugo-timer-profile {
+    margin: 0;
+  }
+
+  .ugo-footer {
+    position: fixed;
+    height: 8rem;
+    padding: 0 2rem;
+  }
+
+  .ugo-game {
+    height: 24rem;
+    width: 45rem;
+    /* position: absolute; */
+  }
+
+  .ugo-score-card {
+    width: 102.022px;
+    height: 41.325px;
+  }
+
+  .ugo-score-card p {
+    font-size: 1.6rem;
+  }
+
+  .ugo-count {
+    font-size: 1.2rem;
+
+    width: 3.4rem;
+    top: -3.45rem;
+    left: calc(50% - 2rem);
+  }
+
+  .side-2 .ugo-count {
+    top: unset;
+    bottom: -3.4rem;
+  }
+  .ugo-board {
+    padding: 1rem;
+  }
+
+  .ugo-hole {
+    height: 3.4rem;
+    width: 3.4rem;
+  }
+
+  .main--game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ugo-seed {
+    width: 1rem;
+    height: 1rem;
+
+    /* parentWidth/2 - width/2 */
+    left: calc(1.5rem - 0.5rem);
+    /* parentHeight/2 - height/2 */
+    top: calc(1.5rem - 0.5rem);
+  }
+
+  .ugo-img-div {
+    height: 6rem;
+    width: 6rem;
+  }
 }
 /* 
 
-@media (max-width) {
-}
 @media (max-width) {
 }
 @media (max-width) {
