@@ -16,7 +16,7 @@
 }
 
 .howto {
-  background: url(../dashboard/mainbg.png), var(--color-brand-600);
+  /* background: url(../dashboard/mainbg.png), var(--color-brand-600); */
   background-size: cover;
   /* min-height: 100vh;
   padding: 4rem; */
@@ -33,7 +33,7 @@ body {
 
 .app {
   padding: 4rem;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .spinner {
