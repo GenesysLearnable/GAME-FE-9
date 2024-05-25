@@ -25,7 +25,7 @@ function SignupItem() {
   return (
     <form className="signup " onSubmit={handleSubmit(onSubmit)}>
       {" "}
-      <AuthNav title="Register" goto="Login" url="/login" />
+      <AuthNav title="Sign Up" goto="Login" url="/login" />
       <h1 className="ayo-header">New to Ayo? Sign up here</h1>
       <div className="page-auth">
         <AuthContainer>

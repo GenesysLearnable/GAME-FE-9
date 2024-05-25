@@ -20,7 +20,7 @@
 .back-button {
   width: min(90px, 6.25vw);
   min-width: 45px;
-  height: au;
+  height: auto;
 }
 .back-button img {
   object-fit: contain;
