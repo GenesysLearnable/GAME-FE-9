@@ -18,8 +18,8 @@
 .howto {
   background: url(../dashboard/mainbg.png), var(--color-brand-600);
   background-size: cover;
-  min-height: 100vh;
-  padding: 4rem;
+  /* min-height: 100vh;
+  padding: 4rem; */
 }
 
 html {
@@ -32,7 +32,7 @@ body {
 }
 
 .app {
-  /* padding: 4rem; */
+  padding: 4rem;
   height: 100vh;
 }
 
@@ -113,7 +113,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .howto {
+  .app {
     padding: 1.5rem;
   }
 }
