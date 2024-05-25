@@ -35,7 +35,7 @@ function SettingWrapper() {
         <Link to="/menu">
           <img src={BkArrow} alt="" />
         </Link>
-        <h4>Settings</h4>
+        {/* <h4>Settings</h4> */}
       </div>
 
       <div className="setting-parent">
@@ -67,11 +67,15 @@ function SettingWrapper() {
               Music <Switch onClick={handleMusic} toggle={isMusic} />
             </label>
 
-            <Link to="/avatar">Channge Avatar</Link>
-            <Link to="/settings">Profile Settings</Link>
+            <Link to="/avatar" className="settings-link">
+              Change Avatar
+            </Link>
+            <Link to="/settings" className="settings-link">
+              Profile Settings
+            </Link>
             <Modal>
               <Modal.Open>
-                <Link>Logout</Link>
+                <Link className="settings-link">Logout</Link>
               </Modal.Open>
               <Modal.Window>
                 <LogoutModal onClick={handleLogout} />

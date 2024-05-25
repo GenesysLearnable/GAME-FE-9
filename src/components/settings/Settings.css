@@ -7,13 +7,14 @@
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
+  /* padding: 4rem; */
 }
 
 .settingWrapper {
   width: 700px;
   height: 700px;
-  border-radius: 834px;
+  border-radius: 120%;
   background: linear-gradient(0deg, #814a1f 0%, #814a1f 100%),
     linear-gradient(0deg, #814a1f 0%, #814a1f 100%), #814a1f;
   box-shadow: 50.04px 33.36px 83.4px 0px #4a2a11 inset,
@@ -125,6 +126,9 @@
   align-items: center;
   gap: 80px;
 }
+.settings-link {
+  padding: unset !important;
+}
 
 @media (max-width: 600px) {
   .settingWrapper {
@@ -158,7 +162,7 @@
     padding: 0;
     margin: 0;
     gap: 15px;
-    padding-top: 55px;
+    padding-top: 40px;
   }
 
   .setting-content a {

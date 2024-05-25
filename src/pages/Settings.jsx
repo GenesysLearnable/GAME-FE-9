@@ -1,12 +1,7 @@
-import SettingWrapper from '../components/settings/SettingWrapper'
-
+import SettingWrapper from "../components/settings/SettingWrapper";
 
 function Settings() {
-  return(
-    <div>
-      <SettingWrapper />
-    </div>
-  )
+  return <SettingWrapper />;
 }
 
 export default Settings;
