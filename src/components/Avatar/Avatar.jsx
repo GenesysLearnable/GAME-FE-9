@@ -3,16 +3,20 @@ import { useState } from "react";
 
 import BkArrow from "../GameLevel/img/bk-arrow.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useAvatars } from "../../services/useAvatars";
+import { useAvatars } from "../../hooks/useAvatars";
 import Spinner from "../../ui/Spinner";
 import Button from "../Auth/Button";
 import { useAvatar } from "../../contexts/AvatarContext";
+import { useSelectAvatar } from "../../hooks/useSeectAvatar";
 
 function Avatar() {
   const [selectedImageId, setSelectedImageId] = useState(null);
   const [data, setData] = useState({});
   const { avatars, isLoading } = useAvatars();
-  const { setUserData } = useAvatar();
+  const { userData, setUserData } = useAvatar();
+  const { isLoading: isSelecting, selectAvatar } = useSelectAvatar();
+
+  const { _id: userId } = userData;
 
   const navigate = useNavigate();
 
@@ -41,7 +45,7 @@ function Avatar() {
     <>
       <div className="container">
         <nav className="avatar-nav">
-          <Link to="Login">
+          <Link to="/settings">
             <img src={BkArrow} alt="" />
           </Link>
 
@@ -69,11 +73,11 @@ function Avatar() {
         <div className="div-btn">
           <Button
             onClick={() => {
-              setUserData(data);
-              navigate("/menu");
+              selectAvatar(selectedImageId, userId);
+              console.log(userId, selectedImageId);
             }}
           >
-            <span>Next</span>
+            {isSelecting ? <Spinner /> : <span>Next</span>}
           </Button>
         </div>
       )}

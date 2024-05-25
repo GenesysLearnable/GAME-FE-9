@@ -414,6 +414,14 @@
   list-style: none;
 }
 
+.player-to-play {
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-brand-100);
+  text-align: center;
+}
+
 .ugo-button {
   width: 100%;
   text-align: left;
@@ -627,6 +635,32 @@
   .ugo-img-div {
     height: 6rem;
     width: 6rem;
+  }
+
+  .ugo-modal {
+  }
+
+  .winb {
+    padding: 2rem;
+    transform: rotate(90deg);
+  }
+
+  .winb p {
+    text-align: center;
+  }
+
+  .winb button {
+    padding: 1.2rem;
+    white-space: nowrap;
+  }
+
+  .player-name {
+    font-size: 1.2rem;
+  }
+
+  .turn-badge {
+    margin: unset;
+    white-space: nowrap;
   }
 }
 /* 

@@ -14,13 +14,12 @@ import toast from "react-hot-toast";
 import WinModal from "../../ui/WinModal";
 import WinBadge from "./WinBadge";
 
-function MainGame() {
+function MainGame({ user }) {
   const [currentPlayer, setCurrentPlayer] = useState("Player 1");
   const [winner, setWinner] = useState("");
   const [board, setBoard] = useState(initialBoard);
   const [scores, setScores] = useState(initialPlayerScores);
 
-  // console.log(board);
 
   function resetGame() {
     setScores(initialPlayerScores);
@@ -264,12 +263,19 @@ function MainGame() {
 
   return (
     <div className="main--game">
-      {/* <div className="player player-1">
+      {/* <p className="player-to-play">
+        {currentPlayer === "Player 1" ? " Player 1 your turn" : "AI's turn"}
+      </p> */}
+      <div className="player player-1">
         <div className="player-display">
           <div className="separator"></div>
           <div>
             <span className="player-name">
-              {currentPlayer === "Player 1" ? currentPlayer : ""}
+              {currentPlayer === "Player 1"
+                ? user
+                  ? user.username
+                  : currentPlayer
+                : ""}
             </span>
             <span className="turn-badge">
               {currentPlayer === "Player 1" && "Your turn"}
@@ -284,10 +290,8 @@ function MainGame() {
           </div>
           <div className="separator"></div>
         </div>
-        <div className="captured">
-         
-        </div>
-      </div> */}
+        <div className="captured"></div>
+      </div>
 
       <div className="ugo-game">
         <ScoreCard>
@@ -295,17 +299,17 @@ function MainGame() {
         </ScoreCard>
         <div className="ugo--board">
           <GameBoard num={1}>
-            {renderHoles(board.slice(0, 6), "Player 1")}
+            {renderHoles(board.slice(0, 6).reverse(), "Player 1")}
           </GameBoard>
 
           {winner && (
             <WinModal>
-              <WinBadge winner={winner} resetPlay={resetGame} />
+              <WinBadge winner={winner} user={user} resetPlay={resetGame} />
             </WinModal>
           )}
 
           <GameBoard num={2}>
-            {renderHoles(board.slice(6).reverse(), "Player 2")}
+            {renderHoles(board.slice(6), "Player 2")}
           </GameBoard>
         </div>
         <ScoreCard>
@@ -313,12 +317,12 @@ function MainGame() {
         </ScoreCard>
       </div>
 
-      {/* <div className="player player-2">
+      <div className="player player-2">
         <div className="player-display">
           <div className="separator"></div>
           <div>
             <span className="player-name">
-              {currentPlayer === "Player 2" ? currentPlayer : ""}
+              {currentPlayer === "Player 2" ? "AI" : ""}
             </span>
             <span className="turn-badge">
               {currentPlayer === "Player 2" && "Your turn!"}
@@ -333,7 +337,7 @@ function MainGame() {
           </div>
           <div className="separator"></div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

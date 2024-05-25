@@ -42,6 +42,7 @@ function App() {
                   <Route path="signup" element={<Signup />} />
                   <Route path="nickname" element={<Nickname />} />
                   <Route path="passwordreset" element={<PasswordReset />} />
+                  <Route path="about" element={<About />} />
 
                   <Route
                     path="/passwordreset/verify"
@@ -55,7 +56,6 @@ function App() {
                       </ProtectedRoutes>
                     }
                   >
-                    <Route path="about" element={<About />} />
                     <Route path="avatar" element={<ChangeAvatar />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="level" element={<GameLevel />} />

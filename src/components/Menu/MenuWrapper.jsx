@@ -4,10 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 function MenuWrapper() {
   const navigate = useNavigate();
   return (
-    <div className="container">
-      <Link onClick={() => navigate(-1)}>
-        <img src="/dashboard/bk-arrow.png" alt="" />
-      </Link>{" "}
+    <div className="">
       <div className="settingWrapper">
         <div className="setting-content">
           <h4>Menu</h4>

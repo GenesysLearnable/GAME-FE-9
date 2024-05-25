@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { createUser as createUserApi } from "./createUser";
+import { createUser as createUserApi } from "../services/createUser";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 export function useCreateUser() {

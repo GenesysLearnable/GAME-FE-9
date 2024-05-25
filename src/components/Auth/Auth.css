@@ -116,7 +116,7 @@
   }
 }
 
-input::placeholder {
+.auth-cont input::placeholder {
   color: var(--color-brand-50, #dacbc0);
   /* font-family: "Lilita One"; */
   font-size: 2.4rem;

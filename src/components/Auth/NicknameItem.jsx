@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useUserData } from "../../contexts/UserContext";
-import { useCreateUser } from "../../services/useCreateUser";
+import { useCreateUser } from "../../hooks/useCreateUser";
 
 import AuthContainer from "./AuthContainer";
 import AuthNav from "./AuthNav";

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Modal from "../../ui/Modal";
 
-function WinBadge({ winner, resetPlay }) {
+function WinBadge({ winner, resetPlay, user }) {
   const navigate = useNavigate();
   function canelPlay() {
     navigate("/menu");
@@ -13,7 +13,9 @@ function WinBadge({ winner, resetPlay }) {
     <div className="winb">
       <h1 className="winb-h">Winner</h1>
       <p>
-        {winner === "Draw" ? "The game is a tie" : `${winner} wins the game`}
+        {winner === "Draw"
+          ? "The game is a tie"
+          : `${winner === "Player 1" ? user?.username : "AI"} wins the game`}
       </p>
 
       <span>

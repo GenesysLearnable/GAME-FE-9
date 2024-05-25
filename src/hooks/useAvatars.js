@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAvatars } from "./fetchAvatars";
+import { getAvatars } from "../services/fetchAvatars";
 
 export function useAvatars() {
   const { data, isPending } = useQuery({
