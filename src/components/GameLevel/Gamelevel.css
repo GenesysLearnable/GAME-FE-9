@@ -1,120 +1,114 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background: url(./img/background-png.png), #6a3b16;
-  background-size: cover;
-  object-fit: contain;
+body{
+  background: url(./img/background-png.png), #6A3B16;
+ background-size: cover;
+object-fit: contain;
 }
 
-.levelWrapper {
-  /* padding: 20px; */
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+.levelWrapper{
+  padding: 20px;
 }
 
-.top-container {
+.top-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+  
 }
 
-.top-container h1 {
+.levelWrapper h4{
   font-size: 40px;
   font-weight: 400;
-  color: #dacbc0;
+  color: #DACBC0;
   font-family: "Lilita One";
+  text-align: center;
 }
 
-.top-container img {
+.top-container img{
   width: 30px;
   background: transparent;
 }
 
-.top-container button {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.top-container button{
+display: flex;
+justify-content: space-evenly;
+align-items: center;
   width: 150px;
   height: 45px;
   font-size: 15px;
   padding: 10px;
-  background: #814a1f;
+  background: #814A1F;
   border-radius: 50px;
   border-style: none;
-  color: #dacbc0;
-  transition: 0.5s ease-in-out;
-  box-shadow: 10.93px 10.019px 27.325px 0px #4a2a11 inset,
-    -20.038px -10.93px 27.325px 0px #5d3619 inset;
+  color: #DACBC0;
+  transition: .7s ease-in-out;
+  box-shadow: 10.93px 10.019px 27.325px 0px #4A2A11 inset, -20.038px -10.93px 27.325px 0px #5D3619 inset;
 }
 
-.top-container button img {
-  width: 30px;
+.top-container button img{
+ width: 30px;
 }
 
-.top-container button span {
+.top-container button span{
   display: flex;
-  align-items: center;
+ align-items: center;
 }
 
-.top-container button:hover {
+
+.top-container button:hover{
   box-shadow: 10.93px 10.019px 27.325px 0px #522f14 inset;
   cursor: pointer;
 }
 
-.level-box {
-  width: 100%;
+.level-box{
   max-width: 350px;
-  /* height: min(588px, 55vh); */
+  height: 75vh;
   border-radius: 90px;
-  text-align: center;
-  padding: 40px;
-  /* margin-top: 100px; */
-  background: linear-gradient(0deg, #814a1f 0%, #814a1f 100%),
-    linear-gradient(0deg, #814a1f 0%, #814a1f 100%), #814a1f;
-  box-shadow: 10.93px 10.019px 27.325px 0px #4a2a11 inset,
-    -20.038px -10.93px 27.325px 0px #5d3619 inset;
-}
-.level-box:hover {
-  transform: scale(1.1);
-}
-.level-box h3 {
-  text-shadow: 0px 2px 0px #e8be9d;
-  -webkit-text-stroke-width: 0.1610850691795349;
-  -webkit-text-stroke-color: #000;
-  font-family: "Lilita One";
-  font-size: 44px;
-  font-style: normal;
-  font-weight: 400;
-  /* color: #ede6e2; */
-  line-height: normal;
-  background: linear-gradient(180deg, #fff 30.82%, #e69e5b 86.99%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+background: linear-gradient(0deg, #814A1F 0%, #814A1F 100%), linear-gradient(0deg, #814A1F 0%, #814A1F 100%), #814A1F;
+box-shadow: 10.93px 10.019px 27.325px 0px #4A2A11 inset, -20.038px -10.93px 27.325px 0px #5D3619 inset;
+text-align: center;
+padding: 40px;
+margin-top: 100px;
+padding-bottom: 150px;
+margin-left: 10px;
+
 }
 
-.level-box .box-content {
+.level-box h3{
+  font-family: "Lilita One";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(180deg, #FFF 30.82%, #f89940 86.99%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.level-box .box-content{
+  
   display: flex;
   max-width: 270px;
-  /* height: 45vh; */
+  height: 45vh;
   /* transform: rotate(90deg); */
   padding: 40px 0px 32px 0px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 20px;
   border-radius: 40px;
-  background: #6a3b16;
-  margin: 30px 0;
+background: #6A3B16;
+margin-top: 30px;
+
 }
 
-.level-box .box-content h4 {
+.level-box .box-content h4{
   /* text-shadow: 0px 2.577px 0px #e8be9d; */
   -webkit-text-stroke-width: 0.1610850691795349;
   -webkit-text-stroke-color: #000;
@@ -124,234 +118,94 @@ body {
   font-weight: 400;
   /* color: #ede6e2; */
   line-height: normal;
-  background: linear-gradient(180deg, #fff 30.82%, #e69e5b 86.99%);
+  background: linear-gradient(180deg, #FFF 30.82%, #e69e5b 86.99%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.level-box .stake-fee {
-  color: #dacbc0;
+
+.level-box .stake-fee{
+  color: #DACBC0;
   display: flex;
 }
 
-.level-box .stake-fee img {
+.level-box .stake-fee img{
   width: 25px;
   height: 25px;
   margin: 2px;
 }
 
-.level-box .reward {
-  color: #dacbc0;
+.level-box .reward{
+  color: #DACBC0;
   display: flex;
 }
 
-.level-box .reward img {
+.level-box .reward img{
   width: 25px;
   height: 25px;
   margin: 2px;
 }
 
-.level-box button {
+.level-box button{
   width: 220px;
   border-radius: 100px;
-  background: #3f240f;
-  padding: 10px;
-  border-style: none;
-  /* margin-top: 10px;
-  margin-bottom: 40px; */
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-  font-family: "Lilita One";
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  color: #dacbc0;
-  transition: 0.5s ease-in-out;
+background: #3F240F;
+padding: 10px;
+border-style: none;
+margin-top: 10px;
+margin-bottom: 40px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+font-family: "Lilita One";
+font-size: 26px;
+font-style: normal;
+font-weight: 400;
+color: #DACBC0;
+transition: .5s ease-in-out;
 }
 
-.level-box button:hover {
-  transform: scale(0.9);
+
+.level-box button:hover{
+  transform: scale(.9);
   box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
   cursor: pointer;
 }
 
-.level-content {
+.level-content{
   display: flex;
   justify-content: space-evenly;
   margin: auto;
-  flex-wrap: wrap;
-  gap: clamp(20px, 5vw, 70px);
-}
-
-@media (max-width: 500px) {
-  /* .level-box {
-    max-width: 400px;
-    height: 65vh;
-    margin-top: 20px;
-  } */
-
-  .levelWrapper h4 {
-    font-size: 40px;
-    font-weight: 400;
-    color: #dacbc0;
-    font-family: "Lilita One";
-    text-align: center;
-  }
-  .level-box h3 {
-    font-size: 33px;
-  }
-
-  /* .level-box .box-content {
-    height: 35vh;
-  } */
-
-  /* .level-box button {
-    width: 150px;
-  }
-  .app {
-    padding: 1.5rem;
-  } */
-  .top-container button {
-    width: 90px;
-    height: 45px;
-    font-size: 15px;
-    padding: 10px;
-    background: #814a1f;
-    border-radius: 50px;
-    border-style: none;
-    color: #dacbc0;
-    transition: 0.5s ease-in-out;
-    box-shadow: 10.93px 10.019px 27.325px 0px #4a2a11 inset,
-      -20.038px -10.93px 27.325px 0px #5d3619 inset;
-  }
-
-  .top-container button img {
-    width: 30px;
-  }
-
-  .top-container button span {
-    display: flex;
-    align-items: center;
-  }
-
-  .top-container button:hover {
-    box-shadow: 10.93px 10.019px 27.325px 0px #522f14 inset;
-    cursor: pointer;
-  }
-
-  .level-box {
-    max-width: 350px;
-    /* height: 75vh; */
-    /* padding-bottom: 150px; */
-    border-radius: 90px;
-    transition: 0.5s ease-in-out;
-    background: linear-gradient(0deg, #814a1f 0%, #814a1f 100%),
-      linear-gradient(0deg, #814a1f 0%, #814a1f 100%), #814a1f;
-    box-shadow: 10.93px 10.019px 27.325px 0px #4a2a11 inset,
-      -20.038px -10.93px 27.325px 0px #5d3619 inset;
-    text-align: center;
-    padding: 40px;
-    margin-top: 100px;
-    /* margin-left: 10px; */
-  }
-
-  .level-box h3 {
-    text-shadow: 0px 2px 0px #e8be9d;
-    -webkit-text-stroke-width: 0.1610850691795349;
-    -webkit-text-stroke-color: #000;
-    font-family: "Lilita One";
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 400;
-    /* color: #ede6e2; */
-    line-height: normal;
-    background: linear-gradient(180deg, #fff 30.82%, #e69e5b 86.99%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .level-box .box-content {
-    display: flex;
-    max-width: 270px;
-    /* height: 45vh; */
-    /* transform: rotate(90deg); */
-    padding: 40px 0px 32px 0px;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    border-radius: 40px;
-    background: #6a3b16;
-    margin-top: 30px;
-  }
-}
-
-.top-container button img {
-  width: 18px;
-}
-
-/* .top-container img {
-  width: 20px;
-} */
-
-.level-box button {
-  width: 220px;
-  border-radius: 100px;
-  background: #3f240f;
-  padding: 10px;
-  border-style: none;
-  /* margin-top: 10px;
-  margin-bottom: 40px; */
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-  font-family: "Lilita One";
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  color: #dacbc0;
-  transition: 0.5s ease-in-out;
-}
-
-.level-box button:hover {
-  transform: scale(0.9);
-  box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
-  cursor: pointer;
-}
-
-.level-content {
-  display: flex;
-  justify-content: space-evenly;
-  margin: auto;
-  margin-top: 40px;
   /* flex-wrap: wrap; */
-  /* overflow-x: auto; */
+  overflow-x: auto;
+ 
 }
 
-.level-content::-webkit-scrollbar {
+.level-content::-webkit-scrollbar{
   width: 0;
 }
 
+
+
+
+
 /* ============= POP-UP =============== */
 
-.pop-up-container {
+.pop-up-container{
   position: fixed;
   max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-
+  height: 600px;
   left: 0;
   right: 0;
-  top: 80px;
+  top: 0;
   margin: auto;
   background-color: #4b260a;
   margin-top: 70px;
   border-radius: 50px;
-  text-align: center;
+text-align: center;
+
 }
 
-.pop-up-container h1 {
+.pop-up-container h1{
   text-align: center;
   text-shadow: 0px 2px 0px #e8be9d;
   -webkit-text-stroke-width: 0.1610850691795349;
@@ -360,154 +214,181 @@ body {
   font-size: 50px;
   font-style: normal;
   font-weight: 400;
-  padding-top: 50px;
-  background: linear-gradient(180deg, #fff 30.82%, #e69e5b 86.99%);
+ padding-top: 50px;
+  background: linear-gradient(180deg, #FFF 30.82%, #e69e5b 86.99%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.pop-content {
+.pop-content{
   display: flex;
   justify-content: space-around;
-  /* margin-top: 80px; */
+ margin-top: 80px;
 }
 
-.pop-content .player h3 {
+.pop-content .player h3{
   text-align: center;
 
   -webkit-text-stroke-width: 0.1610850691795349;
   -webkit-text-stroke-color: #000;
   font-family: "Lilita One";
-  background: linear-gradient(180deg, #fff 30.82%, #edd9c6 86.99%);
+  background: linear-gradient(180deg, #FFF 30.82%, #edd9c6 86.99%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-top: 20px;
 }
 
-.pop-up-container h4 img {
+.pop-up-container h4 img{
   width: 20px;
-}
+ 
+ }
 
-.pop-up-container h4 {
+.pop-up-container h4{
   font-size: 20px;
   /* text-align: start; */
   padding-right: 20px;
 }
 
-.pop-up-container .stake {
+.pop-up-container .stake{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #dacbc0;
+  color: #DACBC0;
   margin-bottom: 20px;
   padding-top: 30px;
 }
 
-.pop-up-container .reward {
+.pop-up-container .reward{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #dacbc0;
+  color: #DACBC0;
 }
 
-.pop-up-container .reward img {
-  width: 22px;
+.pop-up-container .reward img{
+ width: 22px;
 }
-.pop-up-container .stake img {
-  width: 22px;
+.pop-up-container .stake img{
+ width: 22px;
 }
 
-.pop-up-container button {
+.pop-up-container button{
   width: 150px;
   border-radius: 100px;
-  background: #3f240f;
-  padding: 10px;
-  border-style: none;
-  margin-top: 25px;
-  margin-bottom: 40px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-  font-family: "Lilita One";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  color: #dacbc0;
-  margin-right: 20px;
-  transition: 0.5s ease-in-out;
+background: #3F240F;
+padding: 10px;
+border-style: none;
+margin-top: 25px;
+margin-bottom: 40px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+font-family: "Lilita One";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+color: #DACBC0;
+margin-right: 20px;
+transition: .7s ease-in-out;
 }
 
-.pop-up-container button:hover {
-  transform: scale(0.9);
+.pop-up-container button:hover{
+  transform: scale(.9);
   box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
   cursor: pointer;
 }
 
+.pop-up-container .cancel{
+  background: #865528;
+}
+
 @media (max-width: 600px) {
+
+
   .level-box {
-    /* max-width: 400px;
-    height: 75vh; */
-    margin-top: 20px;
-    gap: 20px;
+      max-width: 400px;
+      height: 75vh;
+      margin-top: 20px;
+      gap: 20px;
   }
 
-  .level-content {
-    gap: 30px;
+  .level-content{
+      gap: 30px;
   }
 
-  .levelWrapper h4 {
-    text-align: center;
-    font-size: 25px;
-    font-weight: 400;
-    color: #dacbc0;
-    font-family: "Lilita One";
-    padding-bottom: 10px;
+  .levelWrapper h4{
+      text-align: center;
+      font-size: 25px;
+      font-weight: 400;
+      color: #DACBC0;
+      font-family: "Lilita One";
+      padding-bottom: 10px;
   }
 
   .level-box h3 {
-    font-size: 33px;
+      font-size: 33px;
+      
   }
 
-  .top-container h1 {
-    font-size: 24px;
+  .level-box .box-content {
+      height: 35vh;
   }
-  /* .level-box .box-content {
-    height: 35vh;
-  } */
-  /* .level-box button {
-    width: 150px;
-  } */
+
+  .level-box button {
+      width: 150px;
+  }
+  .app{
+      padding: 1.5rem;
+  }
   .top-container button {
-    width: 90px;
-    height: 45px;
-    font-size: 12px;
-    padding: 8px;
+     
+      width: 90px;
+      height: 45px;
+      font-size: 12px;
+      padding: 8px;
   }
 
-  .pop-content {
-    flex-direction: column;
-    gap: 8rem;
-    display: none;
-  }
-  .top-container button img {
-    width: 18px;
+  .top-container button img{
+width: 18px;
   }
 
   .top-container img {
-    width: 20px;
+      width: 20px;
+    
   }
 
   .top-container h4 {
-    font-size: 16px;
+      font-size: 16px;
+      
   }
-  .pop-content .player img {
-    width: 6rem;
+  .pop-content .player img{
+      width: 80px;
   }
 
-  .pop-up-container {
-    max-width: 360px;
-    max-height: 75vh;
+  
+.pop-up-container{
+ 
+ max-width: 350px;
+  /* max-height: 500px; */
+  margin-top: 20px;
 
-    margin-top: 20px;
-  }
 }
+
+.pop-up-container h1{
+  font-size: 30px;
+}
+
+.pop-up-container button {
+  width: 280px;
+  border-radius: 100px;
+margin-bottom: 8px;
+}
+}
+
+
+
+
+
+
+
+
