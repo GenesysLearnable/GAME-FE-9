@@ -117,7 +117,7 @@ const GameLevelWrapper = () => {
       </div>
       {isOpen && (
         <div className="pop-up-container">
-          <h1>{selectedLevel.Level}</h1>
+          <h1>{selectedLevel.Level} Challenge</h1>
 
           <div className="pop-content">
             <div className="player">
