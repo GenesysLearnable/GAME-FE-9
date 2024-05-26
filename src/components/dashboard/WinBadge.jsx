@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import Modal from "../../ui/Modal";
+import { useScores } from "../../hooks/useScores";
 
 function WinBadge({ winner, resetPlay, user }) {
   const navigate = useNavigate();
+  const [resetScore] = useScores();
   function canelPlay() {
     navigate("/menu");
-
+    resetScore();
     resetPlay();
   }
 

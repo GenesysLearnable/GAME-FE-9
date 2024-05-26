@@ -24,6 +24,8 @@ import PasswordReset from "./pages/PasswordReset";
 import Verification from "./pages/Verification";
 import { GameProvider } from "./components/dashboard/utils/GameContext";
 import { AvatarContextProvider } from "./contexts/AvatarContext";
+import { AudioProvider } from "./contexts/AudioContext";
+import AudioPlayer from "./components/settings/AudioPlayer";
 
 const queryClient = new QueryClient();
 
@@ -34,40 +36,43 @@ function App() {
         <AuthenticationContext>
           <GameProvider>
             <AvatarContextProvider>
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<LandingPage />} />
-                  <Route path="login" element={<Login />} />
+              <AudioProvider>
+                <BrowserRouter>
+                  <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="login" element={<Login />} />
 
-                  <Route path="signup" element={<Signup />} />
-                  <Route path="nickname" element={<Nickname />} />
-                  <Route path="passwordreset" element={<PasswordReset />} />
-                  <Route path="about" element={<About />} />
+                    <Route path="signup" element={<Signup />} />
+                    <Route path="nickname" element={<Nickname />} />
+                    <Route path="passwordreset" element={<PasswordReset />} />
+                    <Route path="about" element={<About />} />
 
-                  <Route
-                    path="/passwordreset/verify"
-                    element={<Verification />}
-                  />
+                    <Route
+                      path="/passwordreset/verify"
+                      element={<Verification />}
+                    />
 
-                  <Route
-                    element={
-                      <ProtectedRoutes>
-                        <AppLayout />
-                      </ProtectedRoutes>
-                    }
-                  >
-                    <Route path="avatar" element={<ChangeAvatar />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="level" element={<GameLevel />} />
-                    <Route path="how-to-play" element={<HowToPlay />} />
-                    <Route path="leaderboard" element={<LeaderBoard />} />
-                    <Route path="menu" element={<Menu />} />
-                    <Route path="settings" element={<Settings />} />
-                    <Route path="invite" element={<Invite />} />
-                    <Route path="*" element={<PageNotFound />} />
-                  </Route>
-                </Routes>
-              </BrowserRouter>
+                    <Route
+                      element={
+                        <ProtectedRoutes>
+                          <AppLayout />
+                          <AudioPlayer />
+                        </ProtectedRoutes>
+                      }
+                    >
+                      <Route path="avatar" element={<ChangeAvatar />} />
+                      <Route path="/dashboard" element={<Dashboard />} />
+                      <Route path="level" element={<GameLevel />} />
+                      <Route path="how-to-play" element={<HowToPlay />} />
+                      <Route path="leaderboard" element={<LeaderBoard />} />
+                      <Route path="menu" element={<Menu />} />
+                      <Route path="settings" element={<Settings />} />
+                      <Route path="invite" element={<Invite />} />
+                      <Route path="*" element={<PageNotFound />} />
+                    </Route>
+                  </Routes>
+                </BrowserRouter>
+              </AudioProvider>
             </AvatarContextProvider>
           </GameProvider>
         </AuthenticationContext>

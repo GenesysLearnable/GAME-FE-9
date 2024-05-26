@@ -54,15 +54,6 @@ const GameLevelWrapper = () => {
 
   const { username, avatar } = user || {};
 
-  // useEffect(() => {
-  //   async function retrieveUser() {
-  //     try {
-  //     } catch (error) {}
-  //   }
-  // }, []);
-
-  // console.log(user, userData);
-
   const openModal = () => {
     setIsOpen(true);
   };
@@ -70,6 +61,12 @@ const GameLevelWrapper = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
+
+  function getFirstWord(str) {
+    const trimmedStr = str.trim();
+    if (!trimmedStr) return "";
+    return trimmedStr.split(" ")[0];
+  }
 
   if (isLoading) return <Spinner />;
 
@@ -121,7 +118,9 @@ const GameLevelWrapper = () => {
           <div className="pop-content">
             <div className="player">
               <img src={avatar === "" ? Avatar1 : avatar} alt="" />
-              <h3>{username.split(" ").splice()}</h3>
+              <h3 style={{ textTransform: "capitalize" }}>
+                {username?.split(" ")[0]}
+              </h3>
             </div>
             <h1>VS</h1>
             <div className="player">

@@ -1,3 +1,4 @@
+import { useScores } from "../../hooks/useScores";
 import { useUser } from "../../hooks/useUser";
 import Spinner from "../../ui/Spinner";
 import MainGame from "./MainGame";
@@ -7,17 +8,21 @@ import TimerProfile from "./TimerProfile";
 function MainDashboard() {
   const { user, isLoading } = useUser();
 
+  const [score] = useScores();
+
   // const { username, avatar } = user;
   const avatar_url = "/dashboard/Rectangle.png";
   return (
     <div className="ugo-main-dashboard">
       <TimerProfile>
-        <p className="ugo-timer">00 : 00</p>
+        <p className="ugo-timer" style={{ textTransform: "capitalize" }}>{` ${
+          user ? user?.username.split(" ")[0] : "Player 1"
+        } ${score.player1} : ${score.player2} AI`}</p>
         {isLoading ? (
           <Spinner />
         ) : (
           <Player
-            name={isLoading ? "Player 1" : user?.username}
+            name={isLoading ? "Player 1" : user?.username.split(" ")[0]}
             imgUrl={
               !isLoading && user?.avatar === "" ? avatar_url : user?.avatar
             }

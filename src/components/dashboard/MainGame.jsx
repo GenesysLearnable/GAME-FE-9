@@ -13,6 +13,7 @@ import {
 import toast from "react-hot-toast";
 import WinModal from "../../ui/WinModal";
 import WinBadge from "./WinBadge";
+import { useScores } from "../../hooks/useScores";
 
 function MainGame({ user }) {
   const [currentPlayer, setCurrentPlayer] = useState("Player 1");
@@ -20,6 +21,7 @@ function MainGame({ user }) {
   const [board, setBoard] = useState(initialBoard);
   const [scores, setScores] = useState(initialPlayerScores);
 
+  const [updateScore] = useScores();
 
   function resetGame() {
     setScores(initialPlayerScores);
@@ -236,8 +238,10 @@ function MainGame({ user }) {
     if (player1Seeds === 0 || player2Seeds === 0) {
       if (scores.player1 > scores.player2) {
         setWinner("Player 1");
+        updateScore("player1", 1);
       } else if (scores.player2 > scores.player1) {
         setWinner("Player 2");
+        updateScore("player2", 1);
       } else {
         setWinner("Draw");
       }
@@ -270,10 +274,13 @@ function MainGame({ user }) {
         <div className="player-display">
           <div className="separator"></div>
           <div>
-            <span className="player-name">
+            <span
+              className="player-name"
+              style={{ textTransform: "capitalize" }}
+            >
               {currentPlayer === "Player 1"
                 ? user
-                  ? user.username
+                  ? user.username.split(" ")[0]
                   : currentPlayer
                 : ""}
             </span>

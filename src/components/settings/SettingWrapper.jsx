@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import GameMusic from "./GameMusic";
-import GameSound from "./GameSound";
+// import GameMusic from "./GameMusic";
+// import GameSound from "./GameSound";
 
 import BkArrow from "../GameLevel/img/bk-arrow.png";
 import { Link } from "react-router-dom";
@@ -8,26 +8,30 @@ import { useAuth } from "../../contexts/AuthenticationContext";
 import Modal from "../../ui/Modal";
 import LogoutModal from "../../ui/LogoutModal";
 import Switch from "./Switch";
-import { useAvatar } from "../../contexts/AvatarContext";
+import { useAudioPlayer } from "../../contexts/AudioContext";
 
 function SettingWrapper() {
   const { setIsAuthenticated } = useAuth();
-  const [isSound, setIsSound] = useState(true);
-  const [isMusic, setIsMusic] = useState(true);
-  const { setUserData } = useAvatar();
+  const {
+    isPlaying,
+    setIsPlaying,
+    isPlayingAud,
+    setIsPlayingAud,
+  } = useAudioPlayer();
+
+  // const { setUserData } = useAvatar();
 
   function handleSound() {
-    setIsSound((iss) => !iss);
+    setIsPlayingAud((iss) => !iss);
     // console.log(isSound);
   }
 
   function handleMusic() {
-    setIsMusic((ism) => !ism);
+    setIsPlaying((ism) => !ism);
   }
 
   function handleLogout() {
     setIsAuthenticated(false);
-    setUserData(null);
   }
   return (
     <div className="container">
@@ -61,10 +65,10 @@ function SettingWrapper() {
             </label>
 
             <label className="label-switch">
-              Sound <Switch onClick={handleSound} toggle={isSound} />
+              Sound <Switch onClick={handleSound} toggle={isPlayingAud} />
             </label>
             <label className="label-switch">
-              Music <Switch onClick={handleMusic} toggle={isMusic} />
+              Music <Switch onClick={handleMusic} toggle={isPlaying} />
             </label>
 
             <Link to="/avatar">Channge Avatar</Link>

@@ -8,15 +8,31 @@ import Spinner from "../../ui/Spinner";
 import Button from "../Auth/Button";
 import { useAvatar } from "../../contexts/AvatarContext";
 import { useSelectAvatar } from "../../hooks/useSeectAvatar";
+import { updateAvatar } from "../../services/fetchAvatars";
 
 function Avatar() {
   const [selectedImageId, setSelectedImageId] = useState(null);
   const [data, setData] = useState({});
   const { avatars, isLoading } = useAvatars();
   const { userData, setUserData } = useAvatar();
-  const { isLoading: isSelecting, selectAvatar } = useSelectAvatar();
+
+  const [isLoadiing, setIsLoadiing] = useState(false);
+
+  async function avatarUpdate(id, id2) {
+    setIsLoadiing(true);
+    try {
+      const avatar = await updateAvatar(id, id2);
+      setUserData(avatar);
+    } catch (error) {
+      throw error;
+    } finally {
+      setIsLoadiing(false);
+    }
+  }
 
   const { _id: userId } = userData;
+
+  // console.log(userData);
 
   const navigate = useNavigate();
 
@@ -71,13 +87,8 @@ function Avatar() {
 
       {selectedImageId && (
         <div className="div-btn">
-          <Button
-            onClick={() => {
-              selectAvatar(selectedImageId, userId);
-              console.log(userId, selectedImageId);
-            }}
-          >
-            {isSelecting ? <Spinner /> : <span>Next</span>}
+          <Button onClick={() => {}}>
+            {isLoadiing ? <Spinner /> : <span>Next</span>}
           </Button>
         </div>
       )}
