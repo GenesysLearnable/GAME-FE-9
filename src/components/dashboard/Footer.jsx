@@ -1,24 +1,32 @@
-import { useState } from "react";
 import Modal from "../../ui/Modal";
 import Quit from "../../ui/Quit";
-import Chatmodal from "../ChatModa/Chatmoda";
 // import Chatmodal from "../ChatModa/Chatmodal";
 import ImgContainer from "./ImgContainer";
+import { useAudioPlayer } from "../../contexts/AudioContext";
 
-function Footer() {
-  const [isPlaying, setIsPlaying] = useState(true);
+function Footer({ isPaused, setIsPaused }) {
+  const { isPlaying, setIsPlaying } = useAudioPlayer();
 
   function handlePlay() {
     setIsPlaying((isp) => !isp);
   }
+
+  function handlePause() {
+    setIsPaused((isp) => !isp);
+  }
   return (
     <footer className="ugo-footer">
-      <ImgContainer>
-        <img src="/dashboard/audio.svg" alt="audio" />
+      <ImgContainer onClick={handlePlay}>
+        {
+          <img
+            src={isPlaying ? "/dashboard/audio.svg" : "/assets/silent.png"}
+            alt="audio"
+          />
+        }
       </ImgContainer>
 
-      <ImgContainer onClick={handlePlay}>
-        {!isPlaying ? (
+      <ImgContainer onClick={handlePause}>
+        {isPaused ? (
           <img src="/dashboard/bk-arrow.png" alt="play" />
         ) : (
           <>

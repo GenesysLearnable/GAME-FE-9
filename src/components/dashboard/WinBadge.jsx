@@ -14,7 +14,7 @@ function WinBadge({ winner, resetPlay, user }) {
   return (
     <div className="winb">
       <h1 className="winb-h">Winner</h1>
-      <p>
+      <p style={{ textTransform: "capitalize" }}>
         {winner === "Draw"
           ? "The game is a tie"
           : `${winner === "Player 1" ? user?.username : "AI"} wins the game`}

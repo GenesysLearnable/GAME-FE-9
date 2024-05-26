@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Auth/Button";
-import { useScores } from "../hooks/useScores";
+// import { useScores } from "../hooks/useScores";
 
 function Quit() {
   const navigate = useNavigate();
-  const [resetScore] = useScores();
+  // const [resetScore] = useScores();
 
   function handleQuit() {
     navigate("/menu");
-    resetScore();
+    // resetScore();
   }
   return (
     <div className="quit quitt">

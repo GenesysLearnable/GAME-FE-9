@@ -1,11 +1,15 @@
 // src/contexts/AudioContext.js
 import React, { createContext, useContext, useState } from "react";
+import { useLocalStorageState } from "../hooks/useLocalStorage";
 
 const AudioContext = createContext();
 
 const AudioProvider = ({ children }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isPlayingAud, setIsPlayingAud] = useState(true);
+  const [isPlaying, setIsPlaying] = useLocalStorageState(true, "musicContext");
+  const [isPlayingAud, setIsPlayingAud] = useLocalStorageState(
+    true,
+    "musicAudioContext"
+  );
 
   return (
     <AudioContext.Provider

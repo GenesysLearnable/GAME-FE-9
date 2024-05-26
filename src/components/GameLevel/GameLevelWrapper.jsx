@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BkArrow from "./img/bk-arrow.png";
 import Coin from "./img/Dollar Coin.png";
 import Add from "./img/add.png";
 import Avatar1 from "./img/Avatar (1).png";
 import Avatar2 from "./img/Avatar (2).png";
 import { Link, useNavigate } from "react-router-dom";
-import { useAvatar } from "../../contexts/AvatarContext";
-import { useUserData } from "../../contexts/UserContext";
+
 import { useUser } from "../../hooks/useUser";
 import Spinner from "../../ui/Spinner";
 
@@ -62,13 +61,19 @@ const GameLevelWrapper = () => {
     setIsOpen(false);
   };
 
-  function getFirstWord(str) {
-    const trimmedStr = str.trim();
-    if (!trimmedStr) return "";
-    return trimmedStr.split(" ")[0];
-  }
-
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          height: "100vh",
+          padding: "4rem",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Spinner />;
+      </div>
+    );
 
   return (
     <div className="levelWrapper">

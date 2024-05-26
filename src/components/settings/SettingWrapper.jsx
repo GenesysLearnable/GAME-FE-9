@@ -32,6 +32,7 @@ function SettingWrapper() {
 
   function handleLogout() {
     setIsAuthenticated(false);
+    setIsPlaying(true);
   }
   return (
     <div className="container">
