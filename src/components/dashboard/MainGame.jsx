@@ -21,8 +21,6 @@ function MainGame({ user }) {
   const [board, setBoard] = useState(initialBoard);
   const [scores, setScores] = useState(initialPlayerScores);
 
-  const [updateScore] = useScores();
-
   function resetGame() {
     setScores(initialPlayerScores);
     setCurrentPlayer("Player 1");
@@ -238,10 +236,8 @@ function MainGame({ user }) {
     if (player1Seeds === 0 || player2Seeds === 0) {
       if (scores.player1 > scores.player2) {
         setWinner("Player 1");
-        updateScore("player1", 1);
       } else if (scores.player2 > scores.player1) {
         setWinner("Player 2");
-        updateScore("player2", 1);
       } else {
         setWinner("Draw");
       }

@@ -8,16 +8,14 @@ import TimerProfile from "./TimerProfile";
 function MainDashboard() {
   const { user, isLoading } = useUser();
 
-  const [score] = useScores();
-
   // const { username, avatar } = user;
   const avatar_url = "/dashboard/Rectangle.png";
   return (
     <div className="ugo-main-dashboard">
       <TimerProfile>
-        <p className="ugo-timer" style={{ textTransform: "capitalize" }}>{` ${
-          user ? user?.username.split(" ")[0] : "Player 1"
-        } ${score.player1} : ${score.player2} AI`}</p>
+        <p className="ugo-timer" style={{ textTransform: "capitalize" }}>
+          00 : 00
+        </p>
         {isLoading ? (
           <Spinner />
         ) : (
