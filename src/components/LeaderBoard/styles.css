@@ -106,7 +106,7 @@
 }
 .leaderboard-item__left {
   gap: clamp(5px, 1.5vw, 20px);
-  flex: 1;
+  flex: 2;
   width: 50%;
 }
 .leaderboard-item__left p {
@@ -132,9 +132,7 @@
   height: 100%;
 }
 .leaderboard-rating {
-  @media screen and (max-width: 540px) {
-    display: none;
-  }
+  display: none;
 }
 .star {
   width: max(16px, 2.5vw);
@@ -146,6 +144,7 @@
 .leaderboard-item__score {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .leaderboard-item__score p {

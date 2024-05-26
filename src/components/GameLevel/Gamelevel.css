@@ -11,7 +11,10 @@ body {
 }
 
 .levelWrapper {
-  padding: 20px;
+  /* padding: 20px; */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .top-container {
@@ -21,7 +24,7 @@ body {
   margin-bottom: 40px;
 }
 
-.top-container h4 {
+.top-container h1 {
   font-size: 40px;
   font-weight: 400;
   color: #dacbc0;
@@ -65,19 +68,21 @@ body {
 }
 
 .level-box {
+  width: 100%;
   max-width: 350px;
-  height: 75vh;
+  /* height: min(588px, 55vh); */
   border-radius: 90px;
+  text-align: center;
+  padding: 40px;
+  /* margin-top: 100px; */
   background: linear-gradient(0deg, #814a1f 0%, #814a1f 100%),
     linear-gradient(0deg, #814a1f 0%, #814a1f 100%), #814a1f;
   box-shadow: 10.93px 10.019px 27.325px 0px #4a2a11 inset,
     -20.038px -10.93px 27.325px 0px #5d3619 inset;
-  text-align: center;
-  padding: 40px;
-  margin-top: 100px;
-  padding-bottom: 150px;
 }
-
+.level-box:hover {
+  transform: scale(1.1);
+}
 .level-box h3 {
   text-shadow: 0px 2px 0px #e8be9d;
   -webkit-text-stroke-width: 0.1610850691795349;
@@ -97,15 +102,16 @@ body {
 .level-box .box-content {
   display: flex;
   max-width: 270px;
-  height: 45vh;
+  /* height: 45vh; */
   /* transform: rotate(90deg); */
   padding: 40px 0px 32px 0px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   border-radius: 40px;
   background: #6a3b16;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 .level-box .box-content h4 {
@@ -152,8 +158,8 @@ body {
   background: #3f240f;
   padding: 10px;
   border-style: none;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  /* margin-top: 10px;
+  margin-bottom: 40px; */
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
   font-family: "Lilita One";
   font-size: 26px;
@@ -174,14 +180,15 @@ body {
   justify-content: space-evenly;
   margin: auto;
   flex-wrap: wrap;
+  gap: clamp(20px, 5vw, 70px);
 }
 
 @media (max-width: 500px) {
-  .level-box {
+  /* .level-box {
     max-width: 400px;
     height: 65vh;
     margin-top: 20px;
-  }
+  } */
 
   .levelWrapper h4 {
     font-size: 40px;
@@ -194,14 +201,14 @@ body {
     font-size: 33px;
   }
 
-  .level-box .box-content {
+  /* .level-box .box-content {
     height: 35vh;
-  }
+  } */
 
-  .level-box button {
+  /* .level-box button {
     width: 150px;
   }
-  /* .app {
+  .app {
     padding: 1.5rem;
   } */
   .top-container button {
@@ -234,8 +241,10 @@ body {
 
   .level-box {
     max-width: 350px;
-    height: 75vh;
+    /* height: 75vh; */
+    /* padding-bottom: 150px; */
     border-radius: 90px;
+    transition: 0.5s ease-in-out;
     background: linear-gradient(0deg, #814a1f 0%, #814a1f 100%),
       linear-gradient(0deg, #814a1f 0%, #814a1f 100%), #814a1f;
     box-shadow: 10.93px 10.019px 27.325px 0px #4a2a11 inset,
@@ -243,8 +252,7 @@ body {
     text-align: center;
     padding: 40px;
     margin-top: 100px;
-    padding-bottom: 150px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
   }
 
   .level-box h3 {
@@ -266,7 +274,7 @@ body {
   .level-box .box-content {
     display: flex;
     max-width: 270px;
-    height: 45vh;
+    /* height: 45vh; */
     /* transform: rotate(90deg); */
     padding: 40px 0px 32px 0px;
     flex-direction: column;
@@ -282,13 +290,9 @@ body {
   width: 18px;
 }
 
-.top-container img {
+/* .top-container img {
   width: 20px;
-}
-
-.top-container h4 {
-  font-size: 16px;
-}
+} */
 
 .level-box button {
   width: 220px;
@@ -296,8 +300,8 @@ body {
   background: #3f240f;
   padding: 10px;
   border-style: none;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  /* margin-top: 10px;
+  margin-bottom: 40px; */
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
   font-family: "Lilita One";
   font-size: 26px;
@@ -317,8 +321,9 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin: auto;
+  margin-top: 40px;
   /* flex-wrap: wrap; */
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 
 .level-content::-webkit-scrollbar {
@@ -440,8 +445,8 @@ body {
 
 @media (max-width: 600px) {
   .level-box {
-    max-width: 400px;
-    height: 75vh;
+    /* max-width: 400px;
+    height: 75vh; */
     margin-top: 20px;
     gap: 20px;
   }
@@ -463,16 +468,15 @@ body {
     font-size: 33px;
   }
 
-  .level-box .box-content {
+  .top-container h1 {
+    font-size: 24px;
+  }
+  /* .level-box .box-content {
     height: 35vh;
-  }
-
-  .level-box button {
+  } */
+  /* .level-box button {
     width: 150px;
-  }
-  .app {
-    padding: 1.5rem;
-  }
+  } */
   .top-container button {
     width: 90px;
     height: 45px;

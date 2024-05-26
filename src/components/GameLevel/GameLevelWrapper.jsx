@@ -79,7 +79,7 @@ const GameLevelWrapper = () => {
         <Link to="/menu">
           <img src={BkArrow} alt="" />
         </Link>
-        <h4>Choose your challenge</h4>
+        <h1>Choose your challenge</h1>
         <button>
           <img src={Coin} alt="" />
           <span>2000</span>
@@ -112,7 +112,6 @@ const GameLevelWrapper = () => {
             </div>
           );
         })}
-        ;
       </div>
       {isOpen && (
         <div className="pop-up-container">

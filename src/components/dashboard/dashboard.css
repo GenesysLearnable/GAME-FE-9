@@ -502,10 +502,6 @@
   }
 }
 @media (max-width: 38em) {
-  .app {
-    height: 100vh;
-  }
-
   .ugo--dashboard-ugo {
     /* transform: rotate(90deg); */
     /* max-width: 60rem; */

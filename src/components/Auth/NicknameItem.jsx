@@ -25,10 +25,10 @@ function NicknameItem() {
   return (
     <form className="signup " onSubmit={handleSubmit(onSubmit)}>
       <AuthNav title="Your Nickname" goto="" url="" />
+      <h1 className="ayo-header">
+        Personalize Your Play: Choose Your Nickname
+      </h1>
       <div className="page-auth">
-        <h1 className="ayo-header">
-          Personalize Your Play: Choose Your Nickname
-        </h1>
         <AuthContainer>
           <input
             type="text"

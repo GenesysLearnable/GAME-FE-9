@@ -4,9 +4,17 @@
 } */
 
 .setting-content a {
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   text-decoration: none;
   padding: 15px;
+}
+.setting-content a:hover {
+  width: 70%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 30px;
+  background: var(--Primary-color, #7a451d);
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
 .setting-content a p {
@@ -20,8 +28,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100dvh;
-  width: 100vw;
+  /* height: 100dvh;
+  width: 100vw; */
 }
 
 .setting-content h4 {
@@ -33,6 +41,7 @@
   .setting-content a {
     padding: 0;
     margin: 0;
+    line-height: 1.5;
   }
 
   /* .setting-content {

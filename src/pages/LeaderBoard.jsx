@@ -1,11 +1,7 @@
 import Leaderboard from "../components/LeaderBoard/Leaderboard";
 
 function LeaderBoard() {
-  return (
-    <div className="howto">
-      <Leaderboard />;
-    </div>
-  );
+  return <Leaderboard />;
 }
 
 export default LeaderBoard;
