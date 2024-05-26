@@ -6,15 +6,11 @@ import { useLogin } from "../../hooks/useLogin";
 import Spinner from "../../ui/Spinner";
 import Error from "./Error";
 import { Link } from "react-router-dom";
-import { useAvatar } from "../../contexts/AvatarContext";
 
 function LoginItem() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  const { userData } = useAvatar();
-  console.log(userData);
 
   const { isLoading, login } = useLogin();
   // console.log(isLoading);

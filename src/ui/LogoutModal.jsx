@@ -5,10 +5,10 @@ function LogoutModal({ onClick }) {
     <div className="quit">
       <h1>Quit</h1>
 
-      <p>Are you sure you wanna logout?</p>
+      <p>Are you sure you want to logout?</p>
 
       <Button onClick={onClick}>
-        <span>Quit</span>
+        <span>Logout</span>
       </Button>
     </div>
   );

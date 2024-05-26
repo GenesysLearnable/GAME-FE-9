@@ -13,13 +13,14 @@ import {
 import toast from "react-hot-toast";
 import WinModal from "../../ui/WinModal";
 import WinBadge from "./WinBadge";
+import { useScores } from "../../hooks/useScores";
+import Button from "../Auth/Button";
 
-function MainGame({ user }) {
+function MainGame({ user, isPaused, setIsPaused }) {
   const [currentPlayer, setCurrentPlayer] = useState("Player 1");
   const [winner, setWinner] = useState("");
   const [board, setBoard] = useState(initialBoard);
   const [scores, setScores] = useState(initialPlayerScores);
-
 
   function resetGame() {
     setScores(initialPlayerScores);
@@ -57,25 +58,30 @@ function MainGame({ user }) {
   }
 
   function makeAiMove() {
-    const validMoves = board.filter((pot, index) => {
-      return (
-        currentPlayer === "Player 2" &&
-        index >= 6 &&
-        index < 12 &&
-        pot.seed.length > 0
-      );
-    });
+    if (isPaused) return;
+    else {
+      const validMoves = board.filter((pot, index) => {
+        return (
+          currentPlayer === "Player 2" &&
+          index >= 6 &&
+          index < 12 &&
+          pot.seed.length > 0
+        );
+      });
 
-    if (validMoves.length === 0) {
-      return;
+      if (validMoves.length === 0) {
+        return;
+      }
+
+      const randomMove =
+        validMoves[Math.floor(Math.random() * validMoves.length)];
+      onClickPit(randomMove, "Player 2");
     }
-
-    const randomMove =
-      validMoves[Math.floor(Math.random() * validMoves.length)];
-    onClickPit(randomMove, "Player 2");
   }
 
   function onClickPit(data, player) {
+    if (isPaused) return;
+
     if (currentPlayer !== player) {
       toast.error("It's not your turn");
       return;
@@ -89,6 +95,8 @@ function MainGame({ user }) {
     }
   }
   function distributeSeed(data, currentPlayer) {
+    if (isPaused) return;
+
     const newBoard = [...board];
     const { seed, id } = data;
     const numSeeds = seed.length;
@@ -102,6 +110,8 @@ function MainGame({ user }) {
     let lastPotId = id;
 
     function dropSeed(i) {
+      if (isPaused) return;
+
       if (i >= numSeeds) {
         captureOrContinue(newBoard, lastPotId, currentPlayer);
         setBoard(newBoard);
@@ -150,6 +160,8 @@ function MainGame({ user }) {
   function captureOrContinue(newBoard, lastPotId, currentPlayer) {
     const lastPot = newBoard.find((pot) => pot.id === lastPotId);
 
+    if (isPaused) return;
+
     // Check if the board is no longer in its initial state
     const isInitialState = board.every(
       (pot) => pot.seed.length === initialBoard[pot.id - 1].seed.length
@@ -181,6 +193,7 @@ function MainGame({ user }) {
   }
 
   function captureSeeds(newBoard, potId, currentPlayer) {
+    if (isPaused) return;
     const pot = newBoard.find((p) => p.id === potId);
     const capturedSeeds = pot.seed.length;
     pot.seed = [];
@@ -215,6 +228,7 @@ function MainGame({ user }) {
   }
 
   function switchPlayer() {
+    if (isPaused) return;
     setCurrentPlayer((prevPlayer) =>
       prevPlayer === "Player 1" ? "Player 2" : "Player 1"
     );
@@ -270,10 +284,13 @@ function MainGame({ user }) {
         <div className="player-display">
           <div className="separator"></div>
           <div>
-            <span className="player-name">
+            <span
+              className="player-name"
+              style={{ textTransform: "capitalize" }}
+            >
               {currentPlayer === "Player 1"
                 ? user
-                  ? user.username
+                  ? user.username.split(" ")[0]
                   : currentPlayer
                 : ""}
             </span>
@@ -305,6 +322,16 @@ function MainGame({ user }) {
           {winner && (
             <WinModal>
               <WinBadge winner={winner} user={user} resetPlay={resetGame} />
+            </WinModal>
+          )}
+
+          {isPaused && (
+            <WinModal>
+              <span className="winb">
+                <button onClick={() => setIsPaused((isp) => !isp)}>
+                  Resume
+                </button>
+              </span>
             </WinModal>
           )}
 
