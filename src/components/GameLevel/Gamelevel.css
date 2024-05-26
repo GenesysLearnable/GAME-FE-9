@@ -179,7 +179,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin: auto;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: clamp(20px, 5vw, 70px);
 }
 
@@ -295,7 +295,7 @@ body {
 } */
 
 .level-box button {
-  width: 220px;
+  /* width: 220px; */
   border-radius: 100px;
   background: #3f240f;
   padding: 10px;
@@ -312,18 +312,20 @@ body {
 }
 
 .level-box button:hover {
-  transform: scale(0.9);
-  box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
-  cursor: pointer;
+  @media screen and (min-height: 768px) {
+    transform: scale(0.9);
+    box-shadow: 10.93px 10.019px 27.325px 0px #512d11;
+    cursor: pointer;
+  }
 }
 
 .level-content {
   display: flex;
   justify-content: space-evenly;
   margin: auto;
-  margin-top: 40px;
+  padding: 40px 10px;
   /* flex-wrap: wrap; */
-  /* overflow-x: auto; */
+  overflow-x: scroll;
 }
 
 .level-content::-webkit-scrollbar {

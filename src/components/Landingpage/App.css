@@ -438,7 +438,7 @@ footer {
   grid-template-columns: repeat(5, 1fr);
   /* grid-template-columns: 1fr; */
   /* gap: clamp(10px, 2.5vw, 126px); */
-  padding: 30px 0;
+  padding: 30px 10px;
   border-top: 1px solid #3f240f;
   border-bottom: 1px solid #3f240f;
   justify-items: center;
@@ -450,10 +450,12 @@ footer {
   font-size: 16px;
 }
 .legal {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(10px, 2vw, 26px);
   justify-content: center;
-  padding: 30px 0;
+  padding: 30px 10px;
+  justify-items: center;
 }
 .legal p {
   font-size: 16px;
