@@ -73,14 +73,14 @@ function SettingWrapper() {
             </label>
 
             <Link to="/avatar" className="settings-link">
-             <p> Change Avatar</p>
+              Change Avatar
             </Link>
             <Link to="/settings" className="settings-link">
-              <p> Profile Settings</p>
+              Profile Settings
             </Link>
             <Modal>
               <Modal.Open>
-                <Link className="settings-link"><p>Logout</p></Link>
+                <Link className="settings-link">Logout</Link>
               </Modal.Open>
               <Modal.Window>
                 <LogoutModal onClick={handleLogout} />

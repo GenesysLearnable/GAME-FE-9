@@ -1,122 +1,183 @@
-.settingWrapper{
-    max-width: 700px;
-
-border-radius: 50%;
-background: linear-gradient(0deg, #814A1F 0%, #814A1F 100%), linear-gradient(0deg, #814A1F 0%, #814A1F 100%), #814A1F;
-box-shadow: 50.04px 33.36px 83.4px 0px #4A2A11 inset, -66.72px -58.38px 83.4px 0px #5D3619 inset;
-margin: auto;
-
-}
-.container .top{
-    display: grid;
-grid-template-columns: 3fr 1fr 3fr;
-    padding: 40px;
+.setting-parent {
+  height: 50vh;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
 }
 
-.container .top h4{
-   
-    /* padding-left: 600px; */
-    float: left;
-    margin-bottom: 0px;
-font-family: "Lilita One";
-font-size: 60px;
-font-weight: 400;
-background: linear-gradient(180deg, #FFF 30.82%, #FFB672 86.99%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-       
-    }
-.setting-content{
-   display: flex;
-   flex-direction: column;
-   gap: 45px;
-   align-items: center;
-   padding: 100px;
+.container {
+  min-height: 100vh;
+  /* padding: 4rem; */
 }
 
-.setting-content select{
-    padding: 10px;
-    background: transparent;
-    border: none;
-    outline: none;
+.settings-link:hover {
+  padding: 0.6rem 2rem;
 }
 
-.setting-content h4{
-    font-size: 45px;
+.settings-link:last-child:hover {
+  padding: 0.4rem 2rem;
 }
 
-.setting-content p{
-width: 350px;
- height: 50px;
- text-align: center;
-
-    width: 300px;
-    height: 40px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 30px;
-    transition: .5s ease-in-out;
+.settingWrapper {
+  width: 700px;
+  height: 700px;
+  border-radius: 120%;
+  background: linear-gradient(0deg, #814a1f 0%, #814a1f 100%),
+    linear-gradient(0deg, #814a1f 0%, #814a1f 100%), #814a1f;
+  box-shadow: 50.04px 33.36px 83.4px 0px #4a2a11 inset,
+    -66.72px -58.38px 83.4px 0px #5d3619 inset;
+  margin: auto;
+}
+.container .top {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  padding: 2rem;
 }
 
-.setting-content p:hover{
- 
-    border-radius: 50px;
-    color: #feeddc;
-    /* background: transparent; */
-    box-shadow: 2.04px 2px 3.4px 3px #723400 inset; 
+.container .top h4 {
+  /* padding-left: 600px; */
+  float: left;
+  margin-bottom: 100px;
+  font-family: "Lilita One";
+  font-size: 60px;
+  font-weight: 400;
+  background: linear-gradient(180deg, #fff 30.82%, #ffb672 86.99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.setting-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 100px;
+  text-shadow: 0px 0.577px 0px #dfd5cd;
+  -webkit-text-stroke-width: 0.1610850691795349;
+  -webkit-text-stroke-color: #000;
+  font-family: "Lilita One";
+  font-size: 32px;
+  font-weight: 400;
+  background: linear-gradient(180deg, #c3c0c0 30.82%, #f49741 86.99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.container  img{
-    width: 40px;
+.setting-content select {
+  padding: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
-.setting-content div{
-    display: inline-flex;
-    align-items: center;
-    gap: 80px;
-   
+.setting-content h4 {
+  font-size: 45px;
 }
 
+.parent-switch {
+  width: 43px;
+  height: 21px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 10px;
+  background: linear-gradient(#512e13, #9e8e82);
+  cursor: pointer;
+
+  transition: all 500ms;
+}
+
+.label-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.parent-switch div {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  /* left: 0; */
+  transition: all 500ms;
+}
+
+.setting-content a p {
+  width: 350px;
+  height: 50px;
+  text-align: center;
+
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  transition: 0.5s ease-in-out;
+}
+
+.setting-content a p:hover {
+  border-radius: 50px;
+  color: #feeddc;
+  background: transparent;
+  box-shadow: 2.04px 2px 3.4px 0px #f4efec inset;
+}
+
+.container a img {
+  width: 40px;
+}
+
+.setting-content div {
+  display: inline-flex;
+  align-items: center;
+  gap: 80px;
+}
+.settings-link {
+  /* padding: unset !important; */
+}
 
 @media (max-width: 600px) {
+  .settingWrapper {
+    width: 38rem;
+    height: 38rem;
+  }
 
-    .settingWrapper {
-   max-width: 700vw;
-     max-height: 550px;
-    }
-
-    .container .top h4 {
+  .container .top h4 {
     margin: 0;
     margin-bottom: 25px;
-font-size: 32px;
-font-weight: 400;
+    font-family: "Lilita One";
+    font-size: 32px;
+    font-weight: 400;
+    background: linear-gradient(180deg, #fff 30.82%, #ffb672 86.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-       
-    }
+  .container a img {
+    width: 30px;
+  }
 
-    .container img{
-        width: 30px;
-    }
+  .setting-content label {
+    font-size: 22px;
+  }
+  .setting-content {
+    text-align: center;
 
-    .setting-content label{
-      font-size: 15px;
-     
-    }
-    
-    
-    .setting-content {
-    gap: 10px;
-    height: 390px;
-    max-width: 650px;
-  
-    }
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    padding-top: 40px;
+  }
 
-    .container .top {
-     
-        padding: 10px;
-    }
-    
+  .setting-content a {
+    font-size: 22px;
+  }
 
+  .setting-content h4 {
+    font-size: 16px;
+  }
 }
-    
