@@ -9,7 +9,7 @@
 .container {
   /* max-height: 100vh; */
   height: 100vh;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   /* padding: 4rem; */
 }
 
@@ -26,8 +26,8 @@
 }
 
 .settingWrapper {
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
   border-radius: 120%;
   background: linear-gradient(0deg, #814a1f 0%, #814a1f 100%),
     linear-gradient(0deg, #814a1f 0%, #814a1f 100%), #814a1f;
