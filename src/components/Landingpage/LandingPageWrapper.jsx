@@ -42,7 +42,7 @@ function LandingPageWrapper() {
           </div>
         </div>
       </section>
-      <section className="about">
+      <section className="about" id="about">
         <div className="max-width about-content">
           <h2>About Us</h2>
           <div className="mode">
@@ -82,7 +82,7 @@ function LandingPageWrapper() {
           </div>
         </div>
       </section>
-      <section className="explore">
+      <section className="explore" id="new">
         <div className="max-width explore-wrapper">
           <h2>Explore Ayo Game</h2>
           <div className="explore-content">
@@ -182,7 +182,7 @@ function LandingPageWrapper() {
           </div>
         </div>
       </section>
-      <section className="features">
+      <section className="features" id="features">
         <div className="max-width">
           <h2>FEATURES</h2>
           <div className="features-text">
@@ -229,7 +229,7 @@ function LandingPageWrapper() {
           </div>
         </div>
       </section>
-      <section className="contact">
+      <section className="contact" id="contact">
         <div className="max-width contact-content">
           <div className="form-header">
             <h2>Contact us today.</h2>

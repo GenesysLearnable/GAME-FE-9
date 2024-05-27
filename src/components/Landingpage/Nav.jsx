@@ -19,19 +19,20 @@ function Nav() {
         </div>
         <nav className="navbar--wrapper">
           <ul className="navbar">
-            <li className="active">
+            <li>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to={`${isAuthenticated ? "/about" : "/login"}`}>About</Link>
+              <a href="#about">About</a>
             </li>
             <li>
-              <Link to={`${isAuthenticated ? "/level" : "/login"}`}>New</Link>
+              <a href="#new">Explore</a>
             </li>
             <li>
-              <Link to={`${isAuthenticated ? "/how-to-play" : "/login"}`}>
-                Feature
-              </Link>
+              <a href="#features">Features</a>
+            </li>
+            <li>
+              <a href="#contact">Contact Us</a>
             </li>
           </ul>
         </nav>
