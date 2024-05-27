@@ -7,16 +7,32 @@ import { useAvatars } from "../../hooks/useAvatars";
 import Spinner from "../../ui/Spinner";
 import Button from "../Auth/Button";
 import { useAvatar } from "../../contexts/AvatarContext";
-import { useSelectAvatar } from "../../hooks/useSeectAvatar";
+import { updateAvatar } from "../../services/fetchAvatars";
 
 function Avatar() {
   const [selectedImageId, setSelectedImageId] = useState(null);
   const [data, setData] = useState({});
   const { avatars, isLoading } = useAvatars();
   const { userData, setUserData } = useAvatar();
-  const { isLoading: isSelecting, selectAvatar } = useSelectAvatar();
-
+  const [isLoadiing, setIsLoadiing] = useState(false);
   const { _id: userId } = userData;
+
+  async function avatarUpdate(id, id2) {
+    setIsLoadiing(true);
+    try {
+      const avatar = await updateAvatar(id, id2);
+      setUserData(avatar);
+    } catch (error) {
+      throw error;
+    } finally {
+      setIsLoadiing(false);
+      navigate("/menu");
+    }
+  }
+
+  // const { _id: userId } = userData;
+
+  // // console.log(userData);
 
   const navigate = useNavigate();
 
@@ -39,7 +55,19 @@ function Avatar() {
     handleImageClick(id);
   }
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          height: "100vh",
+          padding: "4rem",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Spinner />;
+      </div>
+    );
 
   return (
     <>
@@ -73,11 +101,10 @@ function Avatar() {
         <div className="div-btn">
           <Button
             onClick={() => {
-              selectAvatar(selectedImageId, userId);
-              console.log(userId, selectedImageId);
+              avatarUpdate(userId, selectedImageId);
             }}
           >
-            {isSelecting ? <Spinner /> : <span>Next</span>}
+            {isLoadiing ? <Spinner /> : <span>Next</span>}
           </Button>
         </div>
       )}

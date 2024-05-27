@@ -4,28 +4,40 @@ import MainGame from "./MainGame";
 import Player from "./Player";
 import TimerProfile from "./TimerProfile";
 
-function MainDashboard() {
+function MainDashboard({ isPaused, setIsPaused }) {
   const { user, isLoading } = useUser();
 
   // const { username, avatar } = user;
   const avatar_url = "/dashboard/Rectangle.png";
+
+  if (isLoading)
+    return (
+      <div
+        style={{
+          height: "100vh",
+          padding: "4rem",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Spinner />;
+      </div>
+    );
+
   return (
     <div className="ugo-main-dashboard">
       <TimerProfile>
-        <p className="ugo-timer">00 : 00</p>
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <Player
-            name={isLoading ? "Player 1" : user?.username}
-            imgUrl={
-              !isLoading && user?.avatar === "" ? avatar_url : user?.avatar
-            }
-          />
-        )}
+        <p className="ugo-timer" style={{ textTransform: "capitalize" }}>
+          00 : 00
+        </p>
+
+        <Player
+          name={isLoading ? "Player 1" : user?.username.split(" ")[0]}
+          imgUrl={!isLoading && user?.avatar === "" ? avatar_url : user?.avatar}
+        />
       </TimerProfile>
       <div className="ugo-main-game-v2">
-        <MainGame user={user} />
+        <MainGame user={user} isPaused={isPaused} setIsPaused={setIsPaused} />
       </div>
       <TimerProfile>
         <Player

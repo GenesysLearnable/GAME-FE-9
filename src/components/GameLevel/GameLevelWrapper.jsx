@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BkArrow from "./img/bk-arrow.png";
 import Coin from "./img/Dollar Coin.png";
 import Add from "./img/add.png";
 import Avatar1 from "./img/Avatar (1).png";
 import Avatar2 from "./img/Avatar (2).png";
 import { Link, useNavigate } from "react-router-dom";
-import { useAvatar } from "../../contexts/AvatarContext";
-import { useUserData } from "../../contexts/UserContext";
+
 import { useUser } from "../../hooks/useUser";
 import Spinner from "../../ui/Spinner";
 
@@ -54,15 +53,6 @@ const GameLevelWrapper = () => {
 
   const { username, avatar } = user || {};
 
-  // useEffect(() => {
-  //   async function retrieveUser() {
-  //     try {
-  //     } catch (error) {}
-  //   }
-  // }, []);
-
-  // console.log(user, userData);
-
   const openModal = () => {
     setIsOpen(true);
   };
@@ -71,7 +61,19 @@ const GameLevelWrapper = () => {
     setIsOpen(false);
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          height: "100vh",
+          padding: "4rem",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Spinner />;
+      </div>
+    );
 
   return (
     <div className="levelWrapper">
@@ -115,12 +117,14 @@ const GameLevelWrapper = () => {
       </div>
       {isOpen && (
         <div className="pop-up-container">
-          <h1>{selectedLevel.Level}</h1>
+          <h1>{selectedLevel.Level} Challenge</h1>
 
           <div className="pop-content">
             <div className="player">
               <img src={avatar === "" ? Avatar1 : avatar} alt="" />
-              <h3>{username.split(" ").splice()}</h3>
+              <h3 style={{ textTransform: "capitalize" }}>
+                {username?.split(" ")[0]}
+              </h3>
             </div>
             <h1>VS</h1>
             <div className="player">
