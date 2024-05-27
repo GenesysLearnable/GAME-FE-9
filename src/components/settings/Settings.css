@@ -1,5 +1,5 @@
 .setting-parent {
-  height: 50vh;
+  /* height: 50vh; */
   display: flex;
   /* flex-direction: column; */
   justify-content: center;
@@ -7,7 +7,9 @@
 }
 
 .container {
-  min-height: 100vh;
+  /* max-height: 100vh; */
+  height: 80vh;
+  overflow-y: hidden;
   /* padding: 4rem; */
 }
 
@@ -136,12 +138,13 @@
 }
 .settings-link {
   /* padding: unset !important; */
+  font-size: 1.6rem;
 }
 
 @media (max-width: 600px) {
   .settingWrapper {
-    width: 38rem;
-    height: 38rem;
+    width: 35rem;
+    height: 35rem;
   }
 
   .container .top h4 {
@@ -161,7 +164,7 @@
   }
 
   .setting-content label {
-    font-size: 22px;
+    font-size: 18px;
   }
   .setting-content {
     text-align: center;
@@ -174,7 +177,7 @@
   }
 
   .setting-content a {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .setting-content h4 {

@@ -48,7 +48,7 @@
 } */
 
 .ugo-main-dashboard {
-  height: 80%;
+  /* height: 80%; */
   background: url("/dashboard/mainbg.png") var(--color-brand-600) 50% / cover
     no-repeat;
 
@@ -58,7 +58,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  /* top: 9.6rem; */
+  top: 6rem;
   padding: 2rem 18rem;
   width: 100vw;
   height: 100vh;
@@ -68,7 +68,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem 0;
+  /* margin: 1rem 0; */
   width: 100%;
 }
 
@@ -498,7 +498,26 @@
     padding: 0 2rem;
   }
 
-  .quitt {
+  .ugo-game {
+    width: 80rem;
+  }
+}
+
+@media (max-width: 52em) {
+  .ugo-main-dashboard {
+    /* max-width: 95rem; */
+    transform: rotate(90deg);
+    top: unset;
+  }
+
+  .ugo-hole {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .ugo-score-card {
+    width: 20rem;
+    height: 8rem;
   }
 }
 @media (max-width: 38em) {
@@ -674,8 +693,7 @@
 }
 /* 
 
-@media (max-width) {
-}
+
 @media (max-width) {
 }
 @media (max-width) {
